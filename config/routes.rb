@@ -1,4 +1,14 @@
 Dynamic::Application.routes.draw do |map|
+  resources :roles
+
+  resources :profiles
+
+  resources :memberships
+
+  resources :projects
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Rail Coach
+  description: Creates the infrastructure for OpenFoundry
+
+two:
+  id: 2
+  name: LaserHarp
+  description: Playing with LASERS!!!!
+
+three:
+  id: 3
+  name: All ePost
+  description: All ePost
