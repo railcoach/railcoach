@@ -1,7 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  description: MyText
+  description: This is my awesome Superman profile
 
 two:
-  description: MyText
+  description: Me as a pirate for 'Talk like a pirate day'
+
+three:
+  description: Yes it's pink, and I like it

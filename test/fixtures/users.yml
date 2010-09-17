@@ -1,16 +1,91 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+jasperf:
   id: 1
-  first_name: User
-  last_name: One
+  first_name: Jasper
+  last_name: Froeling
 
-two:
+jooste:
   id: 2
-  first_name: Second
-  last_name: User
+  first_name: Joost
+  last_name: Elfering
 
-three:
+timonv:
   id: 3
-  first_name: And
-  last_name: UserThree
+  first_name: Timon
+  last_name: Vonk
+
+tobiv:
+  id: 4
+  first_name: Tobi
+  last_name: Vollebregt
+
+emanuelr:
+  id: 5
+  first_name: Emanuel
+  last_name: Rietveld
+
+roelando:
+  id: 6
+  first_name: Roeland
+  last_name: van Ochten
+
+manuell:
+  id: 7
+  first_name: Manuel
+  last_name: Lorenzo
+
+bertm:
+  id: 8
+  first_name: Bert
+  last_name: Meerman
+
+jeroenl:
+  id: 9
+  first_name: Jeroen
+  last_name: van Lier
+
+christiaanh:
+  id: 10
+  first_name: Christiaan
+  last_name: Huygens
+
+antonl:
+  id: 11
+  first_name: Anton
+  last_name: van Leeuwenhoek
+
+willebrords:
+  id: 12
+  first_name: Willebrord
+  last_name: Snell
+
+simons:
+  id: 13
+  first_name: Simon
+  last_name: Stevin
+
+danielb:
+  id: 14
+  first_name: Daniel
+  last_name: Bernoulli
+
+christophorusb:
+  id: 15
+  first_name: Christophorus
+  last_name: Buys Ballot
+
+johannesw:
+  id: 16
+  first_name: Johannes
+  last_name: van der Waals
+
+edsgerd:
+  id: 17
+  first_name: Edsger
+  last_name: Dijkstra
+
+fritsz:
+  id: 18
+  first_name: Frits
+  last_name: Zernike
