@@ -1,4 +1,4 @@
-class RolesController < ApplicationController
+class Project::RolesController < ApplicationController
   # GET /roles
   # GET /roles.xml
   def index

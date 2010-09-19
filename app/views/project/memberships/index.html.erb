@@ -14,7 +14,7 @@
     <td><%= membership.user_id %></td>
     <td><%= membership.project_id %></td>
     <td><%= link_to 'Show', membership %></td>
-    <td><%= link_to 'Edit', edit_membership_path(membership) %></td>
+    <td><%= link_to 'Edit', edit_project_membership_path(membership) %></td>
     <td><%= link_to 'Destroy', membership, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -22,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New Membership', new_membership_path %>
+<%= link_to 'New Membership', new_project_membership_path %>

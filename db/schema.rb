@@ -12,15 +12,15 @@
 
 ActiveRecord::Schema.define(:version => 20100909210545) do
 
-  create_table "memberships", :force => true do |t|
+  create_table "project_memberships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "profiles", :force => true do |t|
-    t.text     "description"
+  create_table "project_roles", :force => true do |t|
+    t.integer  "membership_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(:version => 20100909210545) do
     t.datetime "updated_at"
   end
 
-  create_table "roles", :force => true do |t|
-    t.integer  "membership_id"
+  create_table "user_profiles", :force => true do |t|
+    t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+class User::ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.xml
   def index

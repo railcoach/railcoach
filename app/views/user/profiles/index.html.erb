@@ -12,7 +12,7 @@
   <tr>
     <td><%= profile.description %></td>
     <td><%= link_to 'Show', profile %></td>
-    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Edit', edit_user_profile_path(profile) %></td>
     <td><%= link_to 'Destroy', profile, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -20,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New Profile', new_profile_path %>
+<%= link_to 'New Profile', new_user_profile_path %>

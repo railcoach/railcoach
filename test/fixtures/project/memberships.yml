@@ -1,81 +1,101 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 jasperf_rc:
+  id: 1
   user_id: 1
   project_id: 1
 
 jasperf_se:
+  id: 2
   user_id: 1
   project_id: 4
 
 jasperf_com:
+  id: 3
   user_id: 1
   project_id: 5
 
 jooste_rc:
+  id: 4
   user_id: 2
   project_id: 1
 
 jooste_lh:
+  id: 5
   user_id: 2
   project_id: 2
 
 timonv_rc:
+  id: 6
   user_id: 3
   project_id: 1
 
 timonv_com:
+  id: 7
   user_id: 3
   project_id: 5
 
 tobiv_rc:
+  id: 8
   user_id: 4
   project_id: 1
 
 emanuelr_rc:
+  id: 9
   user_id: 5
   project_id: 1
 
 manuell_rc:
+  id: 10
   user_id: 7
   project_id: 1
 
 bertm_se:
+  id: 11
   user_id: 8
   project_id: 4
 
 roelando_lh:
+  id: 12
   user_id: 6
   project_id: 2
 
 jeroenl_se:
+  id: 13
   user_id: 9
   project_id: 4
 
 christiaanh_com:
+  id: 14
   user_id: 10
   project_id: 5
 
 simons_rc:
+  id: 15
   user_id: 13
   project_id: 1
 
 simons_lh:
+  id: 16
   user_id: 13
   project_id: 2
 
 simons_ae:
+  id: 17
   user_id: 13
   project_id: 3
   
 simons_se:
+  id: 18
   user_id: 13
   project_id: 4
 
 simons_com:
+  id: 19
   user_id: 13
   project_id: 5
 
 fritsz_ae:
+  id: 20
   user_id: 18
   project_id: 3

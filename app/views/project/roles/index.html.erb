@@ -12,7 +12,7 @@
   <tr>
     <td><%= role.membership_id %></td>
     <td><%= link_to 'Show', role %></td>
-    <td><%= link_to 'Edit', edit_role_path(role) %></td>
+    <td><%= link_to 'Edit', edit_project_role_path(role) %></td>
     <td><%= link_to 'Destroy', role, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -20,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New Role', new_role_path %>
+<%= link_to 'New Role', new_project_role_path %>

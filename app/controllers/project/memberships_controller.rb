@@ -1,4 +1,4 @@
-class MembershipsController < ApplicationController
+class Project::MembershipsController < ApplicationController
   # GET /memberships
   # GET /memberships.xml
   def index
