@@ -11,6 +11,12 @@ Dynamic::Application.routes.draw do |map|
     resources :profiles
   end
 
+  get "static/home"
+  get "static/projects"
+  get "static/members"
+  get "static/news"
+  get "static/about"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
