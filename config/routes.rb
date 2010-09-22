@@ -1,5 +1,7 @@
 Dynamic::Application.routes.draw do |map|
 
+  resources :user_sessions
+
   resources :projects
   namespace :project do
     resources :memberships
@@ -16,6 +18,11 @@ Dynamic::Application.routes.draw do |map|
   get "static/members"
   get "static/news"
   get "static/about"
+
+  # User session routes
+  match 'login' => 'user_sessions#create', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+  resources :user_sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,7 +73,7 @@ Dynamic::Application.routes.draw do |map|
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+   root :to => "static#home"
 
   # See how all your routes lay out with "rake routes"
 

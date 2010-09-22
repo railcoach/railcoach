@@ -66,6 +66,13 @@
             <li id="social_identica">
               <a href="http://identi.ca/group/freefoundry" title="Subscribe to us on identi.ca"><img src="images/transparent.gif"></a>
             </li>
+            <% if @current_user %>
+              <li><%= link_to 'Edit Profile', user_path(@current_user) %></li>
+              <li><%= link_to 'Logout', logout_path %></li>
+            <% else %>
+              <li><%= link_to 'Login', login_path %></li>
+              <li><%= link_to 'Register', new_user_path %></li>
+            <% end %>
           </ul>
         </div>
       </div>
