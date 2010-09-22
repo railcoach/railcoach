@@ -7,4 +7,4 @@ config/database.yml
 *.lock
 *.pid
 *.log
-*.cache
+*.swp
