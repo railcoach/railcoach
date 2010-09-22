@@ -4,3 +4,7 @@ log/*.log
 tmp/**/*
 nbproject/private
 config/database.yml
+*.lock
+*.pid
+*.log
+*.swp
