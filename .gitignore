@@ -8,3 +8,4 @@ config/database.yml
 *.pid
 *.log
 *.swp
+public/stylesheets/*.css
