@@ -1,0 +1,34 @@
+.content .newsRotator {
+    margin-top: 20px;
+
+    h2 {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .article {
+        border-top: 1px solid #AAAAAA;
+
+        &:first-child {
+            border-top: 0px;
+        }
+
+        h1 {
+            display: inline;
+            font-size: 14px;
+            margin: 0px;
+        }
+
+        p {
+            display: inline;
+            color: #555555;
+            font-size: 11px;
+        }
+
+        .container {
+            max-height: 40px;
+            overflow: hidden;
+        }
+    }
+}
