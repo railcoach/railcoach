@@ -26,65 +26,49 @@
     <script type="text/javascript">
       jQ = jQuery.noConflict();
     </script>
-    <script type="text/javascript" src="/javascripts/modernizr-1.5.min.min.js"></script>
     <%= javascript_include_tag :defaults %>
   </head>
   <body>
-    <div class="canvas">
-      <header>
-        <div class="header">
-          <div class="spacer">
-            <nav>
-              <ul class="navigation">
-                <li<%= " class='opened'" if @nav == 'Home' %>><a href="/static/home">Home</a></li>
-                <li<%= " class='opened'" if @nav == 'Projects' %>><a href="/static/projects">Projects</a></li>
-                <li<%= " class='opened'" if @nav == 'Members' %>><a href="/static/members">Members</a></li>
-                <li<%= " class='opened'" if @nav == 'News' %>><a href="/static/news">News</a></li>
-                <li<%= " class='opened'" if @nav == 'About' %>><a href="/static/about">About</a></li>
-              </ul>
-            </nav>
-            <img src="/images/logo-preview.png" alt=".freefoundry" class="logo" />
-          </div>
+    <header>
+      <div class="header">
+        <div class="spacer">
+          <nav>
+            <ul class="navigation">
+              <li<%= " class='opened'" if @nav == 'Home' %>><a href="/static/home">Home</a></li>
+              <li<%= " class='opened'" if @nav == 'Projects' %>><a href="/static/projects">Projects</a></li>
+              <li<%= " class='opened'" if @nav == 'Members' %>><a href="/static/members">Members</a></li>
+              <li<%= " class='opened'" if @nav == 'News' %>><a href="/static/news">News</a></li>
+              <li<%= " class='opened'" if @nav == 'About' %>><a href="/static/about">About</a></li>
+            </ul>
+          </nav>
+          <img src="/images/logo-preview.png" alt=".freefoundry" class="logo" />
         </div>
-      </header>
+      </div>
+    </header>
+    <div class="canvas">
       <%= yield %>
     </div>
-  <footer>
-    <div class="footer">
-      <div class="spacer">
-        <div class="socialButtons">
-          <ul>
-            <li id="social_linkedin">
-              <a href="http://www.linkedin.com/groups?gid=3202443" title="Connect with us on LinkedIn"><img src="images/transparent.gif"></a>
-            </li>
-            <li id="social_facebook">
-              <a href="http://www.facebook.com/pages/Freefoundry/150321324978822" title="Find us on facebook"><img src="images/transparent.gif"></a>
-            </li>
-            <li id="social_twitter">
-              <a href="http://twitter.com/freefoundry" title="Follow us on twitter"><img src="images/transparent.gif"></a>
-            </li>
-            <li id="social_identica">
-              <a href="http://identi.ca/group/freefoundry" title="Subscribe to us on identi.ca"><img src="images/transparent.gif"></a>
-            </li>
+    <footer>
+      <div class="toolbar">
+        <div class="spacer">
+          <ul class="right">
             <% if @current_user %>
-              <li><%= link_to 'Edit Profile', user_path(@current_user) %></li>
+              <li class="secondary"><%= link_to 'Edit Profile', user_path(@current_user) %></li>
               <li><%= link_to 'Logout', logout_path %></li>
             <% else %>
+              <li class="secondary"><%= link_to 'Register', new_user_path %></li>
               <li><%= link_to 'Login', login_path %></li>
-              <li><%= link_to 'Register', new_user_path %></li>
             <% end %>
           </ul>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
 
 <script type="text/javascript">
   <!--
-  var IE = /*@cc_on!@*/false;
-  if (IE){
+  if (jQuery.browser.msie){
     document.getElementById('ie_fallback').innerHTML = '<div class="browserWarning">Currently you are using Internet Explorer. The site will be working properly for you. Users with an HTML5 compatible browser will get a better experience on this website. We as the .freefoundry would like to advize you to use a modern browser. As an open-source community we obviously would like to point you to the <a href="http://www.firefox.com/">Mozilla Firefox</a> and <a href="http://chrome.google.com/">Google Chrome</a> browsers</div>';
   }
   //-->

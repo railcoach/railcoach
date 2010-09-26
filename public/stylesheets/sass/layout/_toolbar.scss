@@ -1,0 +1,66 @@
+.toolbar {
+    position: fixed;
+    bottom: 0px;
+    height: 25px;
+    width: 100%;
+    z-index: 100;
+
+    .spacer {
+        width: 976px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 2px 2px 0px 2px;
+        border-radius: 10px 10px 0px 0px;
+        -moz-border-radius: 10px 10px 0px 0px;
+        -webkit-border-radius: 10px 10px 0px 0px;
+        height: 23px;
+        line-height: 20px;
+        color: #FFFFFF;
+        margin: 0px auto;
+        padding: 0px 0px;
+        background-color: #333333;
+        background-image: -webkit-gradient(linear,
+            left top,
+            left bottom,
+            from(#555555),
+            color-stop(0.66, #111111),
+            to(#444444));
+        background-image: -moz-linear-gradient(
+            center top,
+            #555555 0%,
+            #111111 66%,
+            #444444 100%);
+    }
+
+    ul {
+        height: 23px;
+
+        &.right {
+            float: right;
+            padding: 0px 5px;
+
+            li {
+                float: left;
+
+                &.secondary a {
+                    color: #AAAAAA;
+                }
+
+                a {
+                    display: block;
+                    height: 23px;
+                    line-height: 23px;
+                    color: #FFFFFF;
+                    font-size: 12px;
+                    padding: 0px 5px;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #FF8800;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
