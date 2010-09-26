@@ -1,0 +1,5 @@
+connect:
+  openfoundry:
+    key: "a key"
+    secret: "a secret"
+    label: "Openfoundry"

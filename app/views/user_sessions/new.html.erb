@@ -11,8 +11,11 @@
     </div>
   <% end %>
 <% form_for @user_session do |f| %>
+  <%= f.hidden_field(:authentication_type, :value => :user) %>
   <%= f.label :username %><br />
   <%= f.text_field :username %><br />
+  <%= f.label "Or enter your OpenID Identifier" %><br />
+  <%= f.text_field :openid_identifier %><br />
   <br />
   <%= f.label :password %><br />
   <%= f.password_field :password %><br />
