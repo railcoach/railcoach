@@ -1,0 +1,142 @@
+.content {
+    width: 960px;
+    margin: 0px auto;
+    padding: 55px 0px 35px 0px;
+
+    &.gridlayout {
+        clear: both;
+
+        .row {
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            overflow: hidden;
+
+            &.col1-1 {
+                width: 960px;
+            }
+
+            &.col1-2 {
+                width: 480px;
+            }
+
+            &.col1-3 {
+                width: 320px;
+            }
+
+            &.col2-3 {
+                width: 640px;
+            }
+
+            &.col1-4 {
+                width: 240px;
+            }
+
+            &.col3-4 {
+                width: 720px;
+            }
+
+            &.col1-5 {
+                width: 192px;
+            }
+
+            &.col2-5 {
+                width: 384px;
+            }
+
+            &.col3-5 {
+                width: 576px;
+            }
+
+            &.col4-5 {
+                width: 768px;
+            }
+
+            &.col1-6 {
+                width: 160px;
+            }
+
+            &.col5-6 {
+                width: 800px;
+            }
+
+            &.col1-8 {
+                width: 120px;
+            }
+
+            &.col3-8 {
+                width: 360px;
+            }
+
+            &.col5-8 {
+                width: 600px;
+            }
+
+            &.col7-8 {
+                width: 840px;
+            }
+
+            &.col1-10 {
+                width: 96px;
+            }
+
+            &.col3-10 {
+                width: 288px;
+            }
+
+            &.col7-10 {
+                width: 672px;
+            }
+
+            &.col9-10 {
+                width: 862px;
+            }
+
+            &.col1-12 {
+                width: 80px;
+            }
+
+            &.col5-12 {
+                width: 400px;
+            }
+
+            &.col7-12 {
+                width: 560px;
+            }
+
+            &.col9-12 {
+                width: 720px;
+            }
+
+            &.col11-12 {
+                width: 880px;
+            }
+
+            .spacer {
+                margin: 10px;
+            }
+
+            .block {
+                border: 1px solid #AAAAAA;
+                background-color: #DDDDEE;
+                background-color: rgba(255, 255, 255, 0.4);
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .gridSpaced {
+                padding: 15px;
+            }
+        }
+
+        &.visible .column .spacer {
+            background-color: rgba(0,0,0,0.1);
+        }
+    }
+}

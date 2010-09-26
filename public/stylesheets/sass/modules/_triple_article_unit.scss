@@ -1,0 +1,47 @@
+.content .tripleArticleUnit {
+    .block {
+        .unit {
+            float: left;
+            width: 282px;
+            border-left: 1px solid #AAAAAA;
+
+            &:first-child {
+                border-left: 0px;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: #333333;
+            }
+
+            .headliner {
+                &.left {
+                    float: left;
+                    margin: 0px 10px 5px 0px;
+                }
+
+                &.right {
+                    float: right;
+                    margin: 0px 0px 5px 10px;
+                }
+            }
+        }
+    }
+    a.readMore {
+        display: block;
+        text-align: right;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #555555;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+            color: #CC0000;
+        }
+    }
+}
