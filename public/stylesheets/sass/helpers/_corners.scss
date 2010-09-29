@@ -1,0 +1,5 @@
+@mixin corner-round-all($size) {
+    border-radius: $size;
+    -moz-border-radius: $size;
+    -webkit-border-radius: $size;
+}

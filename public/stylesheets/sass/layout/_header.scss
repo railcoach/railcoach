@@ -1,3 +1,77 @@
+header.exhebition {
+    .header {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .articleContainer {
+        background-color: #111111;
+        background-image: -webkit-gradient(
+            radial,
+            50% 100%,
+            0,
+            50% 100%,
+            800,
+            from(#444444),
+            to(#111111)
+        );
+        background-image: -moz-radial-gradient(
+            50% 100% 270deg,
+            circle cover,
+            #444444 0%,
+            #111111 800px
+        );
+        color: #FFFFFF;
+        font-size: 12px;
+        line-height: 20px;
+
+        & > .spacer {
+            position: relative;
+            width: 980px;
+            margin: 0px auto;
+            padding: 20px 0px;
+        }
+
+        h1 {
+            font-size: 35px;
+            line-height: 40px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: bold;
+            margin-bottom: 9px;
+        }
+
+        .description {
+            float: left;
+            width: 630px;
+            margin-left: 20px;
+
+            .column {
+                float: left;
+                width: 300px;
+                margin-right: 15px;
+            }
+
+            p {
+                margin-top: 10px;
+            }
+        }
+
+        .signUp {
+            background-color: #333333;
+            margin: 0px 20px 0px 650px;
+            border: 1px solid #444444;
+            padding: 15px;
+            @include shadow-inset(10px, 200px, rgba(0, 0, 0, 0.8));
+        }
+    }
+}
+
 .header {
     top: 0px;
     left: 0px;

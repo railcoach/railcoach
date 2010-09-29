@@ -1,0 +1,17 @@
+@mixin shadow-outside($dist, $size, $color) {
+    box-shadow: $dist $dist $size $color;
+    -moz-box-shadow: $dist $dist $size $color;
+    -webkit-box-shadow: $dist $dist $size $color;
+}
+
+@mixin shadow-inset($dist, $size, $color) {
+    box-shadow: $dist $dist $size $color inset;
+    -moz-box-shadow: $dist $dist $size $color inset;
+    -webkit-box-shadow: $dist $dist $size $color inset;
+}
+
+@mixin shadow-in-out($odist, $osize, $ocolor, $idist, $isize, $icolor) {
+    box-shadow: $odist $odist $osize $ocolor, $idist $idist $isize $icolor inset;
+    -moz-box-shadow: $odist $odist $osize $ocolor, $idist $idist $isize $icolor inset;
+    -webkit-box-shadow: $odist $odist $osize $ocolor, $idist $idist $isize $icolor inset;
+}

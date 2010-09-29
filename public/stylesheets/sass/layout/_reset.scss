@@ -17,6 +17,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 body {
     line-height: 20px;
@@ -80,7 +81,4 @@ table {
 
 .break {
     clear: both;
-}
-
-.canvas {
 }
