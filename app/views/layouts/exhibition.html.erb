@@ -29,7 +29,7 @@
     </script>
   </head>
   <body>
-    <header<%= " class='exhebition'" if @current_user.blank? %>>
+    <header<%= " class='exhibition'" if @current_user.blank? %>>
       <% if @current_user.blank? %>
         <div class="articleContainer">
           <div class="spacer">
@@ -62,7 +62,7 @@
       <% end %>
       <%= render :partial => 'layouts/navigation' %>
     </header>
-    <div class="content gridlayout<%= ' exhebition' if @current_user.blank? %>">
+    <div class="content gridlayout<%= ' exhibition' if @current_user.blank? %>">
       <%= yield %>
     </div>
     <footer>

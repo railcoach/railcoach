@@ -4,7 +4,7 @@ class StaticController < ApplicationController
   def home
     @nav = 'Home'
 
-    render :layout => "exhebition"
+    render :layout => "exhibition"
   end
 
   def projects
