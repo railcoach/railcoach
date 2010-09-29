@@ -8,6 +8,14 @@ gem 'rails', '3.0.0'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '>= 3.0.0'
 
+# This needs to be fixed as soon as working rails3 gem is released
+gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+
+group :test, :development do
+  gem "rspec-rails", ">= 2.0.0.beta.22"
+  gem "autotest"
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

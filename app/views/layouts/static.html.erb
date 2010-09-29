@@ -48,25 +48,31 @@
     <div class="content gridlayout">
       <%= yield %>
     </div>
-    <footer>
-      <div class="toolbar">
-        <div class="spacer">
-          <div class="socialButtons">
-            <ul>
-              <li id="social_linkedin">
-                <a href="http://www.linkedin.com/groups?gid=3202443" title="Connect with us on LinkedIn"><%= image_tag "transparent.gif" %></a>
-              </li>
-              <li id="social_facebook">
-                <a href="http://www.facebook.com/pages/Freefoundry/150321324978822" title="Find us on facebook"><%= image_tag "transparent.gif" %></a>
-              </li>
-              <li id="social_twitter">
-                <a href="http://twitter.com/freefoundry" title="Follow us on twitter"><%= image_tag "transparent.gif" %></a>
-              </li>
-              <li id="social_identica">
-                <a href="http://identi.ca/group/freefoundry" title="Subscribe to us on identi.ca"><%= image_tag "transparent.gif" %></a>
-              </li>
-            </ul>
-          </div>
+  <footer>
+    <div class="toolbar">
+      <div class="spacer">
+        <div class="socialButtons">
+          <ul>
+            <li id="social_linkedin">
+              <a href="http://www.linkedin.com/groups?gid=3202443" title="Connect with us on LinkedIn"><%= image_tag "transparent.gif" %></a>
+            </li>
+            <li id="social_facebook">
+              <a href="http://www.facebook.com/pages/Freefoundry/150321324978822" title="Find us on facebook"><%= image_tag "transparent.gif" %></a>
+            </li>
+            <li id="social_twitter">
+              <a href="http://twitter.com/freefoundry" title="Follow us on twitter"><%= image_tag "transparent.gif" %></a>
+            </li>
+            <li id="social_identica">
+              <a href="http://identi.ca/group/freefoundry" title="Subscribe to us on identi.ca"><%= image_tag "transparent.gif" %></a>
+            </li>
+            <% if @current_user %>
+              <li><%= link_to 'Edit Profile', user_path(@current_user) %></li>
+              <li><%= link_to 'Logout', logout_path %></li>
+            <% else %>
+              <li><%= link_to 'Login', login_path %></li>
+              <li><%= link_to 'Register', new_user_path %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </footer>
