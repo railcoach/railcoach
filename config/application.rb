@@ -42,5 +42,12 @@ module Dynamic
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # Generator settings
+    config.generators do |g|
+      g.orm :active_record
+      g.template_engine :haml
+      g.test_framework :rspec
+    end
   end
 end
