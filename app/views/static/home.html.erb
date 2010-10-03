@@ -2,7 +2,7 @@
   <div class="column col1-1">
     <div class="spacer">
       <div class="pageHeader">
-        <h1>What is <img src="/images/freefoundry.png" alt=".freefoundry" class="freefoundryLogo" />?</h1>
+        <h1>What is <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
           <div class="unit gridSpaced">
             <h2>What?</h2>
             <img src="/images/what.png" class="headliner right" />
-            <p>.freefoundry is an organisation that brings people together to work on new and innovative projects. We aim to provide the envoirement to drive such projects. Mostly projects will be in the free and open-source domain. But any project that interests the members and can be done cooperative is welcome.</p>
+            <p>.projectlodge is an organisation that brings people together to work on new and innovative projects. We aim to provide the envoirement to drive such projects. Mostly projects will be in the free and open-source domain. But any project that interests the members and can be done cooperative is welcome.</p>
           </div>
           <div class="unit gridSpaced">
             <h2>Who?</h2>
@@ -25,7 +25,7 @@
           <div class="unit gridSpaced">
             <h2>How?</h2>
             <img src="/images/how.png" class="headliner right" />
-            <p>We provide a platform to enable the members to contribute and organize projects. We organize gatherings every six months to kickoff new projects and just meet new people. Projects also meet frequently. The combination of the platform and the frequent meetings are the make of the .freefoundry</p>
+            <p>We provide a platform to enable the members to contribute and organize projects. We organize gatherings every six months to kickoff new projects and just meet new people. Projects also meet frequently. The combination of the platform and the frequent meetings are the make of the .projectlodge</p>
           </div>
           <div class="break"></div>
         </div>
@@ -44,10 +44,9 @@
               }
             });
             jQ("#article_row").children(".unit").height(height);
-            //alert(height);
           }
         </script>
-        <a href="/static/about" class="readMore">Read more about .freefoundry</a>
+        <a href="/static/about" class="readMore">Read more about .projectlodge</a>
       </article>
       <div class="break"></div>
     </div>
@@ -120,7 +119,7 @@
             avatars: false,
             behavior: 'all'
           }
-        }).render().setUser('freefoundry').start();
+        }).render().setUser('projectlodge').start();
       </script>
     </div>
   </div>
