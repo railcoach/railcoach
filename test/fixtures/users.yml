@@ -4,31 +4,37 @@ jasperf:
   id: 1
   first_name: Jasper
   last_name: Froeling
+  title: Software Developer
 
 jooste:
   id: 2
   first_name: Joost
   last_name: Elfering
+  title: Web- designer/developer
 
 timonv:
   id: 3
   first_name: Timon
   last_name: Vonk
+  title: Web Engineer
 
 tobiv:
   id: 4
   first_name: Tobi
   last_name: Vollebregt
+  title: Software Engineer
 
 emanuelr:
   id: 5
   first_name: Emanuel
   last_name: Rietveld
+  title: Sysadmin
 
 roelando:
   id: 6
   first_name: Roeland
   last_name: van Ochten
+  title: Infrastructure Engineer
 
 manuell:
   id: 7
@@ -39,6 +45,7 @@ bertm:
   id: 8
   first_name: Bert
   last_name: Meerman
+  title: Software Engineer
 
 jeroenl:
   id: 9
