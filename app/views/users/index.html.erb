@@ -12,7 +12,7 @@
 <% @users.each do |user| %>
   <div class="column col1-6">
     <figure>
-      <div class="spacer block"> <!--style="background-image: url(/images/members/jooste.jpg)"-->
+      <div class="spacer block<%= ' female' if user.gender == 'f' %>"> <!--style="background-image: url(/images/members/jooste.jpg)"-->
         <figcaption>
           <div class="caption">
             <h1><%= link_to user.name, user %></h1>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101004210219) do
+ActiveRecord::Schema.define(:version => 20101005163530) do
 
   create_table "project_memberships", :force => true do |t|
     t.integer  "user_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20101004210219) do
     t.string   "password_salt"
     t.string   "persistence_token"
     t.string   "title"
+    t.string   "gender"
   end
 
 end
