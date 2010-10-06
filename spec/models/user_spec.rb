@@ -22,4 +22,8 @@ describe User, "that is already created" do
   it "should have a title" do
     user.title.should == 'Genius'
   end
+
+  it "should be male" do
+    user.gender.should == 'm'
+  end
 end
