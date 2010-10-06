@@ -9,18 +9,19 @@
 </div>
 
 <div class="row memberUnits">
-<% @users.each do |user| %>
-  <div class="column col1-6">
-    <figure>
-      <div class="spacer block<%= ' female' if user.gender == 'f' %>"> <!--style="background-image: url(/images/members/jooste.jpg)"-->
-        <figcaption>
-          <div class="caption">
-            <h1><%= link_to user.name, user %></h1>
-            <p><%= user.title %></p>
-          </div>
-        </figcaption>
-      </div>
-    </figure>
-  </div>
-<% end %>
+  <% @users.each do |user| %>
+    <div class="column col1-6">
+      <figure>
+        <div class="spacer block<%= ' female' if user.gender == 'f' %>"> <!--style="background-image: url(/images/members/jooste.jpg)"-->
+          <figcaption>
+            <div class="caption">
+              <h1><%= link_to user.name, user %></h1>
+              <p><%= user.title %></p>
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
+  <% end %>
+  <div class="break"></div>
 </div>
