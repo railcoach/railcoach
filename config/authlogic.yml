@@ -1,5 +1,9 @@
 connect:
-  openfoundry:
+  projectlodge:
     key: "a key"
     secret: "a secret"
-    label: "Openfoundry"
+    label: "Projectlodge"
+  google:
+    key: "google key"
+    secret: "google secret"
+    labe: "Google"
