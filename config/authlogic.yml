@@ -1,0 +1,9 @@
+connect:
+  projectlodge:
+    key: "a key"
+    secret: "a secret"
+    label: "Projectlodge"
+  google:
+    key: "google key"
+    secret: "google secret"
+    labe: "Google"
