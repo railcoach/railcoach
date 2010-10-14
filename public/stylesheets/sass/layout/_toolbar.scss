@@ -1,0 +1,59 @@
+.toolbar {
+    position: fixed;
+    bottom: 0px;
+    height: 25px;
+    width: 100%;
+    z-index: 100;
+
+    .spacer {
+        width: 976px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 2px 2px 0px 2px;
+        border-radius: 10px 10px 0px 0px;
+        -moz-border-radius: 10px 10px 0px 0px;
+        -webkit-border-radius: 10px 10px 0px 0px;
+        height: 23px;
+        line-height: 20px;
+        color: #FFFFFF;
+        margin: 0px auto;
+        padding: 0px 0px;
+        background-color: #333333;
+        background-image: -webkit-gradient(linear,
+            left top,
+            left bottom,
+            from(#555555),
+            color-stop(0.66, #111111),
+            to(#444444));
+        background-image: -moz-linear-gradient(
+            center top,
+            #555555 0%,
+            #111111 66%,
+            #444444 100%);
+    }
+
+    a {
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+
+    ul {
+        &.right {
+            float: right;
+        }
+
+        &.left {
+            float: left;
+        }
+
+        li {
+            float: left;
+            height: 23px;
+            margin: 0px 10px;
+
+            a {
+                display: block
+            }
+        }
+    }
+}
