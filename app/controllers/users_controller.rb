@@ -20,26 +20,22 @@ class UsersController < ApplicationController
   end
 
   # POST /users
-  # POST /users.xml
   def create
     @user = User.new(params[:user])
     
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.save
+      flash[:notice] = 'Successfully created user'
+      redirect_to(@user, :notice => 'User was successfully created.')
+    else
+      flash[:notice] = 'Creating new user failed'
+      render :action => "new"
     end
   end
 
   # PUT /users/1
-  # PUT /users/1.xml
-
   def update
     @user = User.find(params[:id])
+
     if @user.update_attributes(params[:user])
       flash[:notice] = 'User updated succesfully'
       redirect_to :action => 'show'
@@ -47,5 +43,12 @@ class UsersController < ApplicationController
       flash[:notice] = 'Updating user failed'
       redirect_to :action => 'edit'
     end
+  end
+
+  # DELETE /users/1
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to(users_url)
   end
 end
