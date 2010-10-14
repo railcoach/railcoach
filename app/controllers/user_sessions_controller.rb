@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
           format.html { redirect_to(root_url, :notice => 'Successfully logged in!') }
           format.xml  { render :xml => @user_session, :status => :created, :location => @user_session }
         else
-          format.html { render :action => "new" }
+          format.html { render :action => "create" }
           format.xml  { render :xml => @user_session.errors, :status => :unprocessable_entity }
         end
       end
