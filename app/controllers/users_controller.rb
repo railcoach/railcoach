@@ -23,16 +23,14 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-
+    
     respond_to do |format|
-      @user.save do |result|
-        if result
-          format.html { redirect_to(root_url, :notice => 'User was successfully created.') }
-          format.xml  { render :xml => @user, :status => :created, :location => @user }
-        else
-          format.html { render :action => "new" }
-          format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-        end
+      if @user.save
+        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+        format.xml  { render :xml => @user, :status => :created, :location => @user }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -42,12 +40,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-      if @user.update_attributes(params[:user])
-        flash[:notice] = 'User updated succesfully'
-        redirect_to :action => 'show'
-      else
-        flash[:notice] = 'Updating user failed'
-        redirect_to :action => 'edit'
-      end
+    if @user.update_attributes(params[:user])
+      flash[:notice] = 'User updated succesfully'
+      redirect_to :action => 'show'
+    else
+      flash[:notice] = 'Updating user failed'
+      redirect_to :action => 'edit'
+    end
   end
 end
