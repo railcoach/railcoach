@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_for @user do |f| %>
-  <%= render :partial => "form", :locals => { :f => f, :submit_label => 'Update user'} %>
+  <%= render :partial => "form", :locals => { :form => f, :submit_label => 'Update user'} %>
 <% end %>
