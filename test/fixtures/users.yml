@@ -101,3 +101,26 @@ fritsz:
   id: 18
   first_name: Frits
   last_name: Zernike
+
+adal:
+  id: 19
+  first_name: Ada
+  last_name: Lovelace
+  gender: f
+
+charlesb:
+  id: 20
+  first_name: Charles
+  last_name: Babbage
+
+meritp:
+  id: 21
+  first_name: Merit
+  last_name: Ptah
+  gender: f
+
+mariec:
+  id: 22
+  first_name: Marie
+  last_name: Curie
+  gender: f
