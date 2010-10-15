@@ -40,6 +40,10 @@ manuell:
   id: 7
   first_name: Manuel
   last_name: Lorenzo
+  username: noloman
+  title: Back/Front end developer
+  gender: m
+  email: manulorenzop@gmail.com
 
 bertm:
   id: 8

@@ -13,23 +13,20 @@ describe User do
 
   context "that is already created" do
     before(:each) do
-      @user = User.new do |u|
-        u.first_name = 'Edsger'
-        u.last_name = 'Dijkstra'
-        u.title = 'Genius'
-      end
+      @user = User.new     
     end
+  end
 
-    it "should have a name" do
-      @user.name.should == 'Edsger Dijkstra'
-    end
-
-    it "should have a title" do
-      @user.title.should == 'Genius'
-    end
-
-    it "should be male" do
-      @user.gender.should == 'm'
-    end
+  it "should be invalid without a name" do
+    @user.should_not be_valid
+    @user.email = 'abcde@abcde.com'
+    @user.password = 'abcdefg'
+    @user.title = 'Software Developer'
+    @user.gender = 'm'
+    @user.first_name = 'Edgar'
+    @user.last_name = 'Dijkstra'
+    @user.errors.on(:username)
+    @user.usernamea = 'edijkstra'
+    @user.should be_valid
   end
 end

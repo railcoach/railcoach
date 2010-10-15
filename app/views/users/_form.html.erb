@@ -1,6 +1,33 @@
-<label for="first_name">First name:</label>
-<%= f.text_field :first_name %>
-<label for="last_name">Last name:</label>
-<%= f.text_field :last_name %>
-<%= submit_tag submit_label %><br />
+<p>
+  <label for="first_name">First name:</label>
+  <%= form.text_field :first_name %>
+</p>
+<p><label for="last_name">Last name:</label>
+  <%= form.text_field :last_name %></p>
+<p>
+  <label for="gender">Gender:</label>
+  <%= select("user", "gender", { "Male" => "m", "Female" => "f"}) %>
+</p>
+<p>
+  <label for="title">Title:</label>
+  <%= form.text_field :title %>
+</p>
+<p>
+  <label for="email">Email address:</label>
+  <%= form.text_field :email %>
+</p>
+<p>
+  <label for="username">Username:</label>
+  <%= form.text_field :username %>
+</p>
+<p>
+  <label for="password">Password:</label>
+  <%= form.password_field :password %>
+</p>
+<p>
+  <label for="password_confirmation">Re-enter password</label>
+  <%= form.password_field :password_confirmation %>
+</p>
+
+<%= submit_tag "Register" %><br />
 <%= link_to 'Back', users_path %>
