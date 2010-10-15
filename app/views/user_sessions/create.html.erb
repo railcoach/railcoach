@@ -1,10 +1,7 @@
-<!-- user_sessions/new.html.erb -->
+<!-- user_sessions/create.html.erb -->
 <!-- taken from http://railscasts.com/episodes/160-authlogic --!>
 
-<% title "User login" %>
-
 <% form_for @user_session do |f| %>
-  <%= f.error_messages %>
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>

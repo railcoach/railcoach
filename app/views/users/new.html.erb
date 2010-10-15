@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <h1>Register</h1>
 <% form_for @user do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
 <% end %>
+=======
+<p id="notice"><%= notice %></p>
+
+<%= form_for @user do |f| %>
+  <%= render :partial => "form", :locals => { :f => f, :submit_label => 'Create user'} %>
+<% end %>
+>>>>>>> 15543acf7abfad3ed9f541e3f360c3ba53465bc7
