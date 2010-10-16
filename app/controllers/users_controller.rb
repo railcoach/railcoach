@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :navigation
+
   # GET /users
   def index
     @users = User.all
@@ -50,5 +52,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to(users_url)
+  end
+
+  private
+
+  def navigation
+    @nav = 'Members'
   end
 end
