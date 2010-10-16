@@ -29,133 +29,131 @@
   </div>
 <% end %>
 
-<% content_for :content do %>
-  <div class="row">
-    <div class="column col1-1">
-      <div class="spacer">
-        <div class="pageHeader">
-          <h1>What is <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
-        </div>
+<div class="row">
+  <div class="column col1-1">
+    <div class="spacer">
+      <div class="pageHeader">
+        <h1>What is <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
       </div>
     </div>
   </div>
-  <div class="row tripleArticleUnit">
-    <div class="column col1-1">
-      <div class="spacer">
-        <article>
-          <div class="block" id="article_row">
-            <div class="unit gridSpaced">
-              <h2>What?</h2>
-              <img src="/images/what.png" class="headliner right" />
-              <p>.projectlodge is an organisation that brings people together to work on new and innovative projects. We aim to provide the envoirement to drive such projects. Mostly projects will be in the free and open-source domain. But any project that interests the members and can be done cooperative is welcome.</p>
-            </div>
-            <div class="unit gridSpaced">
-              <h2>Who?</h2>
-              <img src="/images/who.png" class="headliner right" />
-              <p>Our members are professionals, freelancers and students with a passion for advanced technology. They believe in sharing knowledge and experience, so together they bring eachother to new levels and produce exciting new ideas and products.</p>
-            </div>
-            <div class="unit gridSpaced">
-              <h2>How?</h2>
-              <img src="/images/how.png" class="headliner right" />
-              <p>We provide a platform to enable the members to contribute and organize projects. We organize gatherings every six months to kickoff new projects and just meet new people. Projects also meet frequently. The combination of the platform and the frequent meetings are the make of the .projectlodge</p>
-            </div>
-            <div class="break"></div>
+</div>
+<div class="row tripleArticleUnit">
+  <div class="column col1-1">
+    <div class="spacer">
+      <article>
+        <div class="block" id="article_row">
+          <div class="unit gridSpaced">
+            <h2>What?</h2>
+            <img src="/images/what.png" class="headliner right" />
+            <p>.projectlodge is an organisation that brings people together to work on new and innovative projects. We aim to provide the envoirement to drive such projects. Mostly projects will be in the free and open-source domain. But any project that interests the members and can be done cooperative is welcome.</p>
           </div>
-          <script type="text/javascript">
-            jQ(document).ready(function () {
-              setTimeout("adjustStatementHeight()", 500);
-            });
+          <div class="unit gridSpaced">
+            <h2>Who?</h2>
+            <img src="/images/who.png" class="headliner right" />
+            <p>Our members are professionals, freelancers and students with a passion for advanced technology. They believe in sharing knowledge and experience, so together they bring eachother to new levels and produce exciting new ideas and products.</p>
+          </div>
+          <div class="unit gridSpaced">
+            <h2>How?</h2>
+            <img src="/images/how.png" class="headliner right" />
+            <p>We provide a platform to enable the members to contribute and organize projects. We organize gatherings every six months to kickoff new projects and just meet new people. Projects also meet frequently. The combination of the platform and the frequent meetings are the make of the .projectlodge</p>
+          </div>
+          <div class="break"></div>
+        </div>
+        <script type="text/javascript">
+          jQ(document).ready(function () {
+            setTimeout("adjustStatementHeight()", 500);
+          });
 
-            function adjustStatementHeight() {
-              var height = 0;
-              jQ("#article_row").children(".unit").each(function (i){
-                object = jQ("#article_row .unit").get(i);
-                var new_height = jQ(object).height();
-                if (new_height > height) {
-                  height = new_height;
-                }
-              });
-              jQ("#article_row").children(".unit").height(height);
-            }
-          </script>
-          <a href="/static/about" class="readMore">Read more about .projectlodge</a>
-        </article>
-        <div class="break"></div>
-      </div>
+          function adjustStatementHeight() {
+            var height = 0;
+            jQ("#article_row").children(".unit").each(function (i){
+              object = jQ("#article_row .unit").get(i);
+              var new_height = jQ(object).height();
+              if (new_height > height) {
+                height = new_height;
+              }
+            });
+            jQ("#article_row").children(".unit").height(height);
+          }
+        </script>
+        <a href="/static/about" class="readMore">Read more about .projectlodge</a>
+      </article>
+      <div class="break"></div>
     </div>
   </div>
-  <div class="row">
-    <div class="column col2-3">
-      <div class="spacer">
-        <div class="newsRotator">
-          <header>
-            <h2>Latest news from the community.</h2>
-          </header>
-          <div class="block">
-            <div class="article gridSpaced">
-              <article>
-                <div class="container">
-                  <h1>This is a header</h1>
-                  <p>This is the content blurp of the news item. So no long text but only the basic information in a maximum of two lines of text. This is probably going to be to long so I'll try to keep it as short as I can. Well... not that short as I want this thing to be long and a bit oversized.</p>
-                </div>
-              </article>
-            </div>
-            <div class="article gridSpaced">
-              <article>
-                <div class="container">
-                  <h1>This is a header</h1>
-                  <p>This is the content blurp of the news item. So no long text but only the basic information in a maximum of two lines of text. This is probably going to be to long so I'll try to keep it as short as I can. Well... not that short as I want this thing to be long and a bit oversized.</p>
-                </div>
-              </article>
-            </div>
-            <div class="article gridSpaced">
-              <article>
-                <div class="container">
-                  <h1>This is a header</h1>
-                  <p>This is the content blurp of the news item. So no long text but only the basic information in a maximum of two lines of text. This is probably going to be to long so I'll try to keep it as short as I can. Well... not that short as I want this thing to be long and a bit oversized.</p>
-                </div>
-              </article>
-            </div>
+</div>
+<div class="row">
+  <div class="column col2-3">
+    <div class="spacer">
+      <div class="newsRotator">
+        <header>
+          <h2>Latest news from the community.</h2>
+        </header>
+        <div class="block">
+          <div class="article gridSpaced">
+            <article>
+              <div class="container">
+                <h1>This is a header</h1>
+                <p>This is the content blurp of the news item. So no long text but only the basic information in a maximum of two lines of text. This is probably going to be to long so I'll try to keep it as short as I can. Well... not that short as I want this thing to be long and a bit oversized.</p>
+              </div>
+            </article>
+          </div>
+          <div class="article gridSpaced">
+            <article>
+              <div class="container">
+                <h1>This is a header</h1>
+                <p>This is the content blurp of the news item. So no long text but only the basic information in a maximum of two lines of text. This is probably going to be to long so I'll try to keep it as short as I can. Well... not that short as I want this thing to be long and a bit oversized.</p>
+              </div>
+            </article>
+          </div>
+          <div class="article gridSpaced">
+            <article>
+              <div class="container">
+                <h1>This is a header</h1>
+                <p>This is the content blurp of the news item. So no long text but only the basic information in a maximum of two lines of text. This is probably going to be to long so I'll try to keep it as short as I can. Well... not that short as I want this thing to be long and a bit oversized.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </div>
-    <div class="column col1-3">
-      <div class="spacer">
-        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-        <script>
-          new TWTR.Widget({
-            version: 2,
-            type: 'profile',
-            rpp: 3,
-            interval: 6000,
-            width: 'auto',
-            height: 172,
-            theme: {
-              shell: {
-                background: 'rgba(255,255,255,0.2)',
-                color: '#000000'
-              },
-              tweets: {
-                background: 'rgba(255,255,255,0.5)',
-                color: '#333333',
-                links: '#dd7700'
-              }
+  </div>
+  <div class="column col1-3">
+    <div class="spacer">
+      <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+      <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 3,
+          interval: 6000,
+          width: 'auto',
+          height: 172,
+          theme: {
+            shell: {
+              background: 'rgba(255,255,255,0.2)',
+              color: '#000000'
             },
-            features: {
-              scrollbar: true,
-              loop: false,
-              live: false,
-              hashtags: true,
-              timestamp: true,
-              avatars: false,
-              behavior: 'all'
+            tweets: {
+              background: 'rgba(255,255,255,0.5)',
+              color: '#333333',
+              links: '#dd7700'
             }
-          }).render().setUser('projectlodge').start();
-        </script>
-      </div>
+          },
+          features: {
+            scrollbar: true,
+            loop: false,
+            live: false,
+            hashtags: true,
+            timestamp: true,
+            avatars: false,
+            behavior: 'all'
+          }
+        }).render().setUser('projectlodge').start();
+      </script>
     </div>
   </div>
-  <div class="row" id="ie_fallback"></div>
-  <div class="break"></div>
-<% end %>
+</div>
+<div class="row" id="ie_fallback"></div>
+<div class="break"></div>
