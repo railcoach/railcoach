@@ -4,41 +4,12 @@
     <%= render :partial => 'layouts/head' %>
   </head>
   <body>
-    <header<%= " class='exhibition'" if @current_user.blank? %>>
-      <% if @current_user.blank? %>
-        <div class="articleContainer">
-          <div class="spacer">
-            <div class="description">
-              <article>
-                <h1>What is <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
-                <div class="column">
-                  <p>The question should not be what, but who! Linking people together in an open and free environment to do what they like to do. Create musical instruments, collaborate on art pieces, helping out a local causes, plan performances and anything you can imagine. Innovating together in technology and growing personally in knowledge.</p>
-                  <p>We as .projectlodge ARE the platform on wich we do innovative, technological and fun projects. Together on Local and Global level. We find each other and collaborate on the future!</p>
-                </div>
-                <div class="column">
-                  <p>We want to enable the individual to contribute to the world on their own terms, level and field.</p>
-                  <p>Bla bla bla... we need more of this to make it interesting. Maybe some animations or a combined graph. Options we have, content we do not. This needs some love and attention.</p>
-                  <p>Sometimes it doesn't works</p>
-                  <p>Sometimes it does</p>
-                </div>
-              </article>
-            </div>
-            <div class="signUp">
-              <h2>Come and join in.</h2>
-              <p>Create a new account</p>
-              <p>Use your:</p>
-              <p>google account</p>
-              <p>facebook account</p>
-              <p>Already have an account? sign in!</p>
-            </div>
-            <div class="break"></div>
-          </div>
-        </div>
-      <% end %>
+    <header class="exhibition">
+      <%= yield :exhibition %>
       <%= render :partial => 'layouts/navigation' %>
     </header>
-    <div class="content gridlayout<%= ' exhibition' if @current_user.blank? %>">
-      <%= yield %>
+    <div class="content gridlayout exhibition">
+      <%= yield :content %>
     </div>
     <footer>
       <%= render :partial => 'layouts/toolbar' %>
