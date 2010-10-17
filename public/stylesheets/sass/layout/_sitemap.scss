@@ -1,0 +1,17 @@
+.sitemap {
+    width: 960px;
+    margin: 0px auto;
+    padding: 10px 0px 25px 0px;
+
+    ul.main > li {
+        padding: 10px;
+        float: left;
+        width: 219px;
+        border-left: 1px solid #ffffff;
+
+        &:first-child {
+            width: 220px;
+            border-width: 0px;
+        }
+    }
+}

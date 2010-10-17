@@ -1,10 +1,10 @@
 .content {
     width: 960px;
     margin: 0px auto;
-    padding: 67px 0px 35px 0px;
+    padding: 67px 0px 0px 0px;
 
     &.exhibition {
-        padding: 10px 0px 35px 0px;
+        padding: 10px 0px 0px 0px;
     }
 
     &.gridlayout {
@@ -126,7 +126,7 @@
                 border: 1px solid #AAAAAA;
                 background-color: #DDDDEE;
                 background-color: rgba(255, 255, 255, 0.4);
-                @include corner-round-all(10px);
+                @include corner-round-all(5px);
                 @include shadow-outside(5px, 10px, rgba(0, 0, 0, 0.1));
             }
 

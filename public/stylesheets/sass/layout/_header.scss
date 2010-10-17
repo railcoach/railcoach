@@ -85,15 +85,15 @@ header.exhibition {
     margin: 0px auto;
     border-top: 5px solid #FF8800;
     border-bottom: 2px solid #000000;
-    background-color: #111111;
+    background-color: #000000;
     background-image: -webkit-gradient(linear,
         left top,
         left bottom,
-        from(#111111),
+        from(#000000),
         to(#333333));
     background-image: -moz-linear-gradient(
         center top,
-        #111111 0%,
+        #000000 0%,
         #333333 100%);
     background-repeat: no-repeat;
     color: #FFFFFF;
@@ -136,7 +136,16 @@ header.exhibition {
                 text-decoration: none;
 
                 &:hover {
-                    background-color: rgba(255, 255, 255, 0.05);
+                    background-image: -webkit-gradient(linear,
+                        left top,
+                        left bottom,
+                        from(rgba(255, 255, 255, 0)),
+                        color-stop(0.25, rgba(255, 255, 255, 0)),
+                        to(rgba(255, 255, 255, 0.2)));
+                    background-image: -moz-linear-gradient(
+                        center top,
+                        rgba(255, 255, 255, 0) 25%,
+                        rgba(255, 255, 255, 0.2) 100%);
                 }
             }
         }
