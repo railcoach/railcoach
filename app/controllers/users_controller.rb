@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_filter :navigation
 
+  def home
+    @random_users = User.all.shuffle.first(12)
+
+    render :layout => 'exhibition'
+  end
+
   # GET /users
   def index
     @users = User.all

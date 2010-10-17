@@ -1,0 +1,55 @@
+<% content_for :exhibition do %>
+  <div class="articleContainer">
+    <div class="spacer">
+      <div class="description">
+        <article>
+          <h1>Members of <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
+          <div class="column">
+            <p>The question should not be what, but who! Linking people together in an open and free environment to do what they like to do. Create musical instruments, collaborate on art pieces, helping out a local causes, plan performances and anything you can imagine. Innovating together in technology and growing personally in knowledge.</p>
+          </div>
+          <div class="column">
+            <p>We want to enable the individual to contribute to the world on their own terms, level and field.</p>
+            <p>Bla bla bla... we need more of this to make it interesting. Maybe some animations or a combined graph. Options we have, content we do not. This needs some love and attention.</p>
+          </div>
+        </article>
+      </div>
+      <div class="signUp">
+        <h2>Come and join in.</h2>
+        <p>Create a new account</p>
+        <p>Use your:</p>
+        <p>google account</p>
+        <p>facebook account</p>
+        <p>Already have an account? sign in!</p>
+      </div>
+      <div class="break"></div>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="column col1-1">
+    <div class="spacer">
+      <div class="pageHeader">
+        <h1>Members of <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row memberUnits">
+  <% @random_users.each do |user| %>
+    <div class="column col1-6">
+      <figure>
+        <div class="spacer block<%= ' female' if user.gender == 'f' %>"> <!--style="background-image: url(/images/members/jooste.jpg)"-->
+          <figcaption>
+            <div class="caption">
+              <h1><%= link_to user.name, '#' %></h1>
+              <p><%= user.title %></p>
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
+  <% end %>
+  <div class="break"></div>
+</div>

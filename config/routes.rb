@@ -9,6 +9,7 @@ Dynamic::Application.routes.draw do |map|
   end
 
   resources :users
+  match 'user/home' => 'users#home', :as => :home_users
   namespace :user do
     resources :profiles
   end
