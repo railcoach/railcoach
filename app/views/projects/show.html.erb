@@ -1,15 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="row projectUnits commonArticle">
+  <div class="column col1-1">
+    <div class="spacer block gridSpaced">
+      <article>
+        <h1><%= @project.name %></h1>
+        <p><%= @project.description %></p>
+        <div class="footer">
+          <%= link_to 'Show', @project %> -
+          <%= link_to 'Edit', edit_project_path(@project) %> -
+          <%= link_to 'Destroy', @project, :confirm => 'Are you sure?', :method => :delete %> -
+          <%= link_to 'Back', projects_path %>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="break"></div>
+</div>
