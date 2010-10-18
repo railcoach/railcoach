@@ -1,4 +1,12 @@
 class ProjectsController < ApplicationController
+
+  # GET /projects/home
+  def home
+    @random_projects = Project.all.shuffle.first(2)
+
+    render :layout => 'exhibition'
+  end
+
   # GET /projects
   def index
     @projects = Project.all

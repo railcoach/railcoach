@@ -3,6 +3,7 @@ Dynamic::Application.routes.draw do |map|
   resources :user_sessions
 
   resources :projects
+  match 'project/home' => 'projects#home', :as => :home_projects
   namespace :project do
     resources :memberships
     resources :roles

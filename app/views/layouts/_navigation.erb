@@ -3,7 +3,7 @@
     <nav>
       <ul class="navigation">
         <li<%= " class='opened'" if @nav == 'Home' %>><a href="/static/home">Home</a></li>
-        <li<%= " class='opened'" if @nav == 'Projects' %>><a href="/static/projects">Projects</a></li>
+        <li<%= " class='opened'" if @nav == 'Projects' %>><%= link_to('Projects', home_projects_path) %></li>
         <li<%= " class='opened'" if @nav == 'Members' %>><%= link_to('Members', home_users_path) %></li>
         <li<%= " class='opened'" if @nav == 'News' %>><a href="/static/news">News</a></li>
         <li<%= " class='opened'" if @nav == 'About' %>><a href="/static/about">About</a></li>
