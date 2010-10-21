@@ -121,14 +121,15 @@ header.exhibition {
         top: 0px;
         left: 0px;
 
-        li {
+        & > li {
             float: left;
+            position: relative;
 
             &.opened {
                 border-bottom: 2px solid #FFFFFF;
             }
 
-            a {
+            & > a {
                 display: block;
                 padding: 0px 20px;
                 line-height: 50px;
