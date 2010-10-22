@@ -5,6 +5,24 @@
         background-repeat: no-repeat;
         background-position: top center;
         position: relative;
+        color: #333333;
+        text-decoration: none;
+
+        &:hover {
+            color: #000000;
+
+            .caption {
+                background-image: -webkit-gradient(linear,
+                    left top,
+                    left bottom,
+                    from(rgba(255,255,255,0.75)),
+                    to(rgba(180,180,180,0.75)));
+                background-image: -moz-linear-gradient(
+                    center top,
+                    rgba(255,255,255,0.75) 0%,
+                    rgba(180,180,180,0.75) 100%);
+            }
+        }
 
         &.female {
             background-image: url(/images/default-member-female.png);
