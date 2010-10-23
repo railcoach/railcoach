@@ -2,125 +2,89 @@
 
 jasperf:
   id: 1
-  first_name: Jasper
-  last_name: Froeling
-  title: Software Developer
+  username: jasperf
 
 jooste:
   id: 2
-  first_name: Joost
-  last_name: Elfering
-  title: Web- designer/developer
+  username: jooste
 
 timonv:
   id: 3
-  first_name: Timon
-  last_name: Vonk
-  title: Web Engineer
+  username: timonv
 
 tobiv:
   id: 4
-  first_name: Tobi
-  last_name: Vollebregt
-  title: Software Engineer
+  username: tobiv
 
 emanuelr:
   id: 5
-  first_name: Emanuel
-  last_name: Rietveld
-  title: Sysadmin
+  username: emanuelr
 
 roelando:
   id: 6
-  first_name: Roeland
-  last_name: van Ochten
-  title: Infrastructure Engineer
+  username: roelando
 
 manuell:
   id: 7
-  first_name: Manuel
-  last_name: Lorenzo
-  username: noloman
-  title: Back/Front end developer
-  gender: m
-  email: manulorenzop@gmail.com
+  username: manuell
+
 
 bertm:
   id: 8
-  first_name: Bert
-  last_name: Meerman
-  title: Software Engineer
+  username: bertm
 
 jeroenl:
   id: 9
-  first_name: Jeroen
-  last_name: van Lier
+  username: jeroenl
 
 christiaanh:
   id: 10
-  first_name: Christiaan
-  last_name: Huygens
+  username: christiaanh
 
 antonl:
   id: 11
-  first_name: Anton
-  last_name: van Leeuwenhoek
+  username: antonl
 
 willebrords:
   id: 12
-  first_name: Willebrord
-  last_name: Snell
+  username: willebrords
 
 simons:
   id: 13
-  first_name: Simon
-  last_name: Stevin
+  username: simons
 
 danielb:
   id: 14
-  first_name: Daniel
-  last_name: Bernoulli
+  username: danielb
 
 christophorusb:
   id: 15
-  first_name: Christophorus
-  last_name: Buys Ballot
+  username: christophorusb
 
 johannesw:
   id: 16
-  first_name: Johannes
-  last_name: van der Waals
+  username: johannesw
 
 edsgerd:
   id: 17
-  first_name: Edsger
-  last_name: Dijkstra
-  title: Genius
+  username: edsgerd
 
 fritsz:
   id: 18
-  first_name: Frits
-  last_name: Zernike
+  username: fritsz
 
 adal:
   id: 19
-  first_name: Ada
-  last_name: Lovelace
-  gender: f
+  username: adal
 
 charlesb:
   id: 20
-  first_name: Charles
-  last_name: Babbage
+  username: charlesb
 
 meritp:
   id: 21
-  first_name: Merit
-  last_name: Ptah
-  gender: f
+  username: meritp
 
 mariec:
   id: 22
-  first_name: Marie
-  last_name: Curie
-  gender: f
+  username: mariec

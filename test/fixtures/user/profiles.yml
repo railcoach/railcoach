@@ -1,13 +1,121 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.htm
 
-one:
+jasperf:
   user_id: 1
-  description: This is my awesome Superman profile
+  first_name: Jasper
+  last_name: Froeling
+  title: Software Developer
+  gender: m
+  email:
 
-two:
+jooste:
   user_id: 2
-  description: Me as a pirate for 'Talk like a pirate day'
+  first_name: Jasper
+  last_name: Froeling
+  title: Software Developer
 
-three:
+timonv:
   user_id: 3
-  description: Yes it's pink, and I like it
+  first_name: Timon
+  last_name: Vonk
+  title: Web Engineer
+
+tobiv:
+  user_id: 4
+  first_name: Tobi
+  last_name: Vollebregt
+  title: Software Engineer
+
+emanuelr:
+  user_id: 5
+  first_name: Emanuel
+  last_name: Rietveld
+  title: Sysadmin
+
+roelando:
+  user_id: 6
+  first_name: Roeland
+  last_name: van Ochten
+  title: Infrastructure Engineer
+
+manuell:
+  user_id: 7
+  first_name: Manuel
+  last_name: Lorenzo
+  title: Back/Front end developer
+
+bertm:
+  user_id: 8
+  first_name: Bert
+  last_name: Meerman
+
+jeroenl:
+  user_id: 9
+  first_name: blabla
+  last_name: blabla
+
+christiaanh:
+  user_id: 10
+  first_name: blabla
+  last_name: blabla
+
+antonl:
+  user_id: 11
+  first_name: blabla
+  last_name: blabla
+
+willebrords:
+  user_id: 12
+  first_name: blabla
+  last_name: blabla
+
+simons:
+  user_id: 13
+  first_name: blabla
+  last_name: blabla
+
+danielb:
+  user_id: 14
+  first_name: blabla
+  last_name: blabla
+
+christophorusb:
+  user_id: 15
+  first_name: blabla
+  last_name: blabla
+
+johannesw:
+  user_id: 16
+  first_name: blabla
+  last_name: blabla
+
+edsgerd:
+  user_id: 17
+  first_name: blabla
+  last_name: blabla
+
+fritsz:
+  user_id: 18
+  first_name: blabla
+  last_name: blabla
+
+adal:
+  user_id: 19
+  first_name: blabla
+  last_name: blabla
+
+charlesb:
+  user_id: 20
+  first_name: blabla
+  last_name: blabla
+
+meritp:
+  user_id: 21
+  first_name: blabla
+  last_name: blabla
+
+mariec:
+  user_id: 22
+  first_name: Marie
+  last_name: Curie
+  gender: f

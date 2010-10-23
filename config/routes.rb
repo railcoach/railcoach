@@ -26,6 +26,7 @@ Dynamic::Application.routes.draw do |map|
   match 'logout' => 'user_sessions#destroy', :as => :logout
   resources :user_sessions
 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

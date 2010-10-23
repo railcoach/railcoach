@@ -1,6 +1,14 @@
 <h1>Register</h1>
+<%= error_messages_for :user %>
+<%= error_messages_for :profile %>
 <p id="notice"><%= notice %></p>
-
-<% form_for @user do |f| %>
-  <%= render :partial => "form", :locals => { :form => f, :submit_label => 'Create user'} %>
-<% end %>
+<% form_for @user do |u| %>
+  <%= render :partial => 'user', :locals => { :user => u, :submit_label => 'Create user'} %>
+  <%  fields_for @profile do |profile| %>
+    <%= profile.text_field :first_name %>
+    <%= profile.text_field :last_name %>
+    <%= select("profile", "gender", { "Male" => "m", "Female" => "f"}) %>
+    <%= profile.text_field :title %>
+    <%= profile.text_field :email %>
+  <% end -%>
+<% end -%>

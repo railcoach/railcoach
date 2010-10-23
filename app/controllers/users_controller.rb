@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   before_filter :navigation
 
   def home
-    @random_users = User.all.shuffle.first(12)
-
+    @random_users = User.find(:all, :include => :profile).shuffle.first(12)
     render :layout => 'exhibition'
   end
 
@@ -29,11 +28,11 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(params[:user])
-    
-    if @user.save
+    @user = User.new!(params[:user])
+    @profile = @user.build_profile!(params[:profile])
+    if (@profile.save! && @user.save!)
       flash[:notice] = 'Successfully created user'
-      redirect_to(@user, :notice => 'User was successfully created.')
+      redirect_to(@profile, :notice => 'User was successfully created.')
     else
       flash[:notice] = 'Creating new user failed'
       render :action => "new"
@@ -43,8 +42,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   def update
     @user = User.find(params[:id])
-
-    if @user.update_attributes(params[:user])
+    if @user.profile.update_attributes(:first_name => params[:first_name], :last_name => params[:last_name], :gender => params[:gender], :title => params[:title], :email => params[:email])
       flash[:notice] = 'User updated succesfully'
       redirect_to :action => 'show'
     else

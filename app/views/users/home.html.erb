@@ -40,10 +40,10 @@
   <% @random_users.each do |user| %>
     <div class="column col1-6">
       <figure>
-        <a href="<%= user_path(user) %>" class="spacer block<%= ' female' if user.gender == 'f' %>">
+        <a href="<%= user_path(user) %>" class="spacer block<%= ' female' if user.profile.gender == 'f' %>">
           <div class="caption">
-            <h1><%= user.name %></h1>
-            <p><%= user.title %></p>
+            <h1><%= user.profile.name %></h1>
+            <p><%= user.profile.title %></p>
           </div>
         </a>
       </figure>
