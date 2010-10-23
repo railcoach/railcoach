@@ -3,3 +3,9 @@
     -moz-border-radius: $size;
     -webkit-border-radius: $size;
 }
+
+@mixin corner-round-bottom($size) {
+    border-radius: 0px 0px $size $size;
+    -moz-border-radius: 0px 0px $size $size;
+    -webkit-border-radius: 0px 0px $size $size;
+}
