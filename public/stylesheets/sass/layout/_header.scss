@@ -129,14 +129,10 @@ header.exhibition {
                 border-bottom: 2px solid #FFFFFF;
             }
 
-            & > a {
-                display: block;
-                padding: 0px 20px;
-                line-height: 50px;
-                color: #FFFFFF;
-                text-decoration: none;
+            &:hover {
+                border-bottom: 2px solid #FF8800;
 
-                &:hover {
+                & > a {
                     background-image: -webkit-gradient(linear,
                         left top,
                         left bottom,
@@ -147,6 +143,61 @@ header.exhibition {
                         center top,
                         rgba(255, 255, 255, 0) 25%,
                         rgba(255, 255, 255, 0.2) 100%);
+                }
+
+                & > ul {
+                    display: block;
+                }
+            }
+
+            & > a {
+                display: block;
+                padding: 0px 20px;
+                line-height: 50px;
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            & > ul {
+                display: none;
+                position: absolute;
+                top: 52px;
+                background-color: rgba(0,0,0,0.8);
+                color: #FFFFFF;
+                white-space: nowrap;
+                font-weight: normal;
+                @include corner-round-bottom(5px);
+
+                &.columns-1 {
+                    width: 192px;
+                }
+
+                &.columns-2 {
+                    width: 384px;
+                }
+
+                &.columns-3 {
+                    width: 576px;
+                }
+
+                &.columns-4 {
+                    width: 768px;
+                }
+            }
+
+            li.column {
+                float: left;
+                padding: 10px;
+                width: 172px;
+
+                a {
+                    display: block;
+                    color: #FFFFFF;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #FF8800;
+                    }
                 }
             }
         }
