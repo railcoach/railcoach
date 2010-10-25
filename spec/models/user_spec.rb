@@ -14,14 +14,15 @@ describe User do
   context "when fully created" do
     before(:each) do
       @user = User.new
+      @user.build_profile
       @user.username = 'edsgerd'
       @user.password = 'abcdefg'
       @user.password_confirmation = 'abcdefg'
-      @user.first_name = 'Edsger'
-      @user.last_name = 'Dijkstra'
-      @user.email = 'edsgerd@example.com'
-      @user.title = 'Genius'
-      @user.gender = 'm'
+      @user.profile.first_name = 'Edsger'
+      @user.profile.last_name = 'Dijkstra'
+      @user.profile.email = 'edsgerd@example.com'
+      @user.profile.title = 'Genius'
+      @user.profile.gender = 'm'
     end
 
     it "should be valid" do
@@ -34,7 +35,7 @@ describe User do
     end
 
     it "should not be valid with an invalid e-mail" do
-      @user.email = 'Muhahaha'
+      @user.profile.email = 'Muhahaha'
       @user.should_not be_valid
     end
   end

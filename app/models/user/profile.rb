@@ -1,7 +1,7 @@
 class User::Profile < ActiveRecord::Base
   belongs_to :user
 
-  validates :email, :presence => true, :uniqueness => true
+  validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
   validates :first_name,:presence => true
   validates :last_name, :presence => true
   validates :title, :presence => true
@@ -10,7 +10,13 @@ class User::Profile < ActiveRecord::Base
   validate :different_names
 
   def name
-    first_name + ' ' + last_name
+    if !first_name.nil? and !last_name.nil?
+       return first_name + ' ' + last_name
+    elseif !first_name.nil?
+        return first_name
+    else
+        return user.username
+    end
   end
 
   def different_names
