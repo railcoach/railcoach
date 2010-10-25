@@ -16,6 +16,11 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   def show
     @project = Project.find(params[:id])
+
+    unless @project
+      flash[:error] = "This project does not exist (yet)."
+      redirect_to(projects_url)
+    end
   end
 
   # GET /projects/new

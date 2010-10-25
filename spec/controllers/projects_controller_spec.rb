@@ -19,12 +19,17 @@ describe ProjectsController do
     end
 
     context "when the project does not exists" do
+      let(:project) { mock_model(Project).as_null_object }
+      before do
+        Project.should_receive(:find).with(666).and_return(false)
+        get :show, :id => 666
+      end
       it "redirects to projects index" do
-        pending
+        response.should redirect_to :action => "index"
       end
 
       it "sets error message that project does not exist" do
-        pending
+        flash[:error].should eq("This project does not exist (yet).")
       end
     end
 
