@@ -24,11 +24,13 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @profile = @user.build_profile(params[:profile])
   end
 
   # POST /users
   def create
     @user = User.new(params[:user])
+    @profile = @user.build_profile(params[:profile])
     if @user.save
       flash[:notice] = 'Successfully created user'
       redirect_to(@user, :notice => 'User was successfully created.')
