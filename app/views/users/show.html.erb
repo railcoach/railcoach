@@ -2,22 +2,30 @@
 
 <p>
   <b>Name:</b>
-  <%= @user.profile.name %>
+  <% if @user.profile %>
+    <%= @user.profile.name %>
+  <% end -%>
 </p>
 
 <p>
   <b>Title:</b>
-  <%= @user.profile.title %>
+  <% if @user.profile %>
+    <%= @user.profile.title %>
+  <% end -%>
 </p>
 
 <p>
   <b>Gender:</b>
-  <%= @user.profile.gender %>
+  <% if @user.profile %>
+    <%= @user.profile.gender %>
+  <% end -%>
 </p>
 
 <p>
   <b>Email:</b>
-  <%= @user.profile.email %>
+  <% if @user.profile %>
+    <%= @user.profile.email %>
+  <% end -%>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
