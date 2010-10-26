@@ -9,3 +9,5 @@ config/database.yml
 *.log
 *.swp
 public/stylesheets/*.css
+coverage
+coverage/*

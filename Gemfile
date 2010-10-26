@@ -5,11 +5,6 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# Development version of rspec that works with rails3
-group :test, :development do 
-  gem "rspec-rails", ">= 2.0.0.beta.22" 
-end 
-
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '>= 3.0.0'
 
@@ -22,10 +17,11 @@ gem "oauth"
 gem "oauth2"
 
 group :test, :development do
-  gem "rspec-rails", ">= 2.0.0.beta.22"
+  gem "rspec-rails", ">= 2.0.1"
   gem "autotest"
   gem "faker"
   gem "machinist"
+  gem "rcov"
 end
 
 # Use unicorn as the web server
