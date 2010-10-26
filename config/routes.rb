@@ -1,4 +1,4 @@
-Dynamic::Application.routes.draw do |map|
+Dynamic::Application.routes.draw do
 
   resources :user_sessions
 
