@@ -6,8 +6,16 @@
       <article>
         <h1><%= @project.name %></h1>
         <p><%= @project.description %></p>
+          <h2>Members</h2><ul>
+            <% if @project.users %>
+              <% @project.users.each do |user| %>
+                <li><%= link_to user.username, user %></li>
+              <% end %>
+            <% else %>
+              No one is working ont his project. too bad huh?
+            <% end %>
+          </ul>
         <div class="footer">
-          <%= link_to 'Show', @project %> -
           <%= link_to 'Edit', edit_project_path(@project) %> -
           <%= link_to 'Destroy', @project, :confirm => 'Are you sure?', :method => :delete %> -
           <%= link_to 'Back', projects_path %>
