@@ -32,6 +32,37 @@ describe ProjectsController do
         flash[:error].should eq("This project does not exist (yet).")
       end
     end
+  end
 
+  describe "GET index" do
+    let(:projects) { [mock_model(Project).as_null_object] }
+    before do
+      Project.should_receive(:all).and_return(projects)
+      get :index
+    end
+
+    it "should return some projects" do
+      assigns[:projects].should eq(projects)
+    end
+
+    it "responds with success" do
+      response.should be_success
+    end
+  end
+
+  describe "GET home" do
+    let(:projects) { [mock_model(Project).as_null_object] * 20 }
+    before do
+      Project.should_receive(:all).and_return(projects)
+      get :home
+    end
+
+    it "should return two items of the shuffled list" do
+      assigns[:random_projects].length.should == 2
+    end
+
+    it "responds with success" do
+      response.should be_success
+    end
   end
 end
