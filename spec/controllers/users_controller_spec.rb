@@ -40,29 +40,30 @@ describe UsersController do
     end
 
     context "when there are users" do
-      let(:users) {[mock_model(User).as_null_object]}
+      # Return two arrays. - Contents does not matter (in specs, views are not rendered),
+      # so filling them with ints works fine
+      let(:users) {[*1..15] }
+      let(:shuffled_list) {[*2..13]}
+
       before(:each) do
         User.stub(:find).with(:all, {:include=>:profile}).and_return(users)
+
+        users.stub(:shuffle).and_return(shuffled_list)
       end
 
       it "should shuffle the user list" do
-        User.stub(:shuffle).and_return(users.shuffle)
         User.stub(:first).with(12).and_return(users)
         get :home
-        assigns[:random_users].should eq users
+        assigns[:random_users].should eq shuffled_list
       end
 
       # Note: This should be configurable
       it "should return 12 users" do
-        User.stub(:shuffle).and_return(users)
-        User.stub(:first).with(12).and_return(users.first(12))
         get :home
         assigns[:random_users].size.should eq users.first(12).size
       end
 
       it "should return the first 12 items of the shuffled list" do
-        User.stub(:shuffle).and_return(users.shuffle)
-        User.stub(:first).with(12).and_return(users.first(12))
         get :home
         assigns[:random_users].should eq users.shuffle.first(12)
       end
