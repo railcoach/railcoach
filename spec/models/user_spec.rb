@@ -33,10 +33,5 @@ describe User do
       @user.username = nil
       @user.should_not be_valid
     end
-
-    it "should not be valid with an invalid e-mail" do
-      @user.profile.email = 'Muhahaha'
-      @user.should_not be_valid
-    end
   end
 end
