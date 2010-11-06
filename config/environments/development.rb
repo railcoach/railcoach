@@ -5,6 +5,7 @@ Dynamic::Application.configure do
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
+  config.action_mailer.default_url_options = { :host => "projectlodge.org" }
 
 
   # Make sure deprecation warnings are logged

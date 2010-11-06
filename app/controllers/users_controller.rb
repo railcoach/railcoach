@@ -30,9 +30,9 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(params[:user])
-    @profile = @user.build_profile(params[:profile])
+    @user.profile = User::Profile.new(params[:user_profile])
     if @user.save
-      flash[:notice] = 'Successfully created user'
+      @user.deliver_activation_instructions!
       redirect_to(@user, :notice => 'User was successfully created.')
     else
       flash[:notice] = 'Creating new user failed'
