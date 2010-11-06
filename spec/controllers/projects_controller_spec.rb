@@ -51,18 +51,36 @@ describe ProjectsController do
   end
 
   describe "GET home" do
-    let(:projects) { [mock_model(Project).as_null_object] * 20 }
-    before do
-      Project.stub(:all).and_return(projects)
-      get :home
+    context "when enough projects exist" do
+      let(:projects) { [mock_model(Project).as_null_object] * 20 }
+      before do
+        Project.stub(:all).and_return(projects)
+        get :home
+      end
+
+      it "should return two items of the shuffled list" do
+        assigns[:random_projects].length.should == 2
+      end
+
+      it "should respond with success" do
+        response.should be_success
+      end
     end
 
-    it "should return two items of the shuffled list" do
-      assigns[:random_projects].length.should == 2
-    end
+    context "when only one project exists" do
+      let(:projects) { [mock_model(Project).as_null_object] }
+      before do
+        Project.stub(:all).and_return(projects)
+        get :home
+      end
 
-    it "responds with success" do
-      response.should be_success
+      it "should return the project" do
+        assigns[:random_projects].length.should == 1
+      end
+
+      it "should respond with success" do
+        response.should be_success
+      end
     end
   end
 end
