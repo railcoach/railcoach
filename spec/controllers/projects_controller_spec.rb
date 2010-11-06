@@ -5,7 +5,7 @@ describe ProjectsController do
     context "when the project exists" do
       let(:project) { mock_model(Project).as_null_object }
       before do
-        Project.should_receive(:find).with(1).and_return(project)
+        Project.stub(:find).with(1).and_return(project)
         get :show, :id => 1
       end
 
@@ -21,7 +21,7 @@ describe ProjectsController do
     context "when the project does not exists" do
       let(:project) { mock_model(Project).as_null_object }
       before do
-        Project.should_receive(:find).with(666).and_return(false)
+        Project.stub(:find).with(666).and_return(false)
         get :show, :id => 666
       end
       it "redirects to projects index" do
@@ -37,7 +37,7 @@ describe ProjectsController do
   describe "GET index" do
     let(:projects) { [mock_model(Project).as_null_object] }
     before do
-      Project.should_receive(:all).and_return(projects)
+      Project.stub(:all).and_return(projects)
       get :index
     end
 
@@ -53,7 +53,7 @@ describe ProjectsController do
   describe "GET home" do
     let(:projects) { [mock_model(Project).as_null_object] * 20 }
     before do
-      Project.should_receive(:all).and_return(projects)
+      Project.stub(:all).and_return(projects)
       get :home
     end
 
