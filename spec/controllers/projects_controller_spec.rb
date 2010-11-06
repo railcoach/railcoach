@@ -9,11 +9,11 @@ describe ProjectsController do
         get :show, :id => 1
       end
 
-      it "returns a project object and should be equal" do
+      it "should return a project object and should be equal" do
         assigns[:project].should eq(project)
       end
 
-      it "responds with success" do
+      it "should respond with success" do
         response.should be_success
       end
     end
@@ -24,11 +24,11 @@ describe ProjectsController do
         Project.stub(:find).with(666).and_return(false)
         get :show, :id => 666
       end
-      it "redirects to projects index" do
+      it "should redirect to projects index" do
         response.should redirect_to :action => "index"
       end
 
-      it "sets error message that project does not exist" do
+      it "should set error message that project does not exist" do
         flash[:error].should eq("This project does not exist (yet).")
       end
     end
@@ -45,7 +45,7 @@ describe ProjectsController do
       assigns[:projects].should eq(projects)
     end
 
-    it "responds with success" do
+    it "should respond with success" do
       response.should be_success
     end
   end
