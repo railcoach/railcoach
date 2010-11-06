@@ -1,5 +1,8 @@
 Dynamic::Application.routes.draw do
 
+  get "activations/create"
+  match 'user/activate/:activation_code' => 'activations#create', :as => :user_activation
+
   resources :user_sessions
 
   resources :projects

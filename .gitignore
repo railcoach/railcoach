@@ -11,3 +11,4 @@ config/database.yml
 public/stylesheets/*.css
 coverage
 coverage/*
+db/schema.rb
