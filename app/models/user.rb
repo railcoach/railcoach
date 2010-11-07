@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
     c.login_field= :username
   end
 
-  attr_accessible :login, :email, :password, :password_confirmation
-  
+  attr_accessible :username, :email, :password, :password_confirmation
+
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships
   has_one :profile
-  
+
   validates :username, :presence => true, :uniqueness => true
   validates :password, :presence => true
   validates :password_confirmation, :presence => true
