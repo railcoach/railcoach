@@ -35,12 +35,21 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.new(params[:project])
+    if current_user
+      @project = Project.new(params[:project])
+      # TODO give the new membership an admin role within the project
+      @membership = Project::Membership.new(:project => @project, :user => current_user)
 
-    if @project.save
-      redirect_to(@project, :notice => 'Project was successfully created.')
+      # TODO use transaction
+      if @project.save and @membership.save
+        redirect_to(@project, :notice => 'Project was successfully created.')
+      else
+        render :action => "new"
+      end
     else
-      render :action => "new"
+      # TODO fetch login path dynamically
+      # TODO add some redirect_to= logic to login procedure
+      redirect_to('/users/new')
     end
   end
 
