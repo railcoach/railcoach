@@ -11,8 +11,11 @@ class User < ActiveRecord::Base
   has_one :profile
 
   validates :username, :presence => true, :uniqueness => true
-  validates :password, :presence => true
-  validates :password_confirmation, :presence => true
+  
+  # This should not be validated! crypted_password should be!
+  #validates :password, :presence => true
+  #validates :password_confirmation, :presence => true
+  validates :crypted_password, :presence => true
 
   def activate!
     self.active = true
