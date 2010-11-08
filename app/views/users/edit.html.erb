@@ -1,27 +1,5 @@
-<p id="notice"><%= flash[:notice] %></p>
-
-<%= form_tag user_path(@user.id), :method => :put do %>
-  <p>
-    <label for="first_name">First name:</label>
-    <%= text_field_tag 'first_name', @user.profile.first_name %>
-  </p>
-  <p>
-    <label for="last_name">Last name:</label>
-    <%= text_field_tag 'last_name', @user.profile.last_name %>
-  </p>
-  <p>
-    <label for="gender">Gender:</label>
-    <%= select_tag "gender", content_tag(:option, "I don´t want to tell") + content_tag(:option, "Male", :value => 'm') + content_tag(:option, "Female", :value => 'f') %>
-  </p>
-  <p>
-    <label for="title">Title:</label>
-    <%= text_field_tag 'last_name', @user.profile.last_name %>
-  </p>
-  <p>
-    <label for="email">Email address:</label>
-    <%= text_field_tag 'email', @user.profile.email %>
-  </p>
-
-  <%= submit_tag 'update information' %><br />
+<% form_for @user do |u| %>
+  <%= render :partial => 'user', :locals => { :user => u, :submit_label => 'Create user'} %>
 <% end %>
-<%= link_to 'Back', users_path %>
+
+<%= link_to 'Back', root_url %>

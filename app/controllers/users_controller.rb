@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(current_user)
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   def update
     @user = User.find(params[:id])
-    if @user.profile.update_attributes(:first_name => params[:first_name], :last_name => params[:last_name], :gender => params[:gender], :title => params[:title], :email => params[:email])
+    if @user.update_attributes(params[:user])
       flash[:notice] = 'User updated succesfully'
       redirect_to :action => 'show'
     else
