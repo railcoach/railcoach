@@ -22,6 +22,7 @@ group :test, :development do
   gem "faker"
   gem "machinist"
   gem "rcov"
+  gem 'rails-erd'
 end
 
 # Use unicorn as the web server
