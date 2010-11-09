@@ -31,6 +31,9 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
+    unless @project.owner == current_user
+      redirect_to project_url(params[:id]), :notice => "You cannot edit this project since you do not own it."
+    end
   end
 
   # POST /projects

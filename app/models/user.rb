@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships
   has_one :profile
+  has_many :owned_projects, :class_name => "Project"
 
   validates :username, :presence => true, :uniqueness => true
   

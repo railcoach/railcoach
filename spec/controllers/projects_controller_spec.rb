@@ -1,6 +1,32 @@
 require 'spec_helper'
 
 describe ProjectsController do
+  describe "GET edit" do
+    let(:project) { mock_model(project)as_null_object }
+    context "when current user owns the project" do
+      before do
+        Project.stub(:find).with(1).and_return(project)
+        get :edit, :id => 1
+      end
+
+      it "should check whether current user is owner"
+
+      it "should assign project" do
+        assigns[:project].should eq(project)
+      end
+
+      it "should give succes response" do
+        response.should be_succes
+      end
+    end
+
+    context "when current user does not own the project" do
+      it "should check and fail whether current user is owner"
+      it "should redirect back to project show"
+    end
+
+
+      it "should give response succes"
   describe "GET show" do
     context "when the project exists" do
       let(:project) { mock_model(Project).as_null_object }
