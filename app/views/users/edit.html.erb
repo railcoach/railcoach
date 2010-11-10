@@ -1,5 +1,15 @@
-<% form_for @user do |u| %>
-  <%= render :partial => 'user', :locals => { :user => u, :submit_label => 'Create user'} %>
-<% end %>
 
-<%= link_to 'Back', root_url %>
+<div class="row projectUnits commonArticle">
+  <div class="column col1-2">
+    <div class="spacer block gridSpaced">
+      <h1><%= @user.profile.name %></h1>
+      <p>
+        <%= render :partial => 'user'%>
+      </p>
+      <div class="footer">
+        <%= link_to 'Back', user_path %>
+      </div>
+    </div>
+  </div>
+  <div class="break"></div>
+</div>

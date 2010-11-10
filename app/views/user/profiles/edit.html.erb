@@ -1,6 +1,14 @@
-<h1>Editing profile</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', user_profiles_path %>
+<div class="row projectUnits commonArticle">
+  <div class="column col1-2">
+    <div class="spacer block gridSpaced">
+      <h1><%= @profile.name %></h1>
+      <p>
+        <%= render :partial => 'profile'%>
+      </p>
+      <div class="footer">
+        <%= link_to 'Back', users_path %>
+      </div>
+    </div>
+  </div>
+  <div class="break"></div>
+</div>

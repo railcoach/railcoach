@@ -1,0 +1,10 @@
+<% form_for @profile do |profile| %>
+  <p>
+    <label for="first_name">First name:</label><%= profile.text_field :first_name %><br/>
+    <label for="last_name">Last name:</label><%= profile.text_field :last_name %><br/>
+    <label for="gender">Gender:</label><%= profile.text_field :gender %><br/>
+    <label for="email">Email:</label><%= profile.text_field :email %>
+  </p>
+
+  <%= submit_tag :Submit %><br />
+<% end %>

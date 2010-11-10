@@ -14,8 +14,8 @@
         </table>
       </p>
       <div class="footer">
-        <%= link_to 'Edit', edit_user_path(@user) %> -
-        <%= link_to 'Delete User', @user, :confirm => 'Are you sure?', :method => :delete %> -
+        <%= link_to 'Change password', edit_user_path(@user) %> -
+        <%= link_to 'Edit details', edit_user_profile_path(@user.profile) %> -        
         <%= link_to 'Back', users_path %>
       </div>
     </div>

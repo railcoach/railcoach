@@ -1,14 +1,12 @@
-<p>
-  <label for="username">Username:</label>
-  <%= user.text_field :username %>
-</p>
-<p>
-  <label for="password">Password:</label>
-  <%= user.password_field :password %>
-</p>
-<p>
-  <label for="password_confirmation">Re-enter password</label>
-  <%= user.password_field :password_confirmation %>
-</p>
+<% form_for @user do |user| %>
+  <p>
+    <label for="username">Username:</label>
+    <%= user.text_field :username %><br/>
+    <label for="password">Password:</label>
+    <%= user.password_field :password %><br/>
+    <label for="password_confirmation">Re-enter password</label>
+    <%= user.password_field :password_confirmation %>
+  </p>
 
-<%= submit_tag :submit_label %><br />
+  <%= submit_tag :Submit %><br />
+<% end %>
