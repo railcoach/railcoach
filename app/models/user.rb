@@ -36,4 +36,17 @@ class User < ActiveRecord::Base
     reset_perishable_token!
     Notifier.deliver_welcome(self)
   end
+
+  # Checks for string role on integer(id) project
+  # Gets all memberships where project_id = project, gets rolls associated and maps the names of those in an array, then checks whether role is included in the array.
+  def has_role_on_project?(role, project)
+      membership = self.memberships.find_by_project_id(project)
+      unless membership.blank?
+        membership.roles.collect{ |r| r.name}.include?(role) if not membership.roles.empty?
+      else
+        false
+      end
+ 
+  end
+    
 end
