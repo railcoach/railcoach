@@ -3,13 +3,13 @@
 <div class="row projectUnits commonArticle">
   <div class="column col1-2">
     <div class="spacer block gridSpaced">
-      <h1><%= @user.profile.name %></h1>
+      <h1><%= @user.profile.fullname %></h1>
       <!--These paragraph contains all user profile data-->
       <p>
         <table>
           <!--I would like at least one space inbetween the colon and the parameter but i don't know how at this moment.-->
           <tr><th align="right">Title:</th><td><%= @user.profile.title %></td></tr>
-          <tr><th align="right">Gender:</th><td><%= @user.profile.gender %></td></tr>
+          <tr><th align="right">Gender:</th><td><%= @user.profile.gender%></td></tr>
           <tr><th align="right">Email:</th><td><%= @user.profile.email %></td></tr>
         </table>
       </p>

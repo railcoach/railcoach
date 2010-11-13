@@ -33,10 +33,12 @@ class User::ProfilesController < ApplicationController
   # PUT /profiles/1
   def update
     @profile = Profile.find(params[:id])
-    if @profile.update_attributes(params[:profile])
-      redirect_to(@profile, :notice => 'Profile was successfully updated.')
+    if @profile.update_attributes(params[:user_profile])
+      flash[:notice] = 'profile updated succesfully'
+      redirect_to(user_url(@profile.user_id))
     else
-      render :action => "edit"
+      flash[:notice] = 'Updating profile failed'
+      redirect_to :action => 'edit'
     end
   end
 
