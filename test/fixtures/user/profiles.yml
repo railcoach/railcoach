@@ -10,8 +10,8 @@ jasperf:
 
 jooste:
   user_id: 2
-  first_name: Jasper
-  last_name: Froeling
+  first_name: Joost
+  last_name: Elfering
   title: Software Developer
 
 timonv:
@@ -111,8 +111,9 @@ charlesb:
 
 meritp:
   user_id: 21
-  first_name: blabla
-  last_name: blabla
+  first_name: Clair
+  last_name: Lotion
+  gender: f
 
 mariec:
   user_id: 22
