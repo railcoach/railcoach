@@ -1,6 +1,6 @@
 class AddTitleToUser < ActiveRecord::Migration
   def self.up
-    add_column 'users', 'title', :string
+    add_column :users, :title, :string
   end
 
   def self.down

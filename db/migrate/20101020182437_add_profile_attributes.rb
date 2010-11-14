@@ -10,5 +10,7 @@ class AddProfileAttributes < ActiveRecord::Migration
   end
 
   def self.down
+    remove_column :user_profiles, [:gender, :title, :username, :email, :first_name, :last_name]
+    add_column :user_profiles, :description, :text
   end
 end

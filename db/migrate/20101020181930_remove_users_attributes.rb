@@ -1,12 +1,13 @@
 class RemoveUsersAttributes < ActiveRecord::Migration
   def self.up
-    remove_column :users, :gender
-    remove_column :users, :title
-    remove_column :users, :email
-    remove_column :users, :first_name
-    remove_column :users, :last_name
+    remove_column :users, [:gender, :title, :email, :first_name, :last_name]
   end
 
   def self.down
+    add_column :users, :gender, :string
+    add_column :users, :title, :string
+    add_column :users, :email, :string
+    add_column :users, :first_name, :string
+    add_column :users, :last_name, :string
   end
 end

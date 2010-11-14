@@ -13,9 +13,9 @@ class AddSetupHabtmRoleMemberships < ActiveRecord::Migration
 
   def self.down
     add_column :projects, :owner_id, :integer
-    add_column :project_roles, :membership_id
+    add_column :project_roles, :membership_id, :integer
 
-    remove_column :project_roles, :name, :string
+    remove_column :project_roles, :name
 
     drop_table :project_memberships_roles
   end
