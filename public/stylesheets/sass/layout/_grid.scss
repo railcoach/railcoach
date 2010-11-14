@@ -140,4 +140,18 @@
             background-color: rgba(0,0,0,0.1);
         }
     }
+
+    .breadcrumb {
+        height: 20px;
+
+        ul {
+            float: right;
+            margin-right: 10px;
+
+            li {
+                display: inline-block;
+                margin-left: 20px;
+            }
+        }
+    }
 }

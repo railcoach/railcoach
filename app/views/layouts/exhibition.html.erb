@@ -9,6 +9,9 @@
       <%= render :partial => 'layouts/navigation' %>
     </header>
     <div class="content gridlayout exhibition">
+      <div class="breadcrumb">
+        <%= yield :breadcrumb %>
+      </div>
       <%= yield %>
     </div>
     <footer>
