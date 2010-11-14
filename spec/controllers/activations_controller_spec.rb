@@ -7,15 +7,15 @@ describe ActivationsController do
       it "should find the user" do
         User.stub(:find_by_perishable_token).with("sometoken").and_return(user)
         post :create, :activation_code => "sometoken"
-        assigns[:user] eq(user)
+        assigns[:user].should eq(user)
       end
 
       it "should login the user"
       it "should deliver the welcome message"
-      it "should redirect to account_url"
+      it "should redirect to account_url" do
         post :create, :activation_code => "sometoken"
         response.should redirect_to(account_url)
       end
     end
-
+  end
 end
