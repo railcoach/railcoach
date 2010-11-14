@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.all
+    @projects = Project.all :order => 'name ASC'
   end
 
   # GET /projects/1

@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="row projectUnits commonArticle">
+<div id="projects_list" class="row projectUnits commonArticle">
   <% @projects.each do |project| %>
     <div class="column col1-2">
       <div class="spacer block gridSpaced">
@@ -26,3 +26,20 @@
   <% end %>
   <div class="break"></div>
 </div>
+<script type="text/javascript">
+    jQ(document).ready(function () {
+        jQ("#projects_list .block:odd").each(function (i) {
+            var object = jQ("#projects_list .block:odd").get(i)
+            var odd_height = jQ(object).height();
+            object = jQ("#projects_list .block:even").get(i)
+            even_height = jQ(object).height();
+            if (odd_height > even_height) {
+                object = jQ("#projects_list .block:even").get(i);
+                jQ(object).height(odd_height);
+            } else {
+                object = jQ("#projects_list .block:odd").get(i);
+                jQ(object).height(even_height);
+            }
+        });
+    });
+</script>
