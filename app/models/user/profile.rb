@@ -1,13 +1,10 @@
 class User::Profile < ActiveRecord::Base
   belongs_to :user
 
-  validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
-  validates :first_name,:presence => true
-  validates :last_name, :presence => true
-  validates :title, :presence => true
-  # Custom validator
-  #validates :first_name, :last_name, :different_names => true
-  validate :different_names
+  attr_accessible :first_name, :last_name, :gender, :title, :email
+
+# TODO Fix validations, right now it prevents updating the profile or creating an empty one at registration 
+#    validates :email, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
 
   def name
     if !first_name.nil? and !last_name.nil?

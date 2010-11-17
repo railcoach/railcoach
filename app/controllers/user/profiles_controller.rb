@@ -17,6 +17,9 @@ class User::ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     @profile = Profile.find(params[:id])
+    if !current_user.present?
+      redirect_to user_url(@profile.user_id), :notice => "You cannot edit this profile since you are not logged in."
+    end
   end
 
   # POST /profiles
@@ -33,10 +36,13 @@ class User::ProfilesController < ApplicationController
   # PUT /profiles/1
   def update
     @profile = Profile.find(params[:id])
+    @user = User.find(@profile.user_id)
     if @profile.update_attributes(params[:profile])
-      redirect_to(@profile, :notice => 'Profile was successfully updated.')
+      flash[:notice] = 'Profile updated succesfully'
+      redirect_to (@user)
     else
-      render :action => "edit"
+      flash[:notice] = 'Updating profile failed'
+      redirect_to :action => 'edit'
     end
   end
 

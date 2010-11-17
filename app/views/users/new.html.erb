@@ -1,5 +1,3 @@
 <h1>Register</h1>
 <p id="notice"><%= notice %></p>
-<% form_for @user do |u| %>
-  <%= render :partial => 'user', :locals => { :user => u, :submit_label => 'Create user'} %>
-<% end -%>
+<%= render 'user' %>
