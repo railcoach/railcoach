@@ -2,12 +2,7 @@ class User::Profile < ActiveRecord::Base
   belongs_to :user
 
 #  validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
-  validates :first_name,:presence => true
-  validates :last_name, :presence => true
-  #validates :title, :presence => true
-  # Custom validator
-  #validates :first_name, :last_name, :different_names => true
-  #validate :different_names
+#  # do NOT turn on presence validations, it prevents creating an empty profile for a new user.
 
   def fullname
     if !first_name.nil? and !last_name.nil?
