@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.all.sort_by { |user| user.profile.name }
   end
 
   # GET /users/1
@@ -18,21 +18,26 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    if current_user.present?
+      @user = User.find(params[:id])
+    else
+      redirect_to user_url(params[:id]), :notice => "You cannot edit this user since you are not logged in."
+    end
   end
 
   # GET /users/new
   def new
     @user = User.new
-    @profile = @user.build_profile(params[:profile])
+    @profile = User::Profile.new
   end
 
   # POST /users
   def create
     @user = User.new(params[:user])
-    @user.profile = User::Profile.new(params[:user_profile])
+    @profile = @user.build_profile(params[:profile])
     if @user.save
-      @user.deliver_activation_instructions!
+      # TODO e-mail is not added and because of that an error is generated and you can't register because of the next line. Fix this
+      @user.profile.deliver_activation_instructions!
       redirect_to(@user, :notice => 'User was successfully created.')
     else
       flash[:notice] = 'Creating new user failed'

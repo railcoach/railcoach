@@ -1,11 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
- <h1><%= @profile.fullname %></h1>
- <h1><%= @profile.gender %></h1>
-  
+  <b>First name:</b>
+  <%= @profile.first_name %>
 </p>
 
+<p>
+  <b>Last name:</b>
+  <%= @profile.last_name %>
+</p>
+<p>
+  <b>Title:</b>
+  <%= @profile.title %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @profile.email %>
+</p>
 
 <%= link_to 'Edit', edit_user_profile_path(@profile) %> |
 <%= link_to 'Back', user_profiles_path %>

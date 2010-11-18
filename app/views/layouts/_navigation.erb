@@ -10,7 +10,7 @@
               <h1>Active projects</h1>
               <ul>
                 <li><a href="#">Featured</a></li>
-                <li><a href="#">All by name</a></li>
+                <li><%= link_to 'All by name', projects_path %></li>
                 <li><a href="#">All by popularity</a></li>
                 <li><a href="#">My projects</a></li>
               </ul>
@@ -33,7 +33,26 @@
             </li>
           </ul>
         </li>
-        <li<%= " class='opened'" if @nav == 'Members' %>><%= link_to('Members', home_users_path) %></li>
+        <li<%= " class='opened'" if @nav == 'Members' %>>
+          <%= link_to('Members', home_users_path) %>
+          <ul class="columns-2">
+            <li class="column">
+              <h1>Active members</h1>
+              <ul>
+                <li><a href="#">Featured</a></li>
+                <li><%= link_to 'All by name', users_path %></li>
+                <li><a href="#">My profile</a></li>
+              </ul>
+            </li>
+            <li class="column">
+              <h1>My contacts</h1>
+              <ul>
+                <li><a href="#">My friends</a></li>
+                <li><a href="#">People I work with</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li<%= " class='opened'" if @nav == 'News' %>><a href="/static/news">News</a></li>
         <li<%= " class='opened'" if @nav == 'About' %>><a href="/static/about">About</a></li>
       </ul>

@@ -13,14 +13,7 @@
           </div>
         </article>
       </div>
-      <div class="signUp">
-        <h2>Come and join in.</h2>
-        <p>Create a new account</p>
-        <p>Use your:</p>
-        <p>google account</p>
-        <p>facebook account</p>
-        <p>Already have an account? sign in!</p>
-      </div>
+      <%= render :partial => 'layouts/authentication_widget' %>
       <div class="break"></div>
     </div>
   </div>
@@ -38,6 +31,7 @@
 
 <div class="row memberUnits">
   <% @random_users.each do |user| %>
+    <%  if user.profile %>
     <div class="column col1-6">
       <figure>
         <a href="<%= user_path(user) %>" class="spacer block<%= ' female' if user.profile.gender == 'f' %>">
@@ -48,6 +42,7 @@
         </a>
       </figure>
     </div>
+  <% end %>
   <% end %>
   <div class="break"></div>
 </div>

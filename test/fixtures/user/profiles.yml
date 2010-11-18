@@ -10,112 +10,168 @@ jasperf:
 
 jooste:
   user_id: 2
-  first_name: Jasper
-  last_name: Froeling
+  first_name: Joost
+  last_name: Elfering
   title: Software Developer
+  gender: m
+  email:
 
 timonv:
   user_id: 3
   first_name: Timon
   last_name: Vonk
   title: Web Engineer
+  gender: m
+  email:
 
 tobiv:
   user_id: 4
   first_name: Tobi
   last_name: Vollebregt
   title: Software Engineer
+  gender: m
+  email:
 
 emanuelr:
   user_id: 5
   first_name: Emanuel
   last_name: Rietveld
   title: Sysadmin
+  gender: m
+  email:
 
 roelando:
   user_id: 6
   first_name: Roeland
   last_name: van Ochten
   title: Infrastructure Engineer
+  gender: m
+  email:
 
 manuell:
   user_id: 7
   first_name: Manuel
   last_name: Lorenzo
   title: Back/Front end developer
+  gender: m
+  email:
 
 bertm:
   user_id: 8
   first_name: Bert
   last_name: Meerman
+  title: Back/Front end developer
+  gender: m
+  email:
 
 jeroenl:
   user_id: 9
-  first_name: blabla
-  last_name: blabla
+  first_name: Jeroen
+  last_name: van Lier
+  title: Back/Front end developer
+  gender: m
+  email:
 
 christiaanh:
   user_id: 10
   first_name: blabla
   last_name: blabla
+  title: Back/Front end developer
+  gender: m
+  email:
 
 antonl:
   user_id: 11
-  first_name: blabla
-  last_name: blabla
+  first_name: Anton
+  last_name: van Leeuwenhoek
+  title: Back/Front end developer
+  gender: m
+  email:
 
 willebrords:
   user_id: 12
-  first_name: blabla
-  last_name: blabla
+  first_name: Willebrord
+  last_name: Snellius
+  title: Back/Front end developer
+  gender: m
+  email:
 
 simons:
   user_id: 13
-  first_name: blabla
-  last_name: blabla
+  first_name: Simon
+  last_name: Stevin
+  title: Back/Front end developer
+  gender: m
+  email:
 
 danielb:
   user_id: 14
-  first_name: blabla
-  last_name: blabla
+  first_name: Daniel
+  last_name: Bernoulli
+  title: Back/Front end developer
+  gender: m
+  email:
 
 christophorusb:
   user_id: 15
-  first_name: blabla
-  last_name: blabla
+  first_name: Christophorus
+  last_name: Buys Ballot
+  title: Back/Front end developer
+  gender: m
+  email:
 
 johannesw:
   user_id: 16
-  first_name: blabla
-  last_name: blabla
+  first_name: Johannes
+  last_name: van der Waals
+  title: Back/Front end developer
+  gender: m
+  email:
 
 edsgerd:
   user_id: 17
-  first_name: blabla
-  last_name: blabla
+  first_name: Edsger
+  last_name: Dijkstra
+  title: Back/Front end developer
+  gender: m
+  email:
 
 fritsz:
   user_id: 18
-  first_name: blabla
-  last_name: blabla
+  first_name: Frits
+  last_name: Zernike
+  title: Back/Front end developer
+  gender: m
+  email:
 
 adal:
   user_id: 19
-  first_name: blabla
-  last_name: blabla
+  first_name: Ada
+  last_name: Lovelace
+  title: Back/Front end developer
+  gender: f
+  email:
 
 charlesb:
   user_id: 20
-  first_name: blabla
-  last_name: blabla
+  first_name: Charles
+  last_name: Babbage
+  title: Back/Front end developer
+  gender: m
+  email:
 
 meritp:
   user_id: 21
-  first_name: blabla
-  last_name: blabla
+  first_name: Clair
+  last_name: Lotion
+  gender: f
+  title: Back/Front end developer
+  email:
 
 mariec:
   user_id: 22
   first_name: Marie
   last_name: Curie
   gender: f
+  title: Back/Front end developer
+  email:
