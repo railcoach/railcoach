@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
     c.login_field= :username
   end
 
-  attr_accessible :username, :password, :password_confirmation
-
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships
   has_one :profile
