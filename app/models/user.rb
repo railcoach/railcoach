@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     c.login_field= :username
   end
 
-  attr_accessible :username, :email, :password, :password_confirmation
+  attr_accessible :username, :password, :password_confirmation
 
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships
@@ -21,10 +21,6 @@ class User < ActiveRecord::Base
   def activate!
     self.active = true
     save
-  end
-
-  def email
-    self.profile.email
   end
 
   def deliver_activation_instructions!

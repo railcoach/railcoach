@@ -1,5 +1,7 @@
-<% form_for @user do |u| %>
-  <%= render :partial => 'user', :locals => { :user => u, :submit_label => 'Create user'} %>
-<% end %>
+<h1>Editing user</h1>
+<p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', root_url %>
+<%= render 'form' %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

@@ -31,6 +31,7 @@
 
 <div class="row memberUnits">
   <% @random_users.each do |user| %>
+    <%  if user.profile %>
     <div class="column col1-6">
       <figure>
         <a href="<%= user_path(user) %>" class="spacer block<%= ' female' if user.profile.gender == 'f' %>">
@@ -41,6 +42,7 @@
         </a>
       </figure>
     </div>
+  <% end %>
   <% end %>
   <div class="break"></div>
 </div>
