@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all.sort_by { |user| user.profile.name }
+    @users = User.all.sort_by { |user| user.profile.fullname }
   end
 
   # GET /users/1
@@ -18,11 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if current_user.present?
-      @user = User.find(params[:id])
-    else
-      redirect_to user_url(params[:id]), :notice => "You cannot edit this user since you are not logged in."
-    end
+    @user = User.find(params[:id])
   end
 
   # GET /users/new

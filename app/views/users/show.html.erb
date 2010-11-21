@@ -1,33 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <% if @user.profile %>
-    <%= @user.profile.name %>
-  <% end -%>
-</p>
-
-<p>
-  <b>Title:</b>
-  <% if @user.profile %>
-    <%= @user.profile.title %>
-  <% end -%>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <% if @user.profile %>
-    <%= @user.profile.gender %>
-  <% end -%>
-</p>
-
-<p>
-  <b>Email:</b>
-  <% if @user.profile %>
-    <%= @user.profile.email %>
-  <% end -%>
-</p>
-
-<%= link_to 'Edit Profile', edit_user_profile_path(@user.profile) %> |
-<%= link_to 'Change Password', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="row projectUnits commonArticle">
+  <div class="column col1-2">
+    <div class="spacer block gridSpaced">
+      <h1><%= @user.profile.fullname %></h1>
+      <!--These paragraph contains all user profile data-->
+      <p>
+        <table>
+          <!--I would like at least one space inbetween the colon and the parameter but i don't know how at this moment.-->
+          <tr><th align="right">Title:</th><td><%= @user.profile.title %></td></tr>
+          <tr><th align="right">Gender:</th><td><%= @user.profile.gender%></td></tr>
+          <tr><th align="right">Email:</th><td><%= @user.profile.email %></td></tr>
+        </table>
+      </p>
+      <div class="footer">
+        <%= link_to 'Change password', edit_user_path(@user) %> -
+        <%= link_to 'Edit details', edit_user_profile_path(@user.profile) %> -        
+        <%= link_to 'Back', users_path %>
+      </div>
+    </div>
+  </div>
+  <div class="break"></div>
+</div>
