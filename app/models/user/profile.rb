@@ -1,12 +1,10 @@
 class User::Profile < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessible :first_name, :last_name, :gender, :title, :email
+#  validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
+#  # do NOT turn on presence validations, it prevents creating an empty profile for a new user.
 
-# TODO Fix validations, right now it prevents updating the profile or creating an empty one at registration 
-#    validates :email, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
-
-  def name
+  def fullname
     if !first_name.nil? and !last_name.nil?
        return first_name + ' ' + last_name
     elseif !first_name.nil?

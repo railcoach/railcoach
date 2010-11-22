@@ -15,7 +15,7 @@
       <figure>
         <a href="<%= user_path(user) %>" class="spacer block<%= ' female' if user.profile.gender == 'f' %>">
           <div class="caption">
-            <h1><%= user.profile.name %></h1>
+            <h1><%= user.profile.fullname %></h1>
             <p><%= user.profile.title %></p>
           </div>
         </a>

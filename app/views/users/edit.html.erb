@@ -1,7 +1,15 @@
-<h1>Editing user</h1>
-<p id="notice"><%= notice %></p>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="row projectUnits commonArticle">
+  <div class="column col1-2">
+    <div class="spacer block gridSpaced">
+      <h1><%= @user.profile.fullname %></h1>
+      <p>
+        <%= render :partial => 'user'%>
+      </p>
+      <div class="footer">
+        <%= link_to 'Back', user_path %>
+      </div>
+    </div>
+  </div>
+  <div class="break"></div>
+</div>
