@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all.sort_by { |user| user.profile.fullname }
+    @users = User.all.sort_by { |user| user.username }
   end
 
   # GET /users/1
