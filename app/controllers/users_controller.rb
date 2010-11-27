@@ -24,16 +24,13 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @profile = User::Profile.new
   end
 
   # POST /users
   def create
     @user = User.new(params[:user])
-    @profile = @user.build_profile(params[:profile])
+    @user.build_profile
     if @user.save
-      # TODO e-mail is not added and because of that an error is generated and you can't register because of the next line. Fix this
-      @user.profile.deliver_activation_instructions!
       redirect_to(@user, :notice => 'User was successfully created.')
     else
       flash[:notice] = 'Creating new user failed'

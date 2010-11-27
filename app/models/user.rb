@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
     c.login_field= :username
   end
+  
+  before_save do 
+    self.active = true
+  end
 
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships
@@ -10,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :owned_projects, :class_name => "Project"
 
   validates :username, :presence => true, :uniqueness => true
-  
+  validates :profile, :presence => true
   # This should not be validated! crypted_password should be!
   #validates :password, :presence => true
   #validates :password_confirmation, :presence => true
