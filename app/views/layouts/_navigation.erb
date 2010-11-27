@@ -9,17 +9,17 @@
             <li class="column">
               <h1>Active projects</h1>
               <ul>
-                <li><a href="#">Featured</a></li>
+                <li><%= link_to('Featured', home_projects_path) %></li>
                 <li><%= link_to 'All by name', projects_path %></li>
                 <li><a href="#">All by popularity</a></li>
-                <li><a href="#">My projects</a></li>
               </ul>
             </li>
             <li class="column">
-              <h1>Archived projects</h1>
+              <h1>My projects</h1>
               <ul>
-                <li><a href="#">Showcase</a></li>
-                <li><a href="#">Archived</a></li>
+                <li><a href="#">Projects as Coördinator</a></li>
+                <li><a href="#">Projects as contributer</a></li>
+                <li><%= link_to 'Create a project', new_project_path %></li>
               </ul>
             </li>
             <li class="column">
@@ -39,7 +39,7 @@
             <li class="column">
               <h1>Active members</h1>
               <ul>
-                <li><a href="#">Featured</a></li>
+                <li><%= link_to('Featured', home_users_path) %></li>
                 <li><%= link_to 'All by name', users_path %></li>
                 <li><a href="#">My profile</a></li>
               </ul>
@@ -57,6 +57,6 @@
         <li<%= " class='opened'" if @nav == 'About' %>><a href="/static/about">About</a></li>
       </ul>
     </nav>
-    <img src="/images/logo-preview.png" alt=".projectlodge" class="logo" />
+    <img src="/images/logo.png" alt=".projectlodge" class="logo" />
   </div>
 </div>
