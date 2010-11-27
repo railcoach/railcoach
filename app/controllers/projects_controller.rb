@@ -56,9 +56,8 @@ class ProjectsController < ApplicationController
         render :action => "new"
       end
     else
-      # TODO fetch login path dynamically
       # TODO add some redirect_to= logic to login procedure
-      redirect_to('/users/new')
+      redirect_to(login_path)
     end
   end
 

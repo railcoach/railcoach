@@ -110,4 +110,43 @@ describe ProjectsController do
       end
     end
   end
+
+  describe "POST create" do
+    let(:project) { mock_model(Project).as_null_object }
+    let(:membership) { mock_model(Project::Membership).as_null_object }
+
+    context "when a user is logged on" do
+      let(:current_user) { mock_model(User).as_null_object }
+
+      before(:each) do
+        controller.stub(:current_user).and_return(current_user)
+        Project.should_receive(:new)
+          .and_return(project)
+        Project::Membership.should_receive(:new)
+          .with(:project => project, :user => current_user)
+          .and_return(membership)
+        post :create
+      end
+
+      it "should create the project" do
+        assigns[:project].should eq(project)
+        assigns[:membership].should eq(membership)
+      end
+
+      it "should redirect to the project" do
+        response.should redirect_to project_path(project)
+      end
+    end
+
+    context "when no user is logged on" do
+      before(:each) do
+        controller.stub(:current_user).and_return(false)
+        post :create
+      end
+
+      it "should redirect to the login page" do
+        response.should redirect_to login_path
+      end
+    end
+  end
 end
