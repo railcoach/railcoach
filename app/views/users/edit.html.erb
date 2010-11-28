@@ -1,10 +1,37 @@
-
 <div class="row projectUnits">
   <div class="column col1-2">
     <div class="gridSpacer block blockSpacer">
       <h1><%= @user.profile.fullname %></h1>
-      <p>
-        <%= render :partial => 'user'%>
+      <p>      
+        <%= form_for(@user) do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+              <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+             </ul>
+           </div>
+         <% end %>
+
+         <div class="field">
+           <%= f.label :username %><br />
+           <%= @user.username %>
+         </div>
+         <div class="field">
+           <%= f.label :password %><br />
+           <%= f.password_field :password %>
+         </div>
+         <div class="field">
+           <%= f.label :password_confirmation %><br />
+           <%= f.password_field :password_confirmation %>
+         </div>
+
+         <div class="actions">
+           <%= f.submit %>
+        </div>
+      <% end %>
       </p>
       <div class="footer">
         <%= link_to 'Back', user_path %>

@@ -48,6 +48,7 @@ class ProjectsController < ApplicationController
       # TODO give the new membership an admin role within the project
       @membership = Project::Membership.new(:project => @project, :user => current_user)
 
+      @membership.roles << Project::Role.find_by_name('owner')
       # TODO use transaction
       if @project.save and @membership.save
         redirect_to(@project, :notice => 'Project was successfully created.')
@@ -55,9 +56,8 @@ class ProjectsController < ApplicationController
         render :action => "new"
       end
     else
-      # TODO fetch login path dynamically
       # TODO add some redirect_to= logic to login procedure
-      redirect_to('/users/new')
+      redirect_to(login_path)
     end
   end
 
