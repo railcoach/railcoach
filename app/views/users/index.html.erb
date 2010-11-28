@@ -1,9 +1,7 @@
 <div class="row">
   <div class="column col1-1">
-    <div class="spacer">
-      <div class="pageHeader">
-        <h1>The members of the <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
-      </div>
+    <div class="gridSpacer">
+      <h1>The members of the <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
     </div>
   </div>
 </div>
@@ -13,9 +11,9 @@
     <%  if user.profile %>
     <div class="column col1-6">
       <figure>
-        <a href="<%= user_path(user) %>" class="spacer block<%= ' female' if user.profile.gender == 'Female' %>">
+        <a href="<%= user_path(user) %>" class="gridSpacer block<%= ' female' if user.profile.gender == 'Female' %>">
           <div class="caption">
-            <h1><%= user.profile.fullname %></h1>
+            <h5><%= user.profile.fullname %></h5>
             <p><%= user.profile.title %></p>
           </div>
         </a>

@@ -118,11 +118,8 @@
                 width: 880px;
             }
 
-            .spacer {
-                margin: 10px;
-            }
-
             .block {
+                position: relative;
                 display: block;
                 border: 1px solid #AAAAAA;
                 background-color: #DDDDEE;
@@ -131,12 +128,28 @@
                 @include shadow-outside(5px, 10px, rgba(0, 0, 0, 0.1));
             }
 
-            .gridSpaced {
+            .gridSpacer {
+                position: relative;
+                margin: 10px;
+            }
+
+            .blockSpacer {
                 padding: 15px;
             }
         }
 
-        &.visible .column .spacer {
+        .blockTools {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            display: none;
+        }
+
+        *:hover > .blockTools {
+            display: block;
+        }
+
+        &.visible .column .gridSpacer {
             background-color: rgba(0,0,0,0.1);
         }
     }

@@ -1,4 +1,4 @@
-.content .pageHeader {
+.content {
     h1 {
         line-height: 40px;
         font-size: 35px;
@@ -13,6 +13,37 @@
     h2 {
         line-height: 30px;
         font-size: 25px;
-        margin-top: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
+    h5 {
+        font-size: 13px;
+    }
+
+    h1, h2, h3, h4, h5 {
+        text-align: left;
+
+        sub {
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+
+            &:hover {
+                color: #CC0000;
+                text-decoration: underline;
+            }
+        }
     }
 }

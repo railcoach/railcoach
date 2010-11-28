@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20101112101518) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "gender",     :default => "m"
+    t.string   "gender"
     t.string   "title"
     t.string   "email"
     t.string   "first_name"
