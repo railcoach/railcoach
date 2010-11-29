@@ -30,15 +30,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    if current_user.present?
-      if current_user.has_role_on_project?("owner", params[:id])
-          @project = Project.find(params[:id])
-      else
-        redirect_to project_url(params[:id]), :notice => "You cannot edit this project since you do not own it."
-      end
-    else
-      redirect_to project_url(params[:id]), :notice => "You cannot edit this project since you are not logged in."
-    end
+    @project = Project.find(params[:id])
   end
 
   # POST /projects
