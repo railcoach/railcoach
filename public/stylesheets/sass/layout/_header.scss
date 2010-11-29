@@ -191,10 +191,17 @@ header.exhibition {
                 padding: 10px;
                 width: 172px;
 
+                h1 {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
                 a {
                     display: block;
                     color: #FFFFFF;
                     text-decoration: none;
+                    font-size: 13px;
 
                     &:hover {
                         color: #FF8800;

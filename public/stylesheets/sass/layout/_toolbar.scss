@@ -21,6 +21,12 @@
     a {
         color: #FFFFFF;
         font-size: 12px;
+        text-decoration: none;
+        padding: 0px 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     ul {
@@ -35,7 +41,7 @@
         li {
             float: left;
             height: 25px;
-            margin: 0px 10px;
+            margin: 0px;
 
             a {
                 display: block

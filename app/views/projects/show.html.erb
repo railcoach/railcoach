@@ -1,10 +1,22 @@
-<div class="row projectUnits">
+<div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <h1><%= @project.name %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
   <div class="column col1-1">
     <div class="gridSpacer block blockSpacer">
+      <div class="blockTools">
+        <%= link_to 'Edit', edit_project_path(@project) %> -
+        <%= link_to 'Destroy', @project, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
       <article>
-        <h1><%= @project.name %></h1>
         <p><%= @project.description %></p>
-          <h2>Members</h2><ul>
+          <h2>Members</h2>
+          <ul>
             <% if @project.users %>
               <% @project.users.each do |user| %>
                 <li><%= link_to user.username, user %></li>
@@ -13,11 +25,6 @@
               No one is working ont his project. too bad huh?
             <% end %>
           </ul>
-        <div class="footer">
-          <%= link_to 'Edit', edit_project_path(@project) %> -
-          <%= link_to 'Destroy', @project, :confirm => 'Are you sure?', :method => :delete %> -
-          <%= link_to 'Back', projects_path %>
-        </div>
       </article>
     </div>
   </div>

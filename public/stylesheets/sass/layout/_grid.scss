@@ -135,6 +135,11 @@
 
             .blockSpacer {
                 padding: 15px;
+
+                .blockTools {
+                    top: 15px;
+                    right: 15px;
+                }
             }
         }
 
@@ -165,6 +170,16 @@
                 display: inline-block;
                 margin-left: 20px;
             }
+        }
+    }
+
+    a {
+        color: #CC0000;
+        text-decoration: none;
+
+        &:hover {
+            color: #000000;
+            text-decoration: underline;
         }
     }
 }

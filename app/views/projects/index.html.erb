@@ -13,18 +13,13 @@
   </div>
 </div>
 
-<div id="projects_list" class="row projectUnits">
+<div id="projects_list" class="row">
   <% @projects.each do |project| %>
     <div class="column col1-2">
       <div class="gridSpacer block blockSpacer">
         <article>
           <h3><%= link_to project.name, project %></h3>
           <p><%= project.description %></p>
-          <div class="footer">
-            <%= link_to 'Show', project %> -
-            <%= link_to 'Edit', edit_project_path(project) %> -
-            <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %>
-          </div>
         </article>
       </div>
     </div>
