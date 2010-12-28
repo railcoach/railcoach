@@ -1,3 +1,10 @@
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Users', home_users_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + @user.profile.fullname, '#' %></li>
+  </ul>
+<% end %>
+
 <div class="row">
   <div class="column col1-1">
     <div class="gridSpacer">
@@ -10,10 +17,10 @@
 <div class="row">
   <div class="column col1-6 memberUnits">
     <figure>
-      <div class="gridSpacer block<%= ' female' if @user.profile.gender == 'Female' %>"></div>
+      <div class="gridSpacer block<%= ' female' if @user.profile.gender == 'f' %>"></div>
     </figure>
   </div>
-  <div class="column col3-4">
+  <div class="column col5-6">
     <div class="gridSpacer">
       <div class="blockTools">
         <%= link_to 'Change password', edit_user_path(@user) %> -

@@ -2,33 +2,31 @@
   <div class="spacer">
     <nav>
       <ul class="navigation">
-        <li<%= " class='opened'" if @nav == 'Home' %>><a href="/static/home">Home</a></li>
+        <li<%= " class='opened'" if @nav == 'Home' %>><%= link_to 'Home', '/static/home' %></li>
         <li<%= " class='opened'" if @nav == 'Projects' %>>
           <%= link_to('Projects', home_projects_path) %>
           <ul class="columns-3">
             <li class="column">
               <h1>Active projects</h1>
               <ul>
-                <li><%= link_to('Featured', home_projects_path) %></li>
+                <li><%= link_to 'Featured', home_projects_path %></li>
                 <li><%= link_to 'All by name', projects_path %></li>
-                <li><a href="#">All by popularity</a></li>
+                <li><%= link_to 'All by popularity', '#' %></li>
               </ul>
             </li>
             <li class="column">
               <h1>My projects</h1>
               <ul>
-                <li><a href="#">Projects as Coördinator</a></li>
-                <li><a href="#">Projects as contributer</a></li>
-                <li><%= link_to 'Create a project', new_project_path %></li>
+                <li><%= link_to 'My participations', '#' %></li>
+                <li><%= link_to 'Start a new project', new_project_path %></li>
               </ul>
             </li>
             <li class="column">
               <h1>Starting your own</h1>
               <ul>
-                <li><a href="#">How to start?</a></li>
-                <li><a href="#">What to think about?</a></li>
-                <li><a href="#">What are the guidelines?</a></li>
-                <li><a href="#">More FAQ's about groups</a></li>
+                <li><%= link_to 'How to start?', '#' %></li>
+                <li><%= link_to 'Why to start?', '#' %></li>
+                <li><%= link_to "More FAQ's about groups", '#' %></li>
               </ul>
             </li>
           </ul>
@@ -41,20 +39,20 @@
               <ul>
                 <li><%= link_to('Featured', home_users_path) %></li>
                 <li><%= link_to 'All by name', users_path %></li>
-                <li><a href="#">My profile</a></li>
+                <li><%= link_to 'My profile', '#' %></li>
               </ul>
             </li>
             <li class="column">
               <h1>My contacts</h1>
               <ul>
-                <li><a href="#">My friends</a></li>
-                <li><a href="#">People I work with</a></li>
+                <li><%= link_to 'My friends', '#' %></li>
+                <li><%= link_to 'People I work with', '#' %></li>
               </ul>
             </li>
           </ul>
         </li>
-        <li<%= " class='opened'" if @nav == 'News' %>><a href="/static/news">News</a></li>
-        <li<%= " class='opened'" if @nav == 'About' %>><a href="/static/about">About</a></li>
+        <li<%= " class='opened'" if @nav == 'News' %>><%= link_to 'News', '/static/news' %></li>
+        <li<%= " class='opened'" if @nav == 'About' %>><%= link_to 'About', '/static/about' %></li>
       </ul>
     </nav>
     <img src="/images/logo.png" alt=".projectlodge" class="logo" />

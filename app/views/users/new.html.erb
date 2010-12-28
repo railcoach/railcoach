@@ -1,3 +1,10 @@
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Users', home_users_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'New user', '#' %></li>
+  </ul>
+<% end %>
+
 <h1>Register</h1>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>

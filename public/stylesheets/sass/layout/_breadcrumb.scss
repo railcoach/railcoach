@@ -1,0 +1,35 @@
+.breadcrumb {
+    height: 20px;
+
+    ul {
+        float: right;
+        margin-right: 10px;
+
+        li {
+            float: left;
+            margin-left: 20px;
+            position: relative;
+
+            a {
+                color: #888888;
+                display: block;
+                &:hover {
+                  color: #CC0000;
+                }
+            }
+
+            img {
+                position: absolute;
+                top: 0px;
+                left: -20px;
+                width: 20px;
+                height: 20px;
+                background: {
+                    image: url(/images/sprite_icons.png);
+                    position: 0px 0px;
+                    repeat: no-repeat;
+                }
+            }
+        }
+    }
+}

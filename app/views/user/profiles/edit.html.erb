@@ -1,14 +1,30 @@
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Users', home_users_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + @profile.fullname, user_path(@profile.user) %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'Edit', '#' %></li>
+  </ul>
+<% end %>
+
 <div class="row">
-  <div class="column col1-4">&nbsp;</div>
-  <div class="column col1-2">
-    <div class="gridSpacer block blockSpacer">
-      <h1><%= @profile.fullname %></h1>
-      <%= render :partial => 'profile'%>
-      <div class="footer">
-        <%= link_to 'Back', users_path %>
-      </div>
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <h1><%= @profile.fullname %> <sub><%= @profile.title %></sub></h1>
     </div>
   </div>
-  <div class="column col1-4">&nbsp;</div>
+  <div class="break"></div>
+</div>
+
+<div class="row">
+  <div class="column col1-6 memberUnits">
+    <figure>
+      <div class="gridSpacer block<%= ' female' if @profile.gender == 'f' %>"></div>
+    </figure>
+  </div>
+  <div class="column col5-6">
+    <div class="gridSpacer block blockSpacer">
+      <%= render :partial => 'profile'%>
+    </div>
+  </div>
   <div class="break"></div>
 </div>

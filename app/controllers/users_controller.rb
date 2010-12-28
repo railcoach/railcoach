@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def home
     @random_users = User.find(:all, :include => :profile).shuffle.first(12)
-    render :layout => 'exhibition'
+    render :layout => 'exhibition' unless @current_user.present?
   end
 
   # GET /users

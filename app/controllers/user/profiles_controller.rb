@@ -1,33 +1,7 @@
 class User::ProfilesController < ApplicationController
-  # GET /profiles
-  def index
-    @profiles = User::Profile.all
-  end
-
-  # GET /profiles/1
-  def show
-    @profile = User::Profile.find(params[:id])
-  end
-
-  # GET /profiles/new
-  def new
-    @profile = User::Profile.new
-  end
-
   # GET /profiles/1/edit
   def edit
     @profile = User::Profile.find(params[:id])
-  end
-
-  # POST /profiles
-  def create
-    @profile = User::Profile.new(params[:profile])
-
-    if @profile.save
-      redirect_to(@profile, :notice => 'Profile was successfully created.')
-    else
-      render :action => "new"
-    end
   end
 
   # PUT /profiles/1

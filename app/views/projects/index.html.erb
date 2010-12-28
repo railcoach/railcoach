@@ -1,10 +1,9 @@
 <% content_for :breadcrumb do %>
   <ul>
-    <li>Projects</li>
-    <li>All by name</li>
+    <li><%= link_to image_tag('transparent.gif') + 'Projects', home_projects_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'All by name', '#' %></li>
   </ul>
 <% end %>
-
 <div class="row">
   <div class="column col1-1">
     <div class="gridSpacer">
