@@ -3,33 +3,54 @@
     <ul class="main">
       <li>
         <ul>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
+          <li><h1>Projects</h1></li>
+          <li><%= link_to 'Featured projects', home_projects_path %></li>
+          <li><%= link_to 'Projects by name', projects_path %></li>
+          <li><%= link_to 'Projects by popularity', '#' %></li>
+          <% if @current_user.present? %>
+            <li><%= link_to 'Your projects', '#' %></li>
+            <li><%= link_to 'Create a project', new_project_path %></li>
+          <% end %>
         </ul>
       </li>
       <li>
         <ul>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
+          <li><h1>Members</h1></li>
+          <li><%= link_to 'Featured members', home_users_path %></li>
+          <li><%= link_to 'Members by name', users_path %></li>
+          <% if @current_user.present? %>
+            <li><%= link_to 'Your profile', '#' %></li>
+          <% end %>
         </ul>
       </li>
       <li>
         <ul>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
+          <li><h1>News</h1></li>
+          <li><%= link_to 'Featured news', '/static/news' %></li>
+          <li><%= link_to 'Archives', '#' %></li>
+          <li><%= link_to 'twitter', 'http://twitter.com/#!/projectlodge' %></li>
         </ul>
       </li>
       <li>
         <ul>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
-          <li>sitemap item</li>
+          <li><h1>About</h1></li>
+          <li><%= link_to 'About projectlodge', '/static/about' %></li>
+          <li><%= link_to 'Contact', '#' %></li>
+          <li><%= link_to 'FAQ', '#' %></li>
         </ul>
       </li>
       <div class="break"></div>
     </ul>
   </nav>
 </div>
+<script type="text/javascript">
+  jQ(document).ready(function () {
+      var minHeight = 0;
+      jQ(".sitemap .main > li").each(function (index, element){
+          if (jQ(element).height() > minHeight) {
+              minHeight = jQ(element).height();
+          }
+      });
+      jQ(".sitemap .main > li").css('height', minHeight + 'px');
+  });
+</script>

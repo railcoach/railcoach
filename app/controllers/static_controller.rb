@@ -1,5 +1,4 @@
 class StaticController < ApplicationController
-
   def home
     @nav = 'Home'
 
