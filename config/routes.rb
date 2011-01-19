@@ -8,6 +8,7 @@ Dynamic::Application.routes.draw do
   resources :projects
   match 'project/home' => 'projects#home', :as => :home_projects
   namespace :project do
+    #FIXME: post 'memberships/request_membership' => 'memberships#request_membership'
     resources :memberships
     resources :roles
   end

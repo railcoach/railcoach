@@ -25,6 +25,7 @@ class Project::MembershipsController < ApplicationController
 
     if @membership.save
       redirect_to(@membership, :notice => 'Membership was successfully created.')
+
     else
       render :action => "new"
     end
@@ -46,5 +47,19 @@ class Project::MembershipsController < ApplicationController
     @membership = Membership.find(params[:id])
     @membership.destroy
     redirect_to(memberships_url)
+  end
+
+  # POST /memberships
+  def request_membership
+    @membership = Membership.new
+    @membership.user = current_user
+    @membership.project = params[:project]
+    @membership.user_accepted = true
+    @membership.project_accepted = false
+    if @membership.save then
+      redirect_to(@membership.project, :notice => 'Request sent.')
+    else
+      redirect_to(@membership.project, :notice => 'Failed to send request.')
+    end
   end
 end

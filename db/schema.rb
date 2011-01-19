@@ -10,13 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101112101518) do
+ActiveRecord::Schema.define(:version => 20110113202048) do
 
   create_table "project_memberships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "user_accepted",    :default => false, :null => false
+    t.boolean  "project_accepted", :default => false, :null => false
   end
 
   create_table "project_memberships_roles", :id => false, :force => true do |t|
