@@ -9,12 +9,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '>= 3.0.0'
 
 # This needs to be fixed as soon as working rails3 gem is released
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-gem "authlogic-connect"
+#gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+#gem "authlogic-connect"
 gem "ruby-openid"
-gem "rack-openid", ">=0.2.1", :require => "rack/openid"
-gem "oauth"
-gem "oauth2"
 
 group :test, :development do
   gem "rspec-rails", ">= 2.0.1"
@@ -24,6 +21,9 @@ group :test, :development do
   gem "rcov"
   gem 'rails-erd'
 end
+
+gem 'rack'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'

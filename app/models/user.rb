@@ -1,12 +1,17 @@
 class User < ActiveRecord::Base
-  include ActiveModel::Validations
-  acts_as_authentic do |c|
-    c.login_field= :username
-  end
-  
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable, :lockable and :timeoutable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+
+  #include ActiveModel::Validations
   before_save do 
     self.active = true
   end
+
 
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships

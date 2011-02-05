@@ -1,9 +1,10 @@
 Dynamic::Application.routes.draw do
 
-  get "activations/create"
-  match 'user/activate/:activation_code' => 'activations#create', :as => :user_activation
+  devise_for :users
 
-  resources :user_sessions
+  match 'login' => "devise/sessions#new"
+  match 'logout' => "devise/sessions#delete"
+  match 'new' => "devise/user#new"
 
   resources :projects
   match 'project/home' => 'projects#home', :as => :home_projects
@@ -12,23 +13,18 @@ Dynamic::Application.routes.draw do
     resources :roles
   end
 
-  resources :users
   match 'user/home' => 'users#home', :as => :home_users
   namespace :user do
     resources :profiles
   end
+
+  resources 'users', :controller => 'devise/users'
 
   get "static/home"
   get "static/projects"
   get "static/members"
   get "static/news"
   get "static/about"
-
-  # User session routes
-  match 'login' => 'user_sessions#create', :as => :login
-  match 'logout' => 'user_sessions#destroy', :as => :logout
-  resources :user_sessions
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
