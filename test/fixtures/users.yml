@@ -1,89 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-jasperf:
-  id: 1
-  username: jasperf
-
-jooste:
-  id: 2
-  username: jooste
-
-timonv:
-  id: 3
-  username: timonv
-
-tobiv:
-  id: 4
-  username: tobiv
-
-emanuelr:
-  id: 5
-  username: emanuelr
-
-roelando:
-  id: 6
-  username: roelando
-
-manuell:
-  id: 7
-  username: manuell
-
-bertm:
-  id: 8
-  username: bertm
-
-jeroenl:
-  id: 9
-  username: jeroenl
-
-christiaanh:
-  id: 10
-  username: christiaanh
-
-antonl:
-  id: 11
-  username: antonl
-
-willebrords:
-  id: 12
-  username: willebrords
-
-simons:
-  id: 13
-  username: simons
-
-danielb:
-  id: 14
-  username: danielb
-
-christophorusb:
-  id: 15
-  username: christophorusb
-
-johannesw:
-  id: 16
-  username: johannesw
-
-edsgerd:
-  id: 17
-  username: edsgerd
-
-fritsz:
-  id: 18
-  username: fritsz
-
-adal:
-  id: 19
-  username: adal
-
-charlesb:
-  id: 20
-  username: charlesb
-
-meritp:
-  id: 21
-  username: meritp
-
-mariec:
-  id: 22
-  username: mariec
+# Timon
+# Password = 'test123'
+<% [ "jasperf", "jooste", "timonv", "tobiv", "emanuelr", "roelando", "manuell","bertm" ].each_with_index do |name,index| %>
+<%= name %>:
+  id: <%= index %>
+  email: <%= name + "@projectlodge.org" %>
+  encrypted_password: "$2a$10$ZXncsaxRLWmuGztnZCoSle00WIG/QNTgNE8RqSjoevjxuvyQy08uK"
+  password_salt: "$2a$10$ZXncsaxRLWmuGztnZCoSle"
+<% end %>
