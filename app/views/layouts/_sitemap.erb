@@ -7,7 +7,7 @@
           <li><%= link_to 'Featured projects', home_projects_path %></li>
           <li><%= link_to 'Projects by name', projects_path %></li>
           <li><%= link_to 'Projects by popularity', '#' %></li>
-          <% if @current_user.present? %>
+          <% if user_signed_in? %>
             <li><%= link_to 'Your projects', '#' %></li>
             <li><%= link_to 'Create a project', new_project_path %></li>
           <% end %>
@@ -16,9 +16,9 @@
       <li>
         <ul>
           <li><h1>Members</h1></li>
-          <li><%= link_to 'Featured members', home_users_path %></li>
-          <li><%= link_to 'Members by name', users_path %></li>
-          <% if @current_user.present? %>
+          <li><%= link_to 'Featured members', '#' %></li>
+          <li><%= link_to 'Members by name', "#"  %></li>
+          <% if user_signed_in? %>
             <li><%= link_to 'Your profile', '#' %></li>
           <% end %>
         </ul>

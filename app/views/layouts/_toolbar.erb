@@ -1,12 +1,12 @@
 <div class="toolbar">
   <ul class="right">
-    <% if @current_user.present? %>
-      <li><%= link_to 'Edit Account Information', user_path(@current_user) %></li>
-      <li><%= link_to 'Edit Profile', user_profile_path(@current_user) %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Edit Account Information', edit_user_registration_path %></li>
+      <li><%= link_to 'Edit Profile', "#" %></li>
       <li><%= link_to 'Logout', destroy_user_session_path %></li>
     <% else %>
-      <li><%= link_to 'Login', new_user_session_path  %></li>
-      <li><%= link_to 'Register', user_registration_path %></li>
+      <li><%= link_to 'Login', new_user_session_path %></li>
+      <li><%= link_to 'Register',  new_user_registration_path %></li>
     <% end %>
   </ul>
 </div>

@@ -12,6 +12,9 @@ gem 'haml', '>= 3.0.0'
 #gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 #gem "authlogic-connect"
 gem "ruby-openid"
+gem 'rack'
+gem 'devise'
+
 
 group :test, :development do
   gem "rspec-rails", ">= 2.0.1"
@@ -21,9 +24,6 @@ group :test, :development do
   gem "rcov"
   gem 'rails-erd'
 end
-
-gem 'rack'
-gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'

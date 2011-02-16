@@ -1,10 +1,5 @@
 Dynamic::Application.routes.draw do
-
   devise_for :users
-
-  match 'login' => "devise/sessions#new"
-  match 'logout' => "devise/sessions#delete"
-  match 'new' => "devise/user#new"
 
   resources :projects
   match 'project/home' => 'projects#home', :as => :home_projects
@@ -13,12 +8,11 @@ Dynamic::Application.routes.draw do
     resources :roles
   end
 
-  match 'user/home' => 'users#home', :as => :home_users
+  #match 'user/home' => 'users#home', :as => :home_users
   namespace :user do
     resources :profiles
   end
 
-  resources 'users', :controller => 'devise/users'
 
   get "static/home"
   get "static/projects"
