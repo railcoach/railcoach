@@ -1,9 +1,5 @@
 Dynamic::Application.routes.draw do
-
-  get "activations/create"
-  match 'user/activate/:activation_code' => 'activations#create', :as => :user_activation
-
-  resources :user_sessions
+  devise_for :users
 
   resources :projects
   match 'project/home' => 'projects#home', :as => :home_projects
@@ -12,23 +8,17 @@ Dynamic::Application.routes.draw do
   match 'project/membership/:membership_id/accept_invitation' => 'project/memberships#accept_invitation', :via => :put, :as => :accept_invitation_project_membership
   match 'project/membership/:membership_id/accept_member' => 'project/memberships#accept_member', :via => :put, :as => :accept_member_project_membership
 
-  resources :users
-  match 'user/home' => 'users#home', :as => :home_users
+  #match 'user/home' => 'users#home', :as => :home_users
   namespace :user do
     resources :profiles
   end
+
 
   get "static/home"
   get "static/projects"
   get "static/members"
   get "static/news"
   get "static/about"
-
-  # User session routes
-  match 'login' => 'user_sessions#create', :as => :login
-  match 'logout' => 'user_sessions#destroy', :as => :logout
-  resources :user_sessions
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
