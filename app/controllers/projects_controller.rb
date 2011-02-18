@@ -71,6 +71,23 @@ class ProjectsController < ApplicationController
     redirect_to(projects_url)
   end
 
+  # PUT /project/1/become_member
+  def become_member
+    project = Project.find(params[:project_id])
+    project.become_member(current_user)
+
+    redirect_to :back
+  end
+
+  # PUT /project/1/invite_member
+  def invite_member
+    user = User.find(params[:user_id])
+    project = Project.find(params[:project_id])
+    project.invite_member(user)
+
+    redirect_to :back
+  end
+
   private
 
   def navigation

@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-  <div class="column col1-1">
+  <div class="column col3-4">
     <div class="gridSpacer block blockSpacer">
       <div class="blockTools">
         <%= link_to 'Edit', edit_project_path(@project) %> -
@@ -21,17 +21,25 @@
       </div>
       <article>
         <p><%= @project.description %></p>
-          <h2>Members</h2>
-          <ul>
-            <% if @project.users %>
-              <% @project.users.each do |user| %>
-                <li><%= link_to user.username, user %></li>
-              <% end %>
-            <% else %>
-              No one is working ont his project. too bad huh?
-            <% end %>
-          </ul>
       </article>
+    </div>
+  </div>
+  <div class="column col1-4">
+    <div class="gridSpacer block blockSpacer">
+      <h3>Members</h3>
+      <%= link_to 'become a member', become_member_project_path(:project_id => @project.id), :method => :put %>
+      <% if @project.memberships %>
+        <ul>
+          <% @project.memberships.each do |membership|
+            role_line = ''
+            membership.roles.each do |role|
+              role_line << role.name
+              role_line << ', ' unless role == membership.roles.last
+            end %>
+            <li><%= link_to membership.user.username, membership.user %> (<%= role_line %>)</li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
   </div>
   <div class="break"></div>

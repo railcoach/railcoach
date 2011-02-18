@@ -149,4 +149,14 @@ describe ProjectsController do
       end
     end
   end
+
+  describe "become_member" do
+    it "should call Project.become_member with user"
+    it "should redirect to back"
+  end
+
+  describe "invite_member" do
+    it "should call Project.invite_member with user"
+    it "should redirect to back"
+  end
 end
