@@ -43,7 +43,7 @@ Devise.setup do |config|
   # from others authentication tools as :clearance_sha1, :authlogic_sha512 (then
   # you should set stretches above to 20 for default behavior) and :restful_authentication_sha1
   # (then you should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
-  config.encryptor = :bcrypt
+  #config.encryptor = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
   config.pepper = "f0b4432864477ced323c0e854c71caba38a64fe6190c80dd6385d534788d0b9018f50dc3564c77c327829d26b9880f6a0cf7b89c73f927d7926ad230d332a259"
@@ -139,4 +139,8 @@ Devise.setup do |config|
   #   end
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
+
+  # OmniAuth settings
+  require 'openid/store/filesystem'
+  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
 end
