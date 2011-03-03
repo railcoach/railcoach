@@ -77,4 +77,12 @@ class User < ActiveRecord::Base
   def password_required?
     (user_tokens.empty? || !password.blank?) && super
   end
+
+  # Returns all connected networks in array, if open_id just get from regex.
+  # Author: Timon Vonk
+  def get_connected_networks
+    user_tokens.collect do |token|
+      token.provider == 'open_id' ? token.uid.match(/\.(\w+)\./)[1] : token.provider
+    end
+  end
 end

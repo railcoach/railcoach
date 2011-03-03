@@ -7,7 +7,7 @@
     <h2>Come and join in.</h2>
     <p>Create a new account</p>
     <p>Use your:</p>
-    <p><%= link_to 'Google account', user_omniauth_authorize_path(:open_id, :openid_url => "https://www.google.com/accounts/o8/id") %></p>
+    <p><%= link_to 'Google account', user_auth_helper_path(:google) %></p>
     <p>facebook account</p>
   </div>
 </div>

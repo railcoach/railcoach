@@ -11,6 +11,7 @@ Dynamic::Application.routes.draw do
   #match 'user/home' => 'users#home', :as => :home_users
   namespace :user do
     resources :profiles
+    resources :networks
   end
 
 
