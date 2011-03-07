@@ -1,6 +1,6 @@
 class ActivationsController < ApplicationController
   #Code cp'ed from github.com/matthooks/authlogic-activation-tutorial
-  before_filter :require_no_user
+  #before_filter :require_no_user
 
   def create
     @user = User.find_using_perishable_token(params[:activation_code], 1.week || (raise Exception))
