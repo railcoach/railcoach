@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ProjectsController do
   describe "GET edit" do
-    let(:project) { mock_model(project).as_null_object }
+    let(:project) { mock_model(Project).as_null_object }
     context "when current user owns the project" do
       before do
         Project.stub(:find).with(1).and_return(project)
