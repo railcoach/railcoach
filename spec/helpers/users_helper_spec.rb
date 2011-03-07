@@ -5,14 +5,14 @@ describe UsersHelper do
     context "when asting to translate m" do
       it "should return the 'male'" do
         result = helper.translate_gender('m')
-        result.should be('male')
+        result.should == 'male'
       end
     end
 
     context "when asting to translate f" do
       it "should return the 'male'" do
         result = helper.translate_gender('f')
-        result.should be('female')
+        result.should == 'female'
       end
     end
 
@@ -20,7 +20,7 @@ describe UsersHelper do
       it "should return the input variable" do
         input = 'foobar'
         result = helper.translate_gender(input)
-        result.should be(input)
+        result.should == input
       end
     end
   end
