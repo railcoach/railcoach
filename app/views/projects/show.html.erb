@@ -36,7 +36,7 @@
               role_line << role.name
               role_line << ', ' unless role == membership.roles.last
             end %>
-            <li><%= link_to membership.user.username, membership.user %> (<%= role_line %>)</li>
+            <li><%= link_to membership.user.profile.fullname, membership.user %> (<%= role_line %>)</li>
           <% end %>
         </ul>
       <% end %>
