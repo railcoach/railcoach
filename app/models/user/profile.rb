@@ -6,11 +6,13 @@ class User::Profile < ActiveRecord::Base
 
   def fullname
     if !first_name.nil? and !last_name.nil?
-       return first_name + ' ' + last_name
-    elseif !first_name.nil?
-        return first_name
+      return first_name + ' ' + last_name
+    elsif !first_name.nil?
+      return first_name
+    elsif !last_name.nil?
+      return last_name
     else
-        return user.username
+      return nil
     end
   end
 
