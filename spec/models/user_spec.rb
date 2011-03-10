@@ -15,7 +15,7 @@ describe User do
     before(:each) do
       @user = User.new
       @user.build_profile
-      @user.username = 'edsgerd'
+      @user.email = 'edsgerd@example.com'
       @user.password = 'abcdefg'
       @user.password_confirmation = 'abcdefg'
       @user.profile.first_name = 'Edsger'
@@ -29,8 +29,8 @@ describe User do
       @user.should be_valid
     end
 
-    it "should not be valid without a username" do
-      @user.username = nil
+    it "should not be valid without an email" do
+      @user.email = nil
       @user.should_not be_valid
     end
   end
