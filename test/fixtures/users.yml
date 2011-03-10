@@ -4,7 +4,7 @@
 # Password = 'test123'
 <% [ "jasperf", "jooste", "timonv", "tobiv", "emanuelr", "roelando", "manuell","bertm" ].each_with_index do |name,index| %>
 <%= name %>:
-  id: <%= index %>
+  id: <%= index + 1 %>
   email: <%= name + "@projectlodge.org" %>
   encrypted_password: "$2a$10$ZXncsaxRLWmuGztnZCoSle00WIG/QNTgNE8RqSjoevjxuvyQy08uK"
   password_salt: "$2a$10$ZXncsaxRLWmuGztnZCoSle"
