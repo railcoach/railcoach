@@ -1,5 +1,5 @@
 Dynamic::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "user/omniauth_callbacks" }
 
   resources :projects
   match 'project/home' => 'projects#home', :as => :home_projects
@@ -11,6 +11,7 @@ Dynamic::Application.routes.draw do
   #match 'user/home' => 'users#home', :as => :home_users
   namespace :user do
     resources :profiles
+    resources :networks
   end
 
 

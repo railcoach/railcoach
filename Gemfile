@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
 
+# Thin if webrick fucks up
+gem 'thin'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -13,8 +16,12 @@ gem 'haml', '>= 3.0.0'
 #gem "authlogic-connect"
 gem "ruby-openid"
 gem 'rack'
-gem 'devise'
 
+# Authentication Gems
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'omniauth', :git => 'https://github.com/intridea/omniauth.git'
+#gem 'oa-oauth'
+#gem 'oa-openid', :require => 'omniauth/openid'
 
 group :test, :development do
   gem "rspec-rails", ">= 2.0.1"
