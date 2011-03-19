@@ -143,4 +143,5 @@ Devise.setup do |config|
   # OmniAuth settings
   require 'openid/store/filesystem'
   config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
+  config.stretches = Rails.env.test? ? 1 : 10
 end

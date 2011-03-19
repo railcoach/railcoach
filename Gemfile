@@ -30,6 +30,10 @@ group :test, :development do
   gem "machinist"
   gem "rcov"
   gem 'rails-erd'
+  gem 'cucumber-rails'
+  gem 'selenium-client'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 # Use unicorn as the web server
