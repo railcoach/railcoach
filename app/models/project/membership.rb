@@ -4,15 +4,12 @@ class Project::Membership < ActiveRecord::Base
   has_and_belongs_to_many :roles, :class_name => "Project::Role", :join_table => "project_memberships_roles"
 
   state_machine :initial => :none do
-  end
+    event :accept_member do
+      transition :join_request => :accepted
+    end
 
-  def accept_invitation
-    self.user_accepted = true
-    save
-  end
-
-  def accept_member
-    self.project_accepted = true
-    save
+    event :accept_invitation do
+      transition :invitation => :accepted
+    end
   end
 end
