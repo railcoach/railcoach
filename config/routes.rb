@@ -3,7 +3,7 @@ Dynamic::Application.routes.draw do
 
   resources :projects
   match 'project/home' => 'projects#home', :as => :home_projects
-  match 'project/:project_id/become_member' => 'projects#become_member', :via => :put, :as => :become_member_project
+  match 'project/:project_id/request_membership' => 'projects#request_membership', :via => :put, :as => :request_membership_project
   match 'project/:project_id/invite_member' => 'projects#invite_member', :via => :put, :as => :invite_member_project
   match 'project/membership/:membership_id/accept_invitation' => 'project/memberships#accept_invitation', :via => :put, :as => :accept_invitation_project_membership
   match 'project/membership/:membership_id/accept_member' => 'project/memberships#accept_member', :via => :put, :as => :accept_member_project_membership

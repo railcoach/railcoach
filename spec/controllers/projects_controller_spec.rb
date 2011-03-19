@@ -139,8 +139,8 @@ describe ProjectsController do
     end
   end
 
-  describe "become_member" do
-    it "should call Project.become_member with user"
+  describe "request_membership" do
+    it "should call Project.request_membership with user"
     it "should redirect to back"
   end
 

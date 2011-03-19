@@ -66,10 +66,10 @@ class ProjectsController < ApplicationController
     redirect_to(projects_url)
   end
 
-  # PUT /project/1/become_member
-  def become_member
+  # PUT /project/1/request_membership
+  def request_membership
     project = Project.find(params[:project_id])
-    project.become_member(current_user)
+    project.request_membership(current_user)
 
     redirect_to :back
   end

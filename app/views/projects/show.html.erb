@@ -27,7 +27,7 @@
   <div class="column col1-4">
     <div class="gridSpacer block blockSpacer">
       <h3>Members</h3>
-      <%= link_to 'become a member', become_member_project_path(:project_id => @project.id), :method => :put %>
+      <%= link_to 'become a member', request_membership_project_path(:project_id => @project.id), :method => :put %>
       <% if @project.memberships %>
         <ul>
           <% @project.memberships.each do |membership|
