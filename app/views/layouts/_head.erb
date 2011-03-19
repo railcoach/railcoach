@@ -16,11 +16,7 @@
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link href="/stylesheets/base.css" media="all" rel="stylesheet" type="text/css" />
-<!--[if IE]>
-<link href="stylesheets/iebh.css" media="all" rel="stylesheet" type="text/css" />
-<![endif]-->
 
-<%= javascript_include_tag :all %>
-<script type="text/javascript">
-  jQ = jQuery.noConflict();
-</script>
+<%= csrf_meta_tag %>
+
+<%= javascript_include_tag :defaults %>

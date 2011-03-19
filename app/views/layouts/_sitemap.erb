@@ -44,13 +44,13 @@
   </nav>
 </div>
 <script type="text/javascript">
-  jQ(document).ready(function () {
+  $(document).ready(function () {
       var minHeight = 0;
-      jQ(".sitemap .main > li").each(function (index, element){
-          if (jQ(element).height() > minHeight) {
-              minHeight = jQ(element).height();
+      $(".sitemap .main > li").each(function (index, element){
+          if ($(element).height() > minHeight) {
+              minHeight = $(element).height();
           }
       });
-      jQ(".sitemap .main > li").css('height', minHeight + 'px');
+      $(".sitemap .main > li").css('height', minHeight + 'px');
   });
 </script>

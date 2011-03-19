@@ -26,18 +26,18 @@
   <div class="break"></div>
 </div>
 <script type="text/javascript">
-    jQ(document).ready(function () {
-        jQ("#projects_list .block:odd").each(function (i) {
-            var object = jQ("#projects_list .block:odd").get(i)
-            var odd_height = jQ(object).height();
-            object = jQ("#projects_list .block:even").get(i)
-            even_height = jQ(object).height();
+    $(document).ready(function () {
+        $("#projects_list .block:odd").each(function (i) {
+            var object = $("#projects_list .block:odd").get(i)
+            var odd_height = $(object).height();
+            object = $("#projects_list .block:even").get(i)
+            even_height = $(object).height();
             if (odd_height > even_height) {
-                object = jQ("#projects_list .block:even").get(i);
-                jQ(object).height(odd_height);
+                object = $("#projects_list .block:even").get(i);
+                $(object).height(odd_height);
             } else {
-                object = jQ("#projects_list .block:odd").get(i);
-                jQ(object).height(even_height);
+                object = $("#projects_list .block:odd").get(i);
+                $(object).height(even_height);
             }
         });
     });

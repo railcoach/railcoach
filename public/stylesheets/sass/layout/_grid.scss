@@ -3,10 +3,6 @@
     margin: 0px auto;
     padding: 67px 0px 0px 0px;
 
-    &.exhibition {
-        padding: 10px 0px 0px 0px;
-    }
-
     &.gridlayout {
         clear: both;
 
@@ -168,4 +164,8 @@
             text-decoration: underline;
         }
     }
+}
+
+.exhibition .content {
+    padding: 10px 0px 0px 0px;
 }

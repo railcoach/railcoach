@@ -64,38 +64,3 @@ jeroenl_se:
   id: 13
   user_id: 9
   project_id: 4
-
-christiaanh_com:
-  id: 14
-  user_id: 10
-  project_id: 5
-
-simons_rc:
-  id: 15
-  user_id: 13
-  project_id: 1
-
-simons_lh:
-  id: 16
-  user_id: 13
-  project_id: 2
-
-simons_ae:
-  id: 17
-  user_id: 13
-  project_id: 3
-  
-simons_se:
-  id: 18
-  user_id: 13
-  project_id: 4
-
-simons_com:
-  id: 19
-  user_id: 13
-  project_id: 5
-
-fritsz_ae:
-  id: 20
-  user_id: 18
-  project_id: 3
