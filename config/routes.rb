@@ -14,7 +14,6 @@ Dynamic::Application.routes.draw do
     resources :networks
   end
 
-
   get "static/home"
   get "static/projects"
   get "static/members"

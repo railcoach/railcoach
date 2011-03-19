@@ -1,14 +1,13 @@
-#include Devise::TestHelpers
-
 Given /^I am logged in$/ do
   @user = User.create(:email => "flippo@henkiespenk.nl", :password => "test", :password_confirmation => "test")
-  #sign_in @user, :user
+  # TODO log user on, else the pages with connectedNetworks/connectableNetworks can not be seen. You can't use 
+  #include Devise::TestHelpers and use sign_in :user, @user that will only work in controller specs, not in cucumber tests
 end
 
-Then /^I should see a list of connectable networks$/ do
+Then /^I should see a list of connectable networks within a div with id "([^"]*)"$/ do |selector|
   @user.get_connectable_networks.each do |network|
-    within ('#connectableNetworks') do
-      page.should contain(network)
+    within "##{selector}" do |content|
+      content.should contain(network)
     end
   end
 end
@@ -20,16 +19,16 @@ Given /^I am connected to at least "([^"]*)" network$/ do |arg1|
   end
 end
 
-When /^I visit the edit user network page$/ do
+When /^I visit the 'edit user network' page$/ do
   #visit edit_user_network_path(@user.id)
-  visit(edit_user_network_path(@user.id))
+  visit(edit_user_network_path(:id))
 end
 
-Then /^I should see a list of "([^"]*)" connected networks$/ do |arg1|
+Then /^I should see a list of "([^"]*)" connected networks within a div with id "([^"]*)"$/ do |networks, selector|
   # Should be cleaned up
-  @user.get_connect_networks.each do |network|
-    within ('#connectedNetworks') do
-      page.should contain(network)
+  @user.get_connected_networks.each do |network|
+    within "##{selector}" do |content|
+      content.should contain(network)
     end
   end
 end
@@ -43,7 +42,7 @@ end
 
 Then /^the new "([^"]*)" should be added to my networks$/ do |network|
   visit edit_user_network_path(@user.id)
-  within("connectableNetworks") do
+  within("#connectableNetworks") do
     page.should contain(network)
   end
 end

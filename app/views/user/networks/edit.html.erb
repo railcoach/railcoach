@@ -1,10 +1,17 @@
 <%# TODO: Needs cleanup, methods to controllers %>
 
 <h2>Networks you are connected to</h2>
-<ul>
+<ul id="connectedNetworks">
 <% @connected_networks.each do |network|%>
   <%= network %>
 <% end %>
 </ul>
 
 <h2>Networks you can connect</h2>
+<ul id="connectableNetworks">
+<% @connectable_networks.each do |network|%>
+<li>
+ <a href=""><%= network %></a>
+</li>
+<% end %>
+</ul>
