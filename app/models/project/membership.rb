@@ -12,4 +12,12 @@ class Project::Membership < ActiveRecord::Base
       transition :invitation => :accepted
     end
   end
+
+  def self.create_membership_invitation(project, user)
+    Project::Membership.create(:project => project, :user => user, :state => "invitation")
+  end
+
+  def self.create_membership_request(project, user)
+    Project::Membership.create(:project => project, :user => user, :state => "join_request")
+  end
 end
