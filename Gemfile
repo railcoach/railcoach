@@ -12,8 +12,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '>= 3.0.0'
 
 # This needs to be fixed as soon as working rails3 gem is released
-#gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-#gem "authlogic-connect"
 gem "ruby-openid"
 gem 'rack'
 gem 'jquery-rails'
@@ -21,8 +19,6 @@ gem 'jquery-rails'
 # Authentication Gems
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
-#gem 'oa-oauth'
-#gem 'oa-openid', :require => 'omniauth/openid'
 
 group :test, :development do
   gem "rspec-rails", ">= 2.0.1"
