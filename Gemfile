@@ -8,12 +8,15 @@ gem 'rails', '3.0.5'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '>= 3.0.0'
 
+#gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+
 # This needs to be fixed as soon as working rails3 gem is released
 #gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 #gem "authlogic-connect"
 gem "ruby-openid"
 gem 'rack'
 gem 'devise'
+gem 'state_machine'
 
 
 group :test, :development do
