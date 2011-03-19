@@ -14,6 +14,7 @@ gem 'haml', '>= 3.0.0'
 gem "ruby-openid"
 gem 'rack'
 gem 'devise'
+gem 'jquery-rails'
 
 
 group :test, :development do
