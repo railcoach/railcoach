@@ -1,14 +1,17 @@
 <!doctype html>
-<html style="overflow-x: hidden;">
+<!--[if lt IE 7 ]> <html class="no-js ie6 exhibition" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7 exhibition" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8 exhibition" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js exhibition" lang="en"> <!--<![endif]-->
   <head>
     <%= render :partial => 'layouts/head' %>
   </head>
   <body>
-    <header class="exhibition">
+    <header>
       <%= yield :exhibition %>
       <%= render :partial => 'layouts/navigation' %>
     </header>
-    <div class="content gridlayout exhibition">
+    <div class="content gridlayout>
       <div class="breadcrumb">
         <%= yield :breadcrumb %>
       </div>

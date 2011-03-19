@@ -31,3 +31,19 @@
         }
     }
 }
+
+.ie6, .ie7, .ie8 {
+    .browserWarning {
+        font-size: 11px;
+        color: #555555;
+        margin-top: 40px;
+
+        a {
+            color: #555555;
+
+            &:hover {
+                color: #CC0000;
+            }
+        }
+    }
+}
