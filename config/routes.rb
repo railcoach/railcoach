@@ -8,10 +8,11 @@ Dynamic::Application.routes.draw do
   match 'project/membership/:membership_id/accept_invitation' => 'project/memberships#accept_invitation', :via => :put, :as => :accept_invitation_project_membership
   match 'project/membership/:membership_id/accept_member' => 'project/memberships#accept_member', :via => :put, :as => :accept_member_project_membership
 
+  resources :users
   match 'users/index' => 'users#index'
   match 'users/show' => 'users#show', :as => :user
   match 'users/home' => 'users#home', :as => :home_users
-  resources :users
+
   namespace :user do
     resources :profiles
     resources :networks
