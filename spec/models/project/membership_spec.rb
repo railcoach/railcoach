@@ -24,6 +24,18 @@ describe Project::Membership do
       its(:user_id) { should == user.id }
       its(:state) { should == "join_request" }
     end
+
+    context "when a membership already exists" do
+      before(:each) do
+        Project::Membership.create_membership_request( project, user )
+      end
+
+      it "should not create a new instance" do
+        proc {
+          Project::Membership.create_membership_request( project, user )
+        }.should_not change(Project::Membership, :count)
+      end
+    end
   end
 
   describe "create_membership_invitation" do
@@ -45,6 +57,18 @@ describe Project::Membership do
       its(:project_id) { should == project.id }
       its(:user_id) { should == user.id }
       its(:state) { should == "invitation" }
+    end
+
+    context "when a membership already exists" do
+      before(:each) do
+        Project::Membership.create_membership_invitation( project, user )
+      end
+
+      it "should not create a new instance" do
+        proc {
+          Project::Membership.create_membership_invitation( project, user )
+        }.should_not change(Project::Membership, :count)
+      end
     end
   end
 end
