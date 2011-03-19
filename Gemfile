@@ -20,7 +20,7 @@ gem 'jquery-rails'
 
 # Authentication Gems
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
-gem 'omniauth', :git => 'https://github.com/intridea/omniauth.git'
+gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 #gem 'oa-oauth'
 #gem 'oa-openid', :require => 'omniauth/openid'
 
