@@ -137,17 +137,6 @@ describe ProjectsController do
         response.should redirect_to project_path(project)
       end
     end
-
-    context "when no user is logged on" do
-      before(:each) do
-        controller.stub(:current_user).and_return(false)
-        post :create
-      end
-
-      it "should redirect to the login page" do
-        response.should redirect_to login_path
-      end
-    end
   end
 
   describe "become_member" do

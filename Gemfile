@@ -17,6 +17,7 @@ gem 'haml', '>= 3.0.0'
 gem "ruby-openid"
 gem 'rack'
 gem 'jquery-rails'
+gem 'state_machine'
 
 # Authentication Gems
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
