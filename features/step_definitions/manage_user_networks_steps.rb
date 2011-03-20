@@ -1,8 +1,8 @@
-#include Devise::TestHelpers
+include Devise::TestHelpers
 
 Given /^I am logged in$/ do
-  @user = User.create(:email => "flippo@henkiespenk.nl", :password => "test", :password_confirmation => "test")
-  #sign_in @user, :user
+  pending "Should include login"
+  @user = User.create!(:email => "flippo@henkiespenk.nl", :password => "test123", :password_confirmation => "test123")
 end
 
 Then /^I should see a list of connectable networks$/ do
@@ -21,7 +21,6 @@ Given /^I am connected to at least "([^"]*)" network$/ do |arg1|
 end
 
 When /^I visit the edit user network page$/ do
-  #visit edit_user_network_path(@user.id)
   visit(edit_user_network_path(@user.id))
 end
 
