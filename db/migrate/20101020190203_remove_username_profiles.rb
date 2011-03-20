@@ -4,5 +4,6 @@ class RemoveUsernameProfiles < ActiveRecord::Migration
   end
 
   def self.down
+    add_column :user_profiles, :username, :string
   end
 end
