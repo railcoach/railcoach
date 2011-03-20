@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(:version => 20110302223720) do
     t.datetime "updated_at"
     t.string   "gender"
     t.string   "title"
-    t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
   end

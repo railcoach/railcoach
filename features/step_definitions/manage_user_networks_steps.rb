@@ -1,14 +1,14 @@
-include Devise::TestHelpers
+#include Devise::TestHelpers
 
 Given /^I am logged in$/ do
   pending "Should include login"
   @user = User.create!(:email => "flippo@henkiespenk.nl", :password => "test123", :password_confirmation => "test123")
 end
 
-Then /^I should see a list of connectable networks$/ do
+Then /^I should see a list of connectable networks within a div with id "([^"]*)"$/ do |selector|
   @user.get_connectable_networks.each do |network|
-    within ('#connectableNetworks') do
-      page.should contain(network)
+    within "##{selector}" do |content|
+      content.should contain(network)
     end
   end
 end
@@ -24,11 +24,11 @@ When /^I visit the edit user network page$/ do
   visit(edit_user_network_path(@user.id))
 end
 
-Then /^I should see a list of "([^"]*)" connected networks$/ do |arg1|
+Then /^I should see a list of "([^"]*)" connected networks within a div with id "([^"]*)"$/ do |networks, selector|
   # Should be cleaned up
-  @user.get_connect_networks.each do |network|
-    within ('#connectedNetworks') do
-      page.should contain(network)
+  @user.get_connected_networks.each do |network|
+    within "##{selector}" do |content|
+      content.should contain(network)
     end
   end
 end
@@ -42,7 +42,7 @@ end
 
 Then /^the new "([^"]*)" should be added to my networks$/ do |network|
   visit edit_user_network_path(@user.id)
-  within("connectableNetworks") do
+  within("#connectableNetworks") do
     page.should contain(network)
   end
 end

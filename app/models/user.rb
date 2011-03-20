@@ -85,4 +85,14 @@ class User < ActiveRecord::Base
       token.provider == 'open_id' ? token.uid.match(/\.(\w+)\./)[1] : token.provider
     end
   end
+  
+  def get_connectable_networks
+    @connectable_networks = []
+    ['facebook', 'google', 'openid'].each do |network| # TODO get list of networks from config file
+      if !self.get_connected_networks.include?(network)
+        @connectable_networks << network
+      end
+    end 
+    return @connectable_networks
+  end
 end

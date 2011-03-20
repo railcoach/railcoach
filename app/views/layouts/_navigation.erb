@@ -34,15 +34,15 @@
           </ul>
         </li>
         <li<%= " class='opened'" if @nav == 'Members' %>>
-          <%= link_to('Members', "#") %>
+          <%= link_to 'Members', home_users_path %>
           <ul class="columns-<%= user_signed_in? ? '2' : '1' %>">
             <li class="column">
               <h1>Active members</h1>
               <ul>
-                <li><%= link_to('Featured', "#") %></li>
-                <li><%= link_to 'All by name', "#" %></li>
+                <li><%= link_to 'Featured', home_users_path %></li>
+                <li><%= link_to 'All by name', users_path %></li>
                 <% if user_signed_in? %>
-                  <li><%= link_to 'My profile', '#' %></li>
+                  <li><%= link_to 'My profile', user_path(current_user.id) %></li>
                 <% end %>
               </ul>
             </li>

@@ -8,16 +8,16 @@ Dynamic::Application.routes.draw do
     resources :roles
   end
 
-  #match 'user/home' => 'users#home', :as => :home_users
+  resources :users
+  match 'user/home' => 'users#home', :as => :home_users
   namespace :user do
     resources :profiles
     resources :networks
   end
 
+  resource :activations
 
   get "static/home"
-  get "static/projects"
-  get "static/members"
   get "static/news"
   get "static/about"
 
