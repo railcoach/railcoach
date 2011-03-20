@@ -3,12 +3,12 @@ class UsersController < ApplicationController
 
   def home
     @random_users = User.find(:all, :include => :profile).shuffle.first(12)
-    render :layout => 'exhibition' unless @current_user.present?
+    render :layout => 'exhibition' unless user_signed_in?
   end
 
   # GET /users
   def index
-    @users = User.all.sort_by { |user| user.username }
+    @users = User.all.sort_by { |user| user.profile.fullname }
   end
 
   # GET /users/1
