@@ -10,9 +10,6 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    
-    when /edit user network page/
-      edit_user_network_path @user 
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

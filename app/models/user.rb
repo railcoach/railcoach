@@ -87,12 +87,6 @@ class User < ActiveRecord::Base
   end
   
   def get_connectable_networks
-    @connectable_networks = []
-    ['facebook', 'google', 'openid'].each do |network| # TODO get list of networks from config file
-      if !self.get_connected_networks.include?(network)
-        @connectable_networks << network
-      end
-    end 
-    return @connectable_networks
+    ['facebook', 'google', 'openid', 'github'] - get_connected_networks
   end
 end

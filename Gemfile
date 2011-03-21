@@ -21,35 +21,14 @@ gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 
 group :test, :development do
-  gem "rspec-rails", ">= 2.0.1"
-  gem "autotest"
+  gem "rspec-rails", ">= 2.0.1" # Controller / Model tests
+  gem "autotest" # Automatic testing
   gem "faker"
-  gem "machinist"
-  gem "rcov"
-  gem 'rails-erd'
-  gem 'cucumber-rails'
-  gem 'selenium-client'
-  gem 'capybara'
+  gem "machinist" # Mocks
+  gem "rcov" # Code coverage tool
+  gem 'rails-erd' #
+  gem 'cucumber-rails' # Acceptance/integration tests
+  gem 'selenium-client' # Javascript driver for cucumber / capybara
+  gem 'capybara' # Engine for testing with cucumber
   gem 'database_cleaner'
 end
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri', '1.4.1'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for certain environments:
-# gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end

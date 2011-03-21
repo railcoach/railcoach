@@ -1,15 +1,18 @@
 #include Devise::TestHelpers
 
 Given /^I am logged in$/ do
-  pending "Should include login"
   @user = User.create!(:email => "flippo@henkiespenk.nl", :password => "test123", :password_confirmation => "test123")
+  visit new_user_session_path
+  within("form#user_new") do
+    fill_in 'user_email', :with => @user.email
+    fill_in 'user_password', :with => "test123"
+    click_button 'Sign in'
+  end
 end
 
-Then /^I should see a list of connectable networks within a div with id "([^"]*)"$/ do |selector|
+Then /^I should see a list of connectable networks$/ do
   @user.get_connectable_networks.each do |network|
-    within "##{selector}" do |content|
-      content.should contain(network)
-    end
+    page.should have_selector('div#connectableNetwork', network)
   end
 end
 
@@ -24,10 +27,10 @@ When /^I visit the edit user network page$/ do
   visit(edit_user_network_path(@user.id))
 end
 
-Then /^I should see a list of "([^"]*)" connected networks within a div with id "([^"]*)"$/ do |networks, selector|
+Then /^I should see a list of "([^"]*)" connected networks$/ do |networks|
   # Should be cleaned up
   @user.get_connected_networks.each do |network|
-    within "##{selector}" do |content|
+    within "#connectedNetworks" do |content|
       content.should contain(network)
     end
   end
@@ -42,7 +45,7 @@ end
 
 Then /^the new "([^"]*)" should be added to my networks$/ do |network|
   visit edit_user_network_path(@user.id)
-  within("#connectableNetworks") do
-    page.should contain(network)
+  within("#connectableNetworks") do |content|
+    content.should contain(network)
   end
 end
