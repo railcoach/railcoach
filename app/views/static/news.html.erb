@@ -1,10 +1,29 @@
-<div class="row">
-  <div class="column col1-1">
-    <div class="gridSpacer">
-      <h1>What is happening in the <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
+<% content_for :exhibition do %>
+  <div class="articleContainer">
+    <div class="spacer">
+      <div class="description">
+        <article>
+          <h1>What's up at the <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
+          <div class="column">
+            <p>text</p>
+          </div>
+          <div class="column">
+            <p>text</p>
+          </div>
+        </article>
+      </div>
+      <%= render :partial => 'layouts/authentication_widget' %>
+      <div class="break"></div>
     </div>
   </div>
-</div>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'News', '#' %></li>
+  </ul>
+<% end %>
+
 <div class="row">
   <div class="column col2-3">
     <div class="gridSpacer block blockSpacer">
