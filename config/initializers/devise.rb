@@ -141,7 +141,30 @@ Devise.setup do |config|
   # end
 
   # OmniAuth settings
+  #config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
+  #config.stretches = Rails.env.test? ? 1 : 10
   require 'openid/store/filesystem'
-  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
-  config.stretches = Rails.env.test? ? 1 : 10
+  config.omniauth :facebook, "147749211905466", "b682557c3bc08512d09ebc4b848d8d93"
+  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :domain => 'openid.net'
+  config.omniauth :github, "147749211905466", "b682557c3bc08512d09ebc4b848d8d93"
+  config.omniauth :google, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
+end
+
+# From the holden omniauth example
+require 'openid/store/nonce'
+require 'openid/store/interface'
+module OpenID
+  module Store
+    class Memcache < Interface
+      def use_nonce(server_url, timestamp, salt)
+        return false if (timestamp - Time.now.to_i).abs > Nonce.skew
+        ts = timestamp.to_s # base 10 seconds since epoch
+        nonce_key = key_prefix + 'N' + server_url + '|' + ts + '|' + salt
+        result = @cache_client.add(nonce_key, '', expiry(Nonce.skew + 5))
+
+        return result #== true (edited 10/25/10)
+        #return !!(result =~ /^STORED/)
+      end
+    end
+  end
 end

@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 
+
 group :test, :development do
   gem "rspec-rails", ">= 2.0.1" # Controller / Model tests
   gem "autotest" # Automatic testing

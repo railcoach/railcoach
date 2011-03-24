@@ -11,8 +11,8 @@ Given /^I am logged in$/ do
 end
 
 Then /^I should see a list of connectable networks$/ do
-  @user.get_connectable_networks.each do |network|
-    page.should have_selector('div#connectableNetwork', network)
+    @user.get_connectable_networks.each do |network|
+      page.should have_selector("#connectableNetworks li", :text => network)
   end
 end
 
@@ -30,22 +30,19 @@ end
 Then /^I should see a list of "([^"]*)" connected networks$/ do |networks|
   # Should be cleaned up
   @user.get_connected_networks.each do |network|
-    within "#connectedNetworks" do |content|
-      content.should contain(network)
-    end
+    page.should have_selector("#connectedNetworks li", :text => network)
   end
 end
 
 When /^I click the add network link for "([^"]*)"$/ do |network|
   within("#connectableNetwork_#{network}") do
-    click_link 'Connect'
+    click_link 'a.connectNetwork'
   end
   @user.user_tokens << UserToken.new(:provider => network)
 end
 
 Then /^the new "([^"]*)" should be added to my networks$/ do |network|
   visit edit_user_network_path(@user.id)
-  within("#connectableNetworks") do |content|
-    content.should contain(network)
-  end
+  page.should have_selector("#connectedNetworks li", :text => network)
+  page.should_not have_selector("connectableNetworks li", :text => network)
 end

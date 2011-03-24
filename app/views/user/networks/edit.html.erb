@@ -1,17 +1,20 @@
 <%# TODO: Needs cleanup, methods to controllers %>
 
+<div id="connectedNetworks">
 <h2>Networks you are connected to</h2>
-<ul id="connectedNetworks">
+<ul>
 <% @connected_networks.each do |network|%>
-  <%= network %>
+  <li id="connectedNetwork_<%=network%>"><%= network %></li>
 <% end %>
 </ul>
 
+<div id="connectableNetworks">
 <h2>Networks you can connect</h2>
-<ul id="connectableNetworks">
+<ul>
 <% @connectable_networks.each do |network|%>
 <li>
- <a href=""><%= network %></a>
+<li id="connectableNetwork_<%=network%>"><%= link_to network, user_auth_helper_path(network), :class => "networkConnect" %></li>
 </li>
 <% end %>
 </ul>
+</div>
