@@ -3,7 +3,7 @@
     <div class="spacer">
       <div class="description">
         <article>
-          <h1>Projects of <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
+          <h1>What does the <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %> do?</h1>
           <div class="column">
             <p><em>Everything is a project, even this.</em> Scott Berkun</p>
             <p>For anything we do we create projects. Projects are a way for us to work together on anything. Code on this website, sit together and talk, come together and go for a walk. All of these things require us to set a goal, plan, communicate and do it. Basically this is a what project is! Goal, time, document and execution.</p>
@@ -26,14 +26,6 @@
     <li><%= link_to image_tag('transparent.gif') + 'Projects', '#' %></li>
   </ul>
 <% end %>
-
-<div class="row">
-  <div class="column col1-1">
-    <div class="gridSpacer">
-      <h1>Projects of <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
-    </div>
-  </div>
-</div>
 
 <div class="row">
   <% @random_projects.each do |project| %>

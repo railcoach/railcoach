@@ -1,2 +1,2 @@
-# Initializer to include monkeypatches
-require 'monkeypatches/hash'
+# recursive_find_by_key
+require_relative '../../lib/monkeypatches/hash.rb'

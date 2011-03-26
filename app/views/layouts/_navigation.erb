@@ -61,6 +61,6 @@
         <li<%= " class='opened'" if @nav == 'About' %>><%= link_to 'About', '/static/about' %></li>
       </ul>
     </nav>
-    <img src="/images/logo.png" alt=".projectlodge" class="logo" />
+    <%= link_to image_tag('logo.png', :class => 'logo'), '/static/home'  %>
   </div>
 </div>
