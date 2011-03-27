@@ -1,16 +1,14 @@
 <% unless user_signed_in? %>
 <div class="authenticationWidget">
-  <ul>
-    <li><%= link_to 'Sign in', '#', :class => 'current' %></li>
-    <li><%= link_to 'Register', '#' %></li>
-  </ul>
   <div class="block">
-    <%= render :partial => 'users/shared/login_box' %>
-    <h2>Come and join in.</h2>
-    <p>Create a new account</p>
-    <p>Use your:</p>
-    <p><%= link_to 'Google account', user_auth_helper_path(:google) %></p>
-    <p>facebook account</p>
+    <h2>Pick a network to login:</h2>
+    <ul class="networks">
+      <% [:google, :facebook, :github, :openid].each do |network| %>
+        <li><%= link_to image_tag("networks/#{network.to_s}.png", :title => network.to_s), user_auth_helper_path(network) %></li>
+      <% end -%>
+    </ul>
+    <div class="break"></div>
+    <p>Logging in, <a href="#">do you want to know more?</a></p>
   </div>
 </div>
 <% end -%>

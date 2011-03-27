@@ -1,17 +1,35 @@
-<h2>Sign in</h2>
+<div class="row">
+  <div class="column col1-6">&nbsp;</div>
+  <div class="column col1-3">
+    <div class="gridSpacer">
+      <h2>Sign in</h2>
+      <%= render :partial => "users/shared/links" %>
+      
+      <% if Rails.env.development? %>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+          <p><%= f.label :email %><br />
+          <%= f.text_field :email %></p>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+          <p><%= f.label :password %><br />
+          <%= f.password_field :password %></p>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+          <% if devise_mapping.rememberable? -%>
+            <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+          <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
+          <p><%= f.submit "Sign in" %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="column col1-3">
+    <div class="gridSpacer block blockSpacer">
+      <h2>joining?</h2>
+      <p>Just log in for the first time. An account will be created for you and you will be able to apply for a membership.</p>
+      <p>We do not have our authentication service. You can use Facebook, Github, facebook or openid. If you wan to create an independent account go to <a href="http://openid.net/">openid.net</a> to create an account.</p>
+    </div>
+  </div>
+  <div class="column col1-6">&nbsp;</div>
+</div>
+<div class="break"></div>
 
-  <p><%= f.submit "Sign in" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>

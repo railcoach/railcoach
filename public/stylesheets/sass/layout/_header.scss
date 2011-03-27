@@ -1,4 +1,11 @@
 .exhibition header {
+    a {
+        color: #FFFFFF;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     .header {
         position: relative;
         top: auto;
@@ -25,7 +32,7 @@
         color: #FFFFFF;
         font-size: 12px;
         line-height: 20px;
-        min-height: 275px;
+        min-height: 265px;
 
         & > .spacer {
             position: relative;
@@ -69,57 +76,29 @@
         }
 
         .authenticationWidget {
-            margin: 0px 20px 0px 650px;
-            position: relative;
-            ul {
-                position: absolute;
-                top: 20px;
-                z-index: 100;
+            margin-right: 20px;
+            float: right;
+            width: 310px;
+            ul.networks {
                 li {
                     float: left;
                     a {
-                        height: 30px;
-                        margin-right: 10px;
                         color: #FFFFFF;
-                        line-height: 30px;
-                        padding: 0px 16px;
                         display: block;
                         text-decoration: none;
-                        &.current {
-                            padding: 0px 15px;
-                            background-color: #161616;
-                            border: {
-                                color: #444444;
-                                style: solid;
-                                width: 1px 1px 0px 1px;
-                            }
-                            &:hover {
-                                height: inherit;
-                                background-color: #161616;
-                                cursor: default;
-                            }
-                        }
+                        opacity: 0.5;
+                        padding: 5px 10px;
                         &:hover {
-                            padding: 0px 15px;
-                            background-color: rgba(0, 0, 0, 0.5);
-                            height: 29px;
-                            border: {
-                                color: #444444;
-                                style: solid;
-                                width: 1px 1px 0px 1px;
-                            }
+                            opacity: 1.0;
                         }
                     }
                 }
+                margin-bottom: 20px;
             }
             .block {
-                position: absolute;
-                z-index: 90;
-                width: 278px;
-                top: 50px;
                 background-color: #333333;
                 border: 1px solid #444444;
-                padding: 15px;
+                padding: 14px;
                 @include shadow-inset(10px, 200px, rgba(0, 0, 0, 0.8));
             }
         }
