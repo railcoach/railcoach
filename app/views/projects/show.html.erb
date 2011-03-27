@@ -29,16 +29,7 @@
       <h3>Members</h3>
       <%= link_to 'become a member', request_membership_project_path(:project_id => @project.id), :method => :put %>
       <% if @project.memberships %>
-        <ul>
-          <% @project.memberships.each do |membership|
-            role_line = ''
-            membership.roles.each do |role|
-              role_line << role.name
-              role_line << ', ' unless role == membership.roles.last
-            end %>
-            <li><%= link_to membership.user.profile.fullname, membership.user %> (<%= role_line %>)</li>
-          <% end %>
-        </ul>
+        <%= render :partial => 'member_list', :locals => {:memberships => @project.memberships} %>
       <% end %>
     </div>
   </div>
