@@ -32,6 +32,14 @@
         <%= render :partial => 'member_list', :locals => {:memberships => @project.accepted_memberships} %>
       <% end %>
     </div>
+
+    <div class="gridSpacer block blockSpacer">
+      <h3>Pending members</h3>
+      <% if @project.pending_memberships %>
+        <%= render :partial => 'member_list', :locals => {:memberships => @project.pending_memberships} %>
+      <% end %>
+    </div>
+
   </div>
   <div class="break"></div>
 </div>
