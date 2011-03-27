@@ -7,5 +7,4 @@
   id: <%= index + 1 %>
   email: <%= name + "@projectlodge.org" %>
   encrypted_password: "$2a$10$ZXncsaxRLWmuGztnZCoSle00WIG/QNTgNE8RqSjoevjxuvyQy08uK"
-  password_salt: "$2a$10$ZXncsaxRLWmuGztnZCoSle"
 <% end %>
