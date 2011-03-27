@@ -28,8 +28,8 @@
     <div class="gridSpacer block blockSpacer">
       <h3>Members</h3>
       <%= link_to 'become a member', request_membership_project_path(:project_id => @project.id), :method => :put %>
-      <% if @project.memberships %>
-        <%= render :partial => 'member_list', :locals => {:memberships => @project.memberships} %>
+      <% if @project.accepted_memberships %>
+        <%= render :partial => 'member_list', :locals => {:memberships => @project.accepted_memberships} %>
       <% end %>
     </div>
   </div>
