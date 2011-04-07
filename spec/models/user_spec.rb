@@ -23,7 +23,6 @@ describe User do
       @user.password_confirmation = 'abcdefg'
       @user.profile.first_name = 'Edsger'
       @user.profile.last_name = 'Dijkstra'
-      @user.profile.email = 'edsgerd@example.com'
       @user.profile.title = 'Genius'
       @user.profile.gender = 'm'
     end
