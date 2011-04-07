@@ -6,6 +6,10 @@ describe User do
       @user = User.new
     end
 
+    it "should have a profile" do
+      @user.profile.should_not be_nil
+    end
+
     it "should not save example" do
       @user.should_not be_valid
     end
@@ -14,7 +18,6 @@ describe User do
   context "when fully created" do
     before(:each) do
       @user = User.new
-      @user.build_profile
       @user.email = 'edsgerd@example.com'
       @user.password = 'abcdefg'
       @user.password_confirmation = 'abcdefg'

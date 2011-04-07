@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   #validates :password_confirmation, :presence => true
   #validates :crypted_password, :presence => true
 
+  after_initialize :create_defaults
+
   #def activate!
   #  self.active = true
   #  save
@@ -89,4 +91,11 @@ class User < ActiveRecord::Base
   def get_connectable_networks
     ['facebook', 'google', 'openid', 'github'] - get_connected_networks
   end
+
+private
+
+  def create_defaults
+    self.build_profile
+  end
+
 end

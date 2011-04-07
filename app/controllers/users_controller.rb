@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(params[:user])
-    @user.build_profile
     if @user.save
       redirect_to(@user, :notice => 'User was successfully created.')
     else
