@@ -4,7 +4,7 @@
     <h2>Pick a network to login:</h2>
     <ul class="networks">
       <% [:google, :facebook, :github, :openid].each do |network| %>
-        <li><%= link_to image_tag("networks/#{network.to_s}.png", :title => network.to_s), user_auth_helper_path(network) %></li>
+        <li><%= link_to image_tag("networks/light_#{network.to_s}.png", :title => network.to_s), user_auth_helper_path(network) %></li>
       <% end -%>
     </ul>
     <div class="break"></div>

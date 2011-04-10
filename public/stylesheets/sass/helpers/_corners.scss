@@ -9,3 +9,15 @@
     -moz-border-radius: 0px 0px $size $size;
     -webkit-border-radius: 0px 0px $size $size;
 }
+
+@mixin corner-round-left($size) {
+    border-radius: $size 0px 0px $size;
+    -moz-border-radius: $size 0px 0px $size;
+    -webkit-border-radius: $size 0px 0px $size;
+}
+
+@mixin corner-round-right($size) {
+    border-radius: 0px $size $size 0px;
+    -moz-border-radius: 0px $size $size 0px;
+    -webkit-border-radius: 0px $size $size 0px;
+}

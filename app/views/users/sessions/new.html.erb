@@ -1,32 +1,49 @@
 <div class="row">
-  <div class="column col1-6">&nbsp;</div>
-  <div class="column col1-3">
+  <div class="column col<%= Rails.env.development? ? '1': '2' %>-3">
     <div class="gridSpacer">
       <h2>Sign in</h2>
       <%= render :partial => "users/shared/links" %>
-      
-      <% if Rails.env.development? %>
-        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-          <p><%= f.label :email %><br />
-          <%= f.text_field :email %></p>
-
-          <p><%= f.label :password %><br />
-          <%= f.password_field :password %></p>
-
-          <% if devise_mapping.rememberable? -%>
-            <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-          <% end -%>
-
-          <p><%= f.submit "Sign in" %></p>
-        <% end %>
-      <% end %>
+      <div class="break"></div>
     </div>
   </div>
+  <%- if Rails.env.development? %>
+    <div class="column col1-3">
+      <div class="gridspacer formBlock">
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+          <p class="formRow">
+            <label for="user_email">email</label>
+            <%= f.text_field :email %>
+          </p>
+          <p class="formRow">
+            <label for="user_password">password</label>
+            <%= f.password_field :password %>
+          </p>
+          <% if devise_mapping.rememberable? -%>
+            <p class="formRow">
+              <label for="user_remember_me">remember me</label>
+              <span class="inputBlock"><%= f.check_box :remember_me %></span>
+            </p>
+          <% end -%>
+          <p class="formRow right">
+            <%= f.submit "Sign in" %>
+          </p>
+        <% end %>
+        <p>
+          <%- if devise_mapping.registerable? %>
+            <%= link_to "No account yet? Sign up!", new_registration_path(resource_name) %> |
+          <% end -%>
+          <%- if devise_mapping.recoverable? %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+          <% end -%>
+        </p>
+      </div>
+    </div>
+  <% end -%>
   <div class="column col1-3">
     <div class="gridSpacer block blockSpacer">
       <h2>joining?</h2>
       <p>Just log in for the first time. An account will be created for you and you will be able to apply for a membership.</p>
-      <p>We do not have our authentication service. You can use Facebook, Github, facebook or openid. If you wan to create an independent account go to <a href="http://openid.net/">openid.net</a> to create an account.</p>
+      <p>We do not have our authentication service. You can use Facebook, Github, Google or OpenID. If you want to create an independent account go to <a href="http://openid.net/">OpenID.net</a> to create an account.</p>
     </div>
   </div>
   <div class="column col1-6">&nbsp;</div>

@@ -1,0 +1,48 @@
+.formBlock {
+    .formRow {
+        height: 20px;
+        margin-top: 10px;
+        &.right {
+            text-align: right;
+        }
+    }
+    label {
+        display: block;
+        float: left;
+        width: 30%;
+        text-align: right;
+        padding-right: 3%;
+        height: 20px;
+        background-color: #DDDDDD;
+        @include corner-round-left(10px);
+    }
+    input {
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+    input[type="text"], input[type="password"], .inputBlock {
+        display: block;
+        margin-left: 33%;
+        text-align: left;
+        width: 67%;
+        height: 20px;
+        @include corner-round-right(10px);
+        background-color: #FFFFFF;
+    }
+    .inputBlock {
+        width: 64%;
+        padding-left: 3%;
+    }
+    input[type="submit"] {
+        height: 18px;
+        line-height: 18px;
+        font-weight: bold;
+        padding: 0px 10px;
+        background-color: #333333;
+        color: #FFFFFF;
+        border: 1px solid #000000;
+        @include corner-round-all(10px);
+        font-size: 11px;
+    }
+}
