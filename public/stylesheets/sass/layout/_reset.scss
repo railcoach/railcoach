@@ -83,6 +83,10 @@ p {
     margin-top: 20px;
 }
 
+p:first-child {
+    margin-top: 0px;
+}
+
 .break {
     clear: both;
 }
