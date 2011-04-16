@@ -15,7 +15,7 @@
   <% unless @connectable_networks.empty? %>
     <ul>
       <% @connectable_networks.each do |network| %>
-      <li id="connectableNetwork_<%=network%>"><%= link_to network, user_auth_helper_path(network), :class => "networkConnect" %></li>
+      <li id="connectableNetwork_<%=network%>"><%= link_to network, user_auth_helper_path(network), :id => "networkConnect_#{network}" %></li>
       <% end %>
     </ul>
   <% end %>

@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="column col<%= Rails.env.development? ? '1': '2' %>-3">
+  <div class="column col<%= Rails.env.production? ? '2': '1' %>-3">
     <div class="gridSpacer">
       <h2>Sign in</h2>
       <%= render :partial => "users/shared/links" %>
       <div class="break"></div>
     </div>
   </div>
-  <%- if Rails.env.development? %>
+  <%- unless Rails.env.production? %>
     <div class="column col1-3">
       <div class="gridspacer formBlock">
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
