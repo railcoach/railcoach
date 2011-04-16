@@ -1,11 +1,5 @@
 <ul>
-  <% memberships.each do |membership|
-    puts membership.inspect
-    role_line = ''
-    membership.roles.each do |role|
-      role_line << role.name
-      role_line << ', ' unless role == membership.roles.last
-    end %>
-    <li><%= link_to membership.user.profile.fullname, membership.user %> (<%= role_line %>)</li>
+  <% memberships.each do |membership| %>
+    <li><%= link_to membership.user.profile.fullname, membership.user %> (<%= role_line(membership) %>)</li>
   <% end %>
 </ul>
