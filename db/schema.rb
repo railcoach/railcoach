@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20110416161924) do
 
   create_table "roles", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "thing_id"
-    t.string   "thing_type"
+    t.integer  "rollable_id"
+    t.string   "rollable_type"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
