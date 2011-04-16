@@ -3,15 +3,15 @@ Dynamic::Application.routes.draw do
 
   resources :projects do
     member do
-      post 'request_membership', :as => 'request_membership_project'
-      put 'invite_member', :as => 'invite_member_project'
+      post 'request_membership', :as => 'request_membership'
+      put 'invite_member', :as => 'invite_member'
     end
     collection do
-      get 'home', :as => 'home_projects'
+      get 'home'
     end
-    scope '/memberships' do
-      put ':membership_id/accept_invitation' => 'project/memberships#accept_invitation', :as => :accept_invitation_project_membership
-      put ':membership_id/accept_member' => 'project/memberships#accept_member', :as => :accept_member_project_membership
+    namespace 'memberships' do
+      put ':membership_id/accept_invitation' => 'project/memberships#accept_invitation', :as => 'accept_invitation'
+      put ':membership_id/accept_member' => 'project/memberships#accept_member', :as => 'accept_member'
     end
   end
 
