@@ -15,9 +15,6 @@ Feature: Manage user networks
         When I visit the edit user network page
         Then I should see a list of "1" connected networks
 
-    @javascript
-    @pause
-    @wip
     Scenario: Add a network to the mix
         Given I am logged in
         When I visit the edit user network page
