@@ -17,7 +17,7 @@ Dynamic::Application.routes.draw do
 
   resources :users do
     collection do
-      get 'users/home' => 'users#home', :as => 'home_users'
+      get 'home' => 'users#home'
     end
   end
 
