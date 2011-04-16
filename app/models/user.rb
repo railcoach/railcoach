@@ -97,6 +97,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def respond_to?(method)
+    return true if method =~ /^is(\w+)_(?:on|of)\?$/
+    super
+  end
+
 private
 
   def create_defaults
