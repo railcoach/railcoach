@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  has_many :roles, :as => 'object'
+
   has_many :memberships, :class_name => "Project::Membership"
   has_many :users, :through => :memberships
 
@@ -16,5 +18,9 @@ class Project < ActiveRecord::Base
 
   def invite_member(user)
     Project::Membership.create_invitation(self, user)
+  end
+
+  def owners
+    self.memberships.joins(:roles).where("project_roles.name = ?", "owner").collect(&:user)
   end
 end
