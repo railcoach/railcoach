@@ -9,9 +9,11 @@ Dynamic::Application.routes.draw do
     collection do
       get 'home'
     end
-    put ':membership_id/accept_invitation' => 'project/memberships#accept_invitation', :as => 'accept_invitation'
-    put ':membership_id/accept_member' => 'project/memberships#accept_member', :as => 'accept_member'
-    put ':membership_id/deny' => 'project/memberships#deny', :as => 'deny'
+    resources :memberships do
+      put ':membership_id/accept_invitation' => 'project/memberships#accept_invitation', :as => 'accept_invitation'
+      put ':membership_id/accept_member' => 'project/memberships#accept_member', :as => 'accept_member'
+      put ':membership_id/deny' => 'project/memberships#deny', :as => 'deny'
+    end
   end
 
   resources :users do
