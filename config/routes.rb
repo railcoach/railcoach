@@ -7,6 +7,7 @@ Dynamic::Application.routes.draw do
   match 'project/:project_id/invite_member' => 'projects#invite_member', :via => :put, :as => :invite_member_project
   match 'project/membership/:membership_id/accept_invitation' => 'project/memberships#accept_invitation', :via => :put, :as => :accept_invitation_project_membership
   match 'project/membership/:membership_id/accept_member' => 'project/memberships#accept_member', :via => :put, :as => :accept_member_project_membership
+  match 'project/membership/:membership_id/deny' => 'project/memberships#deny', :via => :put, :as => :deny_project_membership
 
   resources :users
   match 'user/index' => 'users#index'
