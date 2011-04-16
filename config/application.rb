@@ -39,6 +39,7 @@ module Dynamic
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation]
 
+    config.allowed_networks = {}
     config.generators do |g|
       g.orm :active_record
       g.test_framework :rspec
