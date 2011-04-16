@@ -1,5 +1,10 @@
 <ul>
   <% memberships.each do |membership| %>
-    <li><%= link_to membership.user.profile.fullname, membership.user %> (<%= role_line(membership) %>)</li>
+    <li><%= link_to membership.user.profile.fullname, membership.user %>
+      (<%= role_line(membership) %>)
+      <% if membership.join_request? %>
+        <%= link_to 'Accept', accept_member_project_membership_path(membership), :method => :put %>
+      <% end  %>
+    </li>
   <% end %>
 </ul>
