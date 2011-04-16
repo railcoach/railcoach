@@ -80,20 +80,14 @@ class User < ActiveRecord::Base
   end
 
   def method_missing(method, *args)
-    if method =~ /^is_(\w+)_(?:on|of)_([\w_]+)$/
+    if method =~ /^is_(\w+)_(?:on|of)\?$/
       role = $1
-      object = $2
       that_thing = args.first
-      
+      object = that_thing.class.to_s
       self.class_eval do
         define_method(method) do |thing|
-          self.roles.where("object_type = ? AND name = ?", object, role).inject(false) do |v,o|
-            puts o
-            if o.respond_to?(:object)
-              v ||= (o.send(:object) == thing)
-            else
-              v
-            end
+          self.roles.where("rollable_type = ? AND name = ?", object, role).inject(false) do |v,o|
+            v ||= (o.rollable == thing)
           end
         end
       end
