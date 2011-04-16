@@ -23,22 +23,8 @@ class User < ActiveRecord::Base
   #validates :password_confirmation, :presence => true
   #validates :crypted_password, :presence => true
 
-  after_initialize :create_defaults
+  after_create :create_defaults
 
-  #def activate!
-  #  self.active = true
-  #  save
-  #end
-
-  #def deliver_activation_instructions!
-  #  reset_perishable_token!
-  #  Notifier.deliver_activation_instructions(self)
-  #end
-
-  #def deliver_welcome!
-  #  reset_perishable_token!
-  #  Notifier.deliver_welcome(self)
-  #end
 
   # Checks for string role on integer(id) project
   # Gets all memberships where project_id = project, gets rolls associated and maps the names of those in an array, then checks whether role is included in the array.
@@ -95,7 +81,7 @@ class User < ActiveRecord::Base
 private
 
   def create_defaults
-    self.build_profile
+    self.profile ||= Profile.new(self)
   end
 
 end
