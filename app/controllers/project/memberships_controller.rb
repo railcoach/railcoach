@@ -14,4 +14,12 @@ class Project::MembershipsController < ApplicationController
 
     redirect_to :back
   end
+
+  #PUT deny with membership_id
+  def deny
+    membership = Project::Membership.find(params[:membership_id])
+    membership.destroy
+
+    redirect_to :back
+  end
 end
