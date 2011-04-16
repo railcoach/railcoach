@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
 
   # PUT /project/1/request_membership
   def request_membership
-    project = Project.find(params[:project_id])
+    project = Project.find(params[:id])
     project.request_membership(current_user)
 
     redirect_to :back
@@ -77,7 +77,7 @@ class ProjectsController < ApplicationController
   # PUT /project/1/invite_member
   def invite_member
     user = User.find(params[:user_id])
-    project = Project.find(params[:project_id])
+    project = Project.find(params[:id])
     project.invite_member(user)
 
     redirect_to :back
