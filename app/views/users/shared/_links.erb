@@ -20,8 +20,9 @@
 
 <%- if devise_mapping.omniauthable? %>
   <ul class="networks">
+    <% color ||= 'dark' %>
     <% [:google, :facebook, :github, :openid].each do |network| %>
-      <li><%= link_to image_tag("networks/dark_#{network.to_s}.png", :title => network.to_s), user_auth_helper_path(network) %></li>
+      <li><%= link_to image_tag("networks/#{color}_#{network.to_s}.png", :title => network.to_s), user_auth_helper_path(network) %></li>
     <% end -%>
   </ul>
 <% end -%>

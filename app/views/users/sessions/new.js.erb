@@ -1,0 +1,4 @@
+var content = '<%= escape_javascript(render :template => "users/shared/_links.erb", :locals => { :color => 'light'})%>';
+if(!$('.ui-dialog').length > 0) {
+  $(content).dialog({"width": 320, "title": "Choose your network", close: function(events,ui) { $(this).remove(); }});
+} 
