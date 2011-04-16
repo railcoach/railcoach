@@ -3,7 +3,7 @@ Dynamic::Application.routes.draw do
 
   resources :projects do
     member do
-      post 'request_membership/:user_id' => "projects#request_membership", :as => 'request_membership'
+      post 'request_membership' => "projects#request_membership", :as => 'request_membership'
       put 'invite_member/:user_id' => "projects#invite_member", :as => 'invite_member'
     end
     collection do
