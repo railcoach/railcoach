@@ -153,11 +153,11 @@ describe ProjectsController do
 
       it "should call Project.request_membership with user" do
         project.should_receive(:request_membership).with(current_user)
-        post :request_membership, :project_id => project.id
+        post :request_membership, :id => project.id, :user_id => current_user.id
       end
 
       it "should redirect to back" do
-        post :request_membership, :project_id => project.id
+        post :request_membership, :id => project.id, :user_id => current_user.id
         response.should redirect_to :back
       end
     end
@@ -175,11 +175,11 @@ describe ProjectsController do
 
     it "should call Project.invite_member with user and project" do
       project.should_receive(:invite_member).with(user)
-      post :invite_member, :user_id => user.id, :project_id => project.id
+      post :invite_member, :user_id => user.id, :id => project.id
     end
 
     it "should redirect to the project" do
-      post :invite_member, :user_id => user.id, :project_id => project.id
+      post :invite_member, :user_id => user.id, :id => project.id
       response.should redirect_to :back
     end
   end
