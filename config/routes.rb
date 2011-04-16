@@ -1,16 +1,25 @@
 Dynamic::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "user/omniauth_callbacks" }
 
-  resources :projects
-  match 'project/home' => 'projects#home', :as => :home_projects
-  match 'project/:project_id/request_membership' => 'projects#request_membership', :via => :put, :as => :request_membership_project
-  match 'project/:project_id/invite_member' => 'projects#invite_member', :via => :put, :as => :invite_member_project
-  match 'project/membership/:membership_id/accept_invitation' => 'project/memberships#accept_invitation', :via => :put, :as => :accept_invitation_project_membership
-  match 'project/membership/:membership_id/accept_member' => 'project/memberships#accept_member', :via => :put, :as => :accept_member_project_membership
+  resources :projects do
+    member do
+      post 'request_membership', :as => 'request_membership_project'
+      put 'invite_member', :as => 'invite_member_project'
+    end
+    collection do
+      get 'home', :as => 'home_projects'
+    end
+    scope '/memberships' do
+      put ':membership_id/accept_invitation' => 'project/memberships#accept_invitation', :as => :accept_invitation_project_membership
+      put ':membership_id/accept_member' => 'project/memberships#accept_member', :as => :accept_member_project_membership
+    end
+  end
 
-  resources :users
-  match 'user/index' => 'users#index'
-  match 'user/home' => 'users#home', :as => :home_users
+  resources :users do
+    collection do
+      get 'users/home' => 'users#home', :as => 'home_users'
+    end
+  end
 
   namespace :user do
     resources :profiles
