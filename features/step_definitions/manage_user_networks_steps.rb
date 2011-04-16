@@ -36,7 +36,7 @@ end
 
 When /^I click the add network link for "([^"]*)"$/ do |network|
   within("#connectableNetwork_#{network}") do
-    click_link 'a.connectNetwork'
+    click_link "networkConnect_#{network}"
   end
   @user.user_tokens << UserToken.new(:provider => network)
 end
@@ -45,4 +45,9 @@ Then /^the new "([^"]*)" should be added to my networks$/ do |network|
   visit edit_user_network_path(@user.id)
   page.should have_selector("#connectedNetworks li", :text => network)
   page.should_not have_selector("connectableNetworks li", :text => network)
+end
+
+AfterStep('@pause') do
+  print "Press Return to continue"
+  STDIN.getc
 end

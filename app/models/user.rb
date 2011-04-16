@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   #validates :password_confirmation, :presence => true
   #validates :crypted_password, :presence => true
 
-  after_initialize :create_defaults
+  after_create :create_defaults
 
 
   # Checks for string role on integer(id) project
@@ -81,7 +81,7 @@ class User < ActiveRecord::Base
 private
 
   def create_defaults
-    self.build_profile
+    self.profile ||= Profile.new(self)
   end
 
 end
