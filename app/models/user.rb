@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   #validates :password_confirmation, :presence => true
   #validates :crypted_password, :presence => true
 
-  after_create :create_defaults
+  after_initialize :create_defaults
 
 
   # Checks for string role on integer(id) project
