@@ -49,8 +49,15 @@ manuell:
   title: Back/Front end developer
   gender: m
 
-bertm:
+lennaertm:
   user_id: 8
+  first_name: Lennaert
+  last_name: Meijvogel
+  title: Developer
+  gender: m
+
+bertm:
+  user_id: 9
   first_name: Bert
   last_name: Meerman
   title: Back/Front end developer

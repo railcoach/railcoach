@@ -35,21 +35,16 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    if current_user
-      @project = Project.new(params[:project])
-      # TODO give the new membership an admin role within the project
-      @membership = Project::Membership.new(:project => @project, :user => current_user)
+    @project = Project.new(params[:project])
+    # TODO give the new membership an admin role within the project
+    @membership = Project::Membership.new(:project => @project, :user => current_user)
 
-      @membership.roles << Project::Role.find_by_name('owner')
-      # TODO use transaction
-      if @project.save and @membership.save
-        redirect_to(@project, :notice => 'Project was successfully created.')
-      else
-        render :action => "new"
-      end
+    @membership.roles << Project::Role.find_by_name('owner')
+    # TODO use transaction
+    if @project.save and @membership.save
+      redirect_to(@project, :notice => 'Project was successfully created.')
     else
-      # TODO add some redirect_to= logic to login procedure
-      redirect_to(login_path)
+      render :action => "new"
     end
   end
 
@@ -69,6 +64,23 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     redirect_to(projects_url)
+  end
+
+  # PUT /project/1/request_membership
+  def request_membership
+    project = Project.find(params[:project_id])
+    project.request_membership(current_user)
+
+    redirect_to :back
+  end
+
+  # PUT /project/1/invite_member
+  def invite_member
+    user = User.find(params[:user_id])
+    project = Project.find(params[:project_id])
+    project.invite_member(user)
+
+    redirect_to :back
   end
 
   private

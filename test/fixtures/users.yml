@@ -2,7 +2,7 @@
 
 # Timon
 # Password = 'test123'
-<% ["jasperf", "jooste", "timonv", "tobiv", "emanuelr", "roelando", "manuell", "bertm" ].each_with_index do |name, index| %>
+<% [ "jasperf", "jooste", "timonv", "tobiv", "emanuelr", "roelando", "manuell", "lennaertm", "bertm" ].each_with_index do |name,index| %>
 <%= name %>:
   id: <%= index + 1 %>
   email: <%= name + "@projectlodge.org" %>

@@ -137,16 +137,50 @@ describe ProjectsController do
         response.should redirect_to project_path(project)
       end
     end
+  end
 
-    context "when no user is logged on" do
+  describe "request_membership" do
+    let(:project) { mock_model(Project).as_null_object }
+
+    context "when a user is logged on" do
+      let(:current_user) { mock_model(User).as_null_object }
+
       before(:each) do
-        controller.stub(:current_user).and_return(false)
-        post :create
+        controller.stub(:current_user).and_return(current_user)
+        Project.stub(:find).with(project.id).and_return(project)
+        request.env["HTTP_REFERER"] = "http://example.com/"
       end
 
-      it "should redirect to the login page" do
-        response.should redirect_to login_path
+      it "should call Project.request_membership with user" do
+        project.should_receive(:request_membership).with(current_user)
+        post :request_membership, :project_id => project.id
       end
+
+      it "should redirect to back" do
+        post :request_membership, :project_id => project.id
+        response.should redirect_to :back
+      end
+    end
+  end
+
+  describe "invite_member" do
+    let(:project) { mock_model(Project).as_null_object }
+    let(:user) { mock_model(User).as_null_object }
+
+    before(:each) do
+      Project.stub(:find).with(project.id).and_return(project)
+      User.stub(:find).with(user.id).and_return(user)
+      request.env["HTTP_REFERER"] = "http://example.com/"
+    end
+
+    it "should call Project.invite_member with user and project" do
+      project.should_receive(:invite_member).with(user)
+      post :invite_member, :user_id => user.id, :project_id => project.id
+    end
+
+    it "should redirect to the project" do
+      post :invite_member, :user_id => user.id, :project_id => project.id
+      response.should redirect_to :back
     end
   end
 end

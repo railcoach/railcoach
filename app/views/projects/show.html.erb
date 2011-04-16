@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-  <div class="column col1-1">
+  <div class="column col3-4">
     <div class="gridSpacer block blockSpacer">
       <div class="blockTools">
         <%= link_to 'Edit', edit_project_path(@project) %> -
@@ -21,18 +21,25 @@
       </div>
       <article>
         <p><%= @project.description %></p>
-          <h2>Members</h2>
-          <ul>
-            <% if @project.users %>
-              <% @project.users.each do |user| %>
-                <li><%= link_to user.username, user %></li>
-              <% end %>
-            <% else %>
-              No one is working ont his project. too bad huh?
-            <% end %>
-          </ul>
       </article>
     </div>
+  </div>
+  <div class="column col1-4">
+    <div class="gridSpacer block blockSpacer">
+      <h3>Members</h3>
+      <%= link_to 'become a member', request_membership_project_path(:project_id => @project.id), :method => :put unless @project.users.include?(current_user) %>
+      <% if @project.accepted_memberships %>
+        <%= render :partial => 'member_list', :locals => {:memberships => @project.accepted_memberships} %>
+      <% end %>
+    </div>
+
+    <div class="gridSpacer block blockSpacer">
+      <h3>Pending members</h3>
+      <% if @project.pending_memberships %>
+        <%= render :partial => 'member_list', :locals => {:memberships => @project.pending_memberships} %>
+      <% end %>
+    </div>
+
   </div>
   <div class="break"></div>
 </div>

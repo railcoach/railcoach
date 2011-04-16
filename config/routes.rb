@@ -3,13 +3,15 @@ Dynamic::Application.routes.draw do
 
   resources :projects
   match 'project/home' => 'projects#home', :as => :home_projects
-  namespace :project do
-    resources :memberships
-    resources :roles
-  end
+  match 'project/:project_id/request_membership' => 'projects#request_membership', :via => :put, :as => :request_membership_project
+  match 'project/:project_id/invite_member' => 'projects#invite_member', :via => :put, :as => :invite_member_project
+  match 'project/membership/:membership_id/accept_invitation' => 'project/memberships#accept_invitation', :via => :put, :as => :accept_invitation_project_membership
+  match 'project/membership/:membership_id/accept_member' => 'project/memberships#accept_member', :via => :put, :as => :accept_member_project_membership
 
   resources :users
+  match 'user/index' => 'users#index'
   match 'user/home' => 'users#home', :as => :home_users
+
   namespace :user do
     resources :profiles
     resources :networks
