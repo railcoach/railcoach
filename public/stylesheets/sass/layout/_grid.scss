@@ -126,7 +126,11 @@
 
             .gridSpacer {
                 position: relative;
-                margin: 10px;
+                margin: 20px 10px 10px 10px;
+            }
+
+            .gridSpacer:first-child {
+                margin: 10px 10px 10px 10px;
             }
 
             .blockSpacer {
