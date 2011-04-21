@@ -25,8 +25,6 @@ describe ProjectsController do
       it "should redirect back to project show"
     end
 
-
-    it "should give response succes"
     describe "GET show" do
       context "when the project exists" do
         let(:project) { mock_model(Project).as_null_object }
