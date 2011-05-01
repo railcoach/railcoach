@@ -120,7 +120,7 @@
                 border: 1px solid #AAAAAA;
                 background-color: #DDDDEE;
                 background-color: rgba(255, 255, 255, 0.4);
-                @include corner-round-all(5px);
+                @include corner-round-all(3px);
                 @include shadow-outside(5px, 10px, rgba(0, 0, 0, 0.1));
             }
 
