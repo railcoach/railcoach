@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  include Rollable::Base
+
+  rollables Project, :roles =>  ["owner"]
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

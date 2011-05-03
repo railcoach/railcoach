@@ -28,9 +28,9 @@ class Ability
 
     #Projects
     can :manage, Project do |project|
-      project.owners.include?(user)
+      user.is_owner_of?(project)
     end
-    can :read, Project
 
+    can :read, :all
   end
 end
