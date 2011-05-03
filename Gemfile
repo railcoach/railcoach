@@ -1,7 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
+
+# Authorization semantics
 gem 'cancan'
+# Roles for authorization
+gem 'rollable'
 
 # Thin if webrick fucks up
 gem 'thin'

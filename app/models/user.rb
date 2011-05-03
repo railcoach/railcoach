@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :owned_projects, :class_name => "Project"
   has_many :user_tokens
-  has_many :roles
 
   #validates :username, :presence => true, :uniqueness => true
   #validates :profile, :presence => true
@@ -26,17 +25,6 @@ class User < ActiveRecord::Base
 
   after_initialize :create_defaults
 
-
-  # Checks for string role on integer(id) project
-  # Gets all memberships where project_id = project, gets rolls associated and maps the names of those in an array, then checks whether role is included in the array.
-  def has_role_on_project?(role, project)
-    membership = self.memberships.find_by_project_id(project)
-    unless membership.blank?
-      membership.roles.collect{ |r| r.name}.include?(role) if not membership.roles.empty?
-    else
-      false
-    end
-  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -77,29 +65,6 @@ class User < ActiveRecord::Base
   
   def get_connectable_networks
     ['facebook', 'google', 'openid', 'github'] - get_connected_networks
-  end
-
-  def method_missing(method, *args)
-    if method =~ /^is_(\w+)_(?:on|of)\?$/ # example: is_owner_of?( Project.first )
-      role = $1
-      that_thing = args.first
-      rollable_type = that_thing.class.to_s
-      self.class_eval do
-        define_method(method) do |thing|
-          self.roles.where("rollable_type = ? AND name = ?", rollable_type, role).inject(false) do |v,o|
-            v ||= (o.rollable == thing)
-          end
-        end
-      end
-      self.public_send(method, that_thing)
-    else
-      super
-    end
-  end
-
-  def respond_to?(method)
-    return true if method =~ /^is(\w+)_(?:on|of)\?$/
-    super
   end
 
 private
