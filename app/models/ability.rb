@@ -30,7 +30,6 @@ class Ability
     can :manage, Project do |project|
       user.is_owner_of?(project)
     end
-
     can :read, :all
   end
 end

@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :owned_projects, :class_name => "Project"
   has_many :user_tokens
+  has_many :roles
 
   #validates :username, :presence => true, :uniqueness => true
   #validates :profile, :presence => true
@@ -68,6 +69,29 @@ class User < ActiveRecord::Base
   
   def get_connectable_networks
     ['facebook', 'google', 'openid', 'github'] - get_connected_networks
+  end
+
+  def method_missing(method, *args)
+    if method =~ /^is_(\w+)_(?:on|of)\?$/ # example: is_owner_of?( Project.first )
+      role = $1
+      that_thing = args.first
+      rollable_type = that_thing.class.to_s
+      self.class_eval do
+        define_method(method) do |thing|
+          self.roles.where("rollable_type = ? AND name = ?", rollable_type, role).inject(false) do |v,o|
+            v ||= (o.rollable == thing)
+          end
+        end
+      end
+      self.public_send(method, that_thing)
+    else
+      super
+    end
+  end
+
+  def respond_to?(method)
+    return true if method =~ /^is(\w+)_(?:on|of)\?$/
+    super
   end
 
 private
