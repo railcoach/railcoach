@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships
   has_one :profile
-  has_many :owned_projects, :class_name => "Project"
+  #has_many :owned_projects, :class_name => "Project"
   has_many :user_tokens
   has_many :roles
 
@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     #self.name = omniauth['user_info']['name'] if name.blank?
     #self.nickname = omniauth['user_info']['nickname'] if nickname.blank?
 
-    unless omniauth['credentials'].blank?
+    if omniauth['credentials'].present?
       user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
       user_tokens.build(:provider => omniauth['provider'], 
                         :uid => omniauth['uid'],
