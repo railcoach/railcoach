@@ -9,7 +9,7 @@ gem 'thin'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'haml', '>= 3.0.0'
+gem 'sass'
 
 # This needs to be fixed as soon as working rails3 gem is released
 gem "ruby-openid"
