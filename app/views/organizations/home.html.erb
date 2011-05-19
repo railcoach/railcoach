@@ -1,0 +1,38 @@
+<% content_for :exhibition do %>
+  <div class="articleContainer">
+    <div class="spacer">
+      <div class="description">
+        <article>
+          <h1>What does the <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %> do?</h1>
+          <div class="column">
+            <p>placeholder text</p>
+          </div>
+          <div class="column">
+            <p>placeholder text</p>
+          </div>
+        </article>
+      </div>
+      <%= render :partial => 'layouts/authentication_widget' %>
+      <div class="break"></div>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Organizations', '#' %></li>
+  </ul>
+<% end %>
+
+<div class="row">
+  <%= render @random_organizations %>
+  <div class="break"></div>
+</div>
+
+<div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <%= link_to 'Show more organizations', organizations_path %>
+    </div>
+  </div>
+</div>
