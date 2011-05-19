@@ -18,7 +18,6 @@ From the application folder, run the following commands:
 4. To load some sample data, run rake db:load:fixtures
 5. Done! You can now run 'rails server' to start the web server if you want to check it out
 
-
 Who's behind railcoach?
 -------------------------------
 Railcoach is initiated by .projectlodge. This is an organisation that brings people together to work on new and innovative projects. Railcoach is build to to facilitate such projects. It is build by a team of ruby enthousiast, from beginners to pro's. The railcoach team gets together every week, and has monthly meetings. If you're interested and want to help out, please send us a note!
