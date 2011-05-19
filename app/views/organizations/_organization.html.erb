@@ -1,0 +1,13 @@
+<div class="column col1-3">
+  <div class="gridSpacer block blockSpacer">
+    <article>
+      <h3><%= link_to organization.name, organization %></h3>
+      <p><%= truncate(organization.description, :length => 300, :separator => ' ') %></p>
+      <aside>
+        <%= link_to organization.website_name, organization.website_url %>
+        -
+        <%= organization.location %>
+      </aside>
+    </article>
+  </div>
+</div>
