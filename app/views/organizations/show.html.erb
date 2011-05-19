@@ -1,0 +1,36 @@
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Organizations', home_organizations_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'All by name', organization_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + @organization.name, '#' %></li>
+  </ul>
+<% end %>
+
+<div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <h1><%= @organization.name %></h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="column col2-3">
+    <div class="gridSpacer">
+      <div class="blockTools">
+        <%= link_to 'Edit', edit_organization_path(@organization) %> -
+        <%= link_to 'Destroy', @organization, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+      <p><%= @organization.description %></p>
+      <p><%= link_to @organization.website_name, @organization.website_url %></p>
+    </div>
+  </div>
+  <div class="column col1-3">
+    <div class="gridSpacer">
+      <p>map goes here!</p>
+      <p><%= @organization.location %></p>
+    </div>
+  </div>
+  <div class="break"></div>
+</div>

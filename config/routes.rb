@@ -1,4 +1,10 @@
 Dynamic::Application.routes.draw do
+  resources :organizations do
+    collection do
+      get 'home'
+    end
+  end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "user/omniauth_callbacks" }
 
   resources :projects do
