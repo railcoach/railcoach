@@ -22,7 +22,6 @@ Who's behind railcoach?
 -------------------------------
 Railcoach is initiated by .projectlodge. This is an organisation that brings people together to work on new and innovative projects. Railcoach is build to to facilitate such projects. It is build by a team of ruby enthousiast, from beginners to pro's. The railcoach team gets together every week, and has monthly meetings. If you're interested and want to help out, please send us a note!
 
-
 Resources
 ------------------------------
 www.projectlodge.com
