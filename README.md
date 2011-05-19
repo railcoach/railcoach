@@ -11,8 +11,8 @@ Getting the app running is fairly easy if you're familiar with ruby on rails (Ro
 If you're not familiar with RoR, please don't leave!, there are a lot of good [beginner guides](http://www.codeschool.com/courses/rails-for-zombies) And of course we're also happy to help. That's what railcoach is all about!
 
 Prequisites: ruby 1.9.2 & rails 3.0  
-* clone the app from github 
-Now from the application folder, run the following commands:  
+* clone the app from github
+  Now from the application folder, run the following commands:
 * bundle install
 * rake db:migrate
 * To load some sample data, run rake db:load:fixtures
