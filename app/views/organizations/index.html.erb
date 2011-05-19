@@ -1,0 +1,18 @@
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Organizations', home_organizations_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'All by name', '#' %></li>
+  </ul>
+<% end %>
+<div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <h1>Projects of <%= image_tag 'projectlodge.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
+    </div>
+  </div>
+</div>
+
+<div id="projects_list" class="row">
+  <%= render @organizations %>
+  <div class="break"></div>
+</div>
