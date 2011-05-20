@@ -13,6 +13,7 @@
 </div>
 
 <div id="projects_list" class="row">
+  <%= render partial: 'organizations/empty_organizations', locals: {organizations: @organizations} %>
   <%= render @organizations %>
   <div class="break"></div>
 </div>

@@ -25,6 +25,7 @@
 <% end %>
 
 <div class="row">
+  <%= render partial: 'organizations/empty_organizations', locals: {organizations: @random_organizations} %>
   <%= render @random_organizations %>
   <div class="break"></div>
 </div>
