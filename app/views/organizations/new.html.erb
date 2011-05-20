@@ -1,5 +1,8 @@
-<h1>New organization</h1>
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Organizations', home_organizations_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'New', '#' %></li>
+  </ul>
+<% end %>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', organizations_path %>

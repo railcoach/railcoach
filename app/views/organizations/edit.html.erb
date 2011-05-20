@@ -1,6 +1,9 @@
-<h1>Editing organization</h1>
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Organizations', home_organizations_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + @organization.name, organization_path(@organization) %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'Edit', '#' %></li>
+  </ul>
+<% end %>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @organization %> |
-<%= link_to 'Back', organizations_path %>
