@@ -34,3 +34,8 @@ group :test, :development do
   gem 'capybara' # Engine for testing with cucumber
   gem 'database_cleaner'
 end
+
+# The production environment requires PostgreSQL
+group :production do 
+  gem "pg"	# PostgreSQL gem
+end
