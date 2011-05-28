@@ -10,7 +10,9 @@ class Project::MembershipsController < ApplicationController
   #PUT accept_member with membership_id
   def accept_member
     membership = Project::Membership.find(params[:membership_id])
-    membership.accept_member
+    if membership.user.is_owner_of?(membership.project)
+      membership.accept_member
+    end
 
     redirect_to :back
   end
