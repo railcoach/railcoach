@@ -30,6 +30,24 @@ class Ability
     can :manage, Project do |project|
       user.is_owner_of?(project)
     end
+
+    #Project membership
+    can :request_membership, Project do |project|
+      user_signed_in? # needs to be empty!?
+    end
+    can [:accept_member, :deny], Project::Membership do |membership|
+      user.is_owner_of?(membership.project)
+    end
+
+    #user profiles
+    can :manage, User do |user_model|
+      user.is_owner_of?(user_model)
+    end
+    can :manage, User::Profile do |profile|
+      user.is_owner_of?(profile)
+    end
+
+    #read on all
     can :read, :all
   end
 end
