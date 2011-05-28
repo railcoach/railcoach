@@ -1,7 +1,6 @@
 <ul>
   <% memberships.each do |membership| %>
-    <li><%= link_to membership.user.profile.fullname, membership.user %>
-      (<%= role_line(membership) %>)
+    <li><%= link_to membership.user.profile.fullname, user_path(membership.user.id) %>
       <% if membership.join_request? %>
         <%= link_to 'Accept', project_membership_accept_member_path(:project_id => membership.project.id, :membership_id => membership.id), :method => :put %>
         <%= link_to 'Deny', project_membership_deny_path(:project_id => membership.project.id, :membership_id => membership.id), :method => :put %>
