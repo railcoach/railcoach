@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'rake', '0.8.7'
 gem 'rails', '3.0.5'
 
 # Thin if webrick fucks up
@@ -37,5 +38,5 @@ end
 
 # The production environment requires PostgreSQL
 group :production do 
-  gem "pg"	# PostgreSQL gem
+  gem "pg"
 end
