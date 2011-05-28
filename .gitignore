@@ -5,6 +5,8 @@ tmp/**/*
 nbproject
 nbproject/*
 config/database.yml
+config/deploy.rb
+Capfile
 *.lock
 *.pid
 *.log

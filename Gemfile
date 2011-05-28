@@ -8,7 +8,6 @@ gem 'thin'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '>= 3.0.0'
 
 # This needs to be fixed as soon as working rails3 gem is released
@@ -23,6 +22,7 @@ gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 
 
 group :test, :development do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem "rspec-rails", ">= 2.0.1" # Controller / Model tests
   gem "autotest" # Automatic testing
   gem "faker"
