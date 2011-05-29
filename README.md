@@ -25,7 +25,7 @@ Railcoach is initiated by .projectlodge. This is an organisation that brings peo
 
 Resources
 ------------------------------
-www.projectlodge.com  
+www.projectlodge.org  
 twitter.com/projectlodge
 
 
