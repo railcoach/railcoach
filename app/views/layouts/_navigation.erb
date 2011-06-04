@@ -11,17 +11,13 @@
               <ul>
                 <li><%= link_to 'Featured', home_users_path %></li>
                 <li><%= link_to 'All by name', users_path %></li>
-                <% if user_signed_in? %>
-                  <li><%= link_to 'My profile', user_path(current_user.id) %></li>
-                <% end %>
               </ul>
             </li>
             <% if user_signed_in? %>
               <li class="column">
-                <h1>My contacts</h1>
+                <h1>Manage profile</h1>
                 <ul>
-                  <li><%= link_to 'My friends', '#' %></li>
-                  <li><%= link_to 'People I work with', '#' %></li>
+                  <li><%= link_to 'My profile', user_path(current_user.id) %></li>
                 </ul>
               </li>
             <% end %>
@@ -38,28 +34,28 @@
                 <li><%= link_to 'All by popularity', '#' %></li>
               </ul>
             </li>
-            <% if user_signed_in? %>
-              <li class="column">
-                <h1>My projects</h1>
-                <ul>
-                  <li><%= link_to 'My participations', '#' %></li>
-                  <li><%= link_to 'Start a new project', new_project_path %></li>
-                </ul>
-              </li>
-            <% end %>
             <li class="column">
-              <h1>Starting your own</h1>
+              <h1>About projects</h1>
               <ul>
                 <li><%= link_to 'How to start?', '#' %></li>
                 <li><%= link_to 'Why to start?', '#' %></li>
                 <li><%= link_to "More FAQ's", '#' %></li>
               </ul>
             </li>
+            <% if user_signed_in? %>
+              <li class="column">
+                <h1>Manage projects</h1>
+                <ul>
+                  <li><%= link_to 'My participations', '#' %></li>
+                  <li><%= link_to 'Start a new project', new_project_path %></li>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </li>
         <li<%= " class='opened'" if @nav == 'Organizations' %>>
           <%= link_to('Organizations', home_organizations_path) %>
-          <ul class="columns-2">
+          <ul class="columns-<%= (user_signed_in?) ? '3' : '2' %>">
             <li class="column">
               <h1>Organizations</h1>
               <ul>
@@ -69,12 +65,6 @@
               </ul>
             </li>
             <li class="column">
-              <% if user_signed_in? %>
-                <h1>Manage organizations</h1>
-                <ul>
-                  <li><%= link_to 'Register a new organization', new_organization_path %></li>
-                </ul>
-              <% end %>
               <h1>About organizations</h1>
               <ul>
                 <li><%= link_to 'What are organizations?', '#' %></li>
@@ -82,6 +72,14 @@
                 <li><%= link_to "More FAQ's", '#' %></li>
               </ul>
             </li>
+            <% if user_signed_in? %>
+              <li class="column">
+                <h1>Manage organizations</h1>
+                <ul>
+                  <li><%= link_to 'Register a new organization', new_organization_path %></li>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </li>
         <li<%= " class='opened'" if @nav == 'News' %>><%= link_to 'News', '/static/news' %></li>
