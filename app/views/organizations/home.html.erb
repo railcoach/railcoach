@@ -25,6 +25,13 @@
 <% end %>
 
 <div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer block">
+      <p>reserved space for the overview map.</p>
+    </div>
+  </div>
+</div>
+<div class="row">
   <%= render partial: 'organizations/empty_organizations', locals: {organizations: @random_organizations} %>
   <%= render @random_organizations %>
   <div class="break"></div>
