@@ -3,7 +3,7 @@
   <div class="row">
     <div class="column col1-1">
       <div class="gridSpacer">
-        <h1><%= f.text_field :name %></h1>
+        <h1><%= f.text_field :name, :placeholder => 'organization name'%></h1>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
         <%= f.label :description %>
         <%= f.text_area :description %>
         <%= f.label :website %>
-        <%= f.text_field :website %>
+        <%= f.url_field :website %>
       </div>
     </div>
     <div class="column col1-2">
