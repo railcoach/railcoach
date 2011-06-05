@@ -26,7 +26,12 @@
   </div>
   <div class="column col1-2">
     <div class="gridSpacer">
-      <p>map goes here!</p>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          create_address_map('<%= @organization.location %>', 'organization_map_canvas');
+        });
+      </script>
+      <div id="organization_map_canvas" class="panoramaMap"></div>
       <p><%= @organization.location %></p>
     </div>
   </div>
