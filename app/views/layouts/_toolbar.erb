@@ -5,7 +5,7 @@
       <li><%= link_to 'Manage connected networks', edit_user_network_path(current_user) %>
       <li><%= link_to 'Edit Profile', "#" %></li>
       <li><%= link_to 'Logout', destroy_user_session_path %></li>
-    <% else %>
+    <%# else %>
       <li><%= link_to 'Login', new_user_session_path, :remote => true %></li>
     <% end %>
   </ul>

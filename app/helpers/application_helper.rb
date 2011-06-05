@@ -25,4 +25,8 @@ module ApplicationHelper
       raise 'Unkown authentication method'
     end
   end
+
+  def user_signed_in?
+    false
+  end
 end
