@@ -31,11 +31,9 @@ describe UsersController do
     context "when updating another user" do
       before :each do
         when_another_user
-        put :update, :id => 1
       end
       it "responds with access denied" do
-        # FIXME: change to HTTP 403 ?
-        response.status.should be 500
+        expect { put :update, :id => 1 }.to raise_error CanCan::AccessDenied
       end
     end
   end
@@ -57,11 +55,9 @@ describe UsersController do
     context "when editing another user" do
       before :each do
         when_another_user
-        get :edit, :id => 2
       end
-      it "responds with failure" do
-        # FIXME: change to HTTP 403 ?
-        response.status.should be 500
+      it "responds with access denied" do
+        expect { get :edit, :id => 2 }.to raise_error CanCan::AccessDenied
       end
     end
   end
@@ -96,7 +92,7 @@ describe UsersController do
   describe "GET home" do
     context "when there are no users" do
       it "should not display any users" do
-        User.stub(:all).and_return([])
+        User.stub(:find).with(:all, {:include=>:profile}).and_return([])
         get :home
         assigns[:random_users].should eq []
       end
