@@ -47,12 +47,12 @@ class Ability
 
     #User
     can :manage, User do |user_model|
-      user.is_owner_of?(user_model)
+      user.id.present? && user.id == user_model.id
     end
 
     #User::Profile
     can :manage, User::Profile do |profile|
-      user.is_owner_of?(profile)
+      user.id.present? && user.id == profile.user.id
     end
 
     #read on all
