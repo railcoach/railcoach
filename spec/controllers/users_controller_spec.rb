@@ -1,6 +1,20 @@
 require 'spec_helper'
 
 describe UsersController do
+  describe "GET edit" do
+    let(:user) { mock_model(User).as_null_object }
+    before do
+      User.stub(:find).and_return(user)
+      get :edit, :id => 1
+    end
+    it "should return the user" do
+      assigns[:user].should eq user
+    end
+    it "responds with success" do
+      response.should be_success
+    end
+  end
+
   describe "GET index" do
     let(:users) { [mock_model(User).as_null_object] }
     before do
