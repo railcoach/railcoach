@@ -23,7 +23,10 @@ class Ability
     #
     #   can :update, Article, :published => true
     #
-    # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    # See the wiki for details:
+    # - https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    # - https://github.com/ryanb/cancan/wiki/Defining-Abilities-with-Blocks
+
     user ||= User.new
 
     #Projects
@@ -42,10 +45,12 @@ class Ability
       user.is_owner_of?(membership.project)
     end
 
-    #user profiles
+    #User
     can :manage, User do |user_model|
       user.is_owner_of?(user_model)
     end
+
+    #User::Profile
     can :manage, User::Profile do |profile|
       user.is_owner_of?(profile)
     end
