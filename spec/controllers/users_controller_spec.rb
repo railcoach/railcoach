@@ -1,6 +1,18 @@
 require 'spec_helper'
 
 describe UsersController do
+  describe "PUT update" do
+    let(:user) { mock_model(User).as_null_object }
+    before do
+      User.stub(:find).and_return(user)
+      user.should_receive(:update_attributes).and_return(true)
+      put :update, :id => 1
+    end
+    it "responds with redirect to show" do
+      response.should redirect_to :action => :show
+    end
+  end
+
   describe "GET edit" do
     let(:user) { mock_model(User).as_null_object }
     before do
