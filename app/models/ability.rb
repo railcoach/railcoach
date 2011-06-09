@@ -62,5 +62,6 @@ class Ability
 
     #read on all
     can :read, :all
+    can :home, :all
   end
 end
