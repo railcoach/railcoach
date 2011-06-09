@@ -1,29 +1,68 @@
 require 'spec_helper'
 
 describe UsersController do
+  let(:current_user) { mock_model(User).as_null_object }
+  let(:user) { mock_model(User).as_null_object }
+
+  def when_current_user
+    current_user.stub(:id).and_return(user.id)
+  end
+
+  def when_another_user
+    current_user.stub(:id).and_return(user.id + 1)
+  end
+
+  before :each do
+    controller.stub(:current_user).and_return(current_user)
+    User.stub(:find).and_return(user)
+  end
+
   describe "PUT update" do
-    let(:user) { mock_model(User).as_null_object }
-    before do
-      User.stub(:find).and_return(user)
-      user.should_receive(:update_attributes).and_return(true)
-      put :update, :id => 1
+    context "when updating myself" do
+      before :each do
+        when_current_user
+        put :update, :id => 1
+      end
+      it "responds with redirect to show" do
+        response.should redirect_to :action => :show
+      end
     end
-    it "responds with redirect to show" do
-      response.should redirect_to :action => :show
+
+    context "when updating another user" do
+      before :each do
+        when_another_user
+        put :update, :id => 1
+      end
+      it "responds with access denied" do
+        # FIXME: change to HTTP 403 ?
+        response.status.should be 500
+      end
     end
   end
 
   describe "GET edit" do
-    let(:user) { mock_model(User).as_null_object }
-    before do
-      User.stub(:find).and_return(user)
-      get :edit, :id => 1
+    context "when editing myself" do
+      before :each do
+        when_current_user
+        get :edit, :id => 1
+      end
+      it "should return the user" do
+        assigns[:user].should eq user
+      end
+      it "responds with success" do
+        response.should be_success
+      end
     end
-    it "should return the user" do
-      assigns[:user].should eq user
-    end
-    it "responds with success" do
-      response.should be_success
+
+    context "when editing another user" do
+      before :each do
+        when_another_user
+        get :edit, :id => 2
+      end
+      it "responds with failure" do
+        # FIXME: change to HTTP 403 ?
+        response.status.should be 500
+      end
     end
   end
 
@@ -45,9 +84,7 @@ describe UsersController do
 
   describe "GET show" do
     context "when the user exists" do
-      let(:user) { mock_model(User).as_null_object }
       before do
-        User.stub(:find).with(1).and_return(user)
         get :show, :id =>1
       end
       it "should return the user" do
