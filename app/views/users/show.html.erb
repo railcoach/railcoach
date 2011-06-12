@@ -22,10 +22,6 @@
   </div>
   <div class="column col5-6">
     <div class="gridSpacer">
-      <div class="blockTools">
-        <%= link_to 'Change password', edit_user_path(@user) %> -
-        <%= link_to 'Edit details', edit_user_profile_path(@user.profile) %>
-      </div>
       <p>Gender: <%= translate_gender(@user.profile.gender) %></p>
       <p>Email: <%= @user.email %></p>
     </div>

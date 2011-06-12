@@ -3,9 +3,11 @@ require 'spec_helper'
 describe Project::MembershipsController do
   let (:membership) { mock_model(Project::Membership).as_null_object }
   let (:project) { mock_model(Project).as_null_object }
+  let (:current_user) { mock_model(User).as_null_object }
 
   before do
     Project::Membership.stub(:find).with(membership).and_return(membership)
+    controller.stub(:current_user).and_return(current_user)
     request.env["HTTP_REFERER"] = "http://example.com/"
   end
 

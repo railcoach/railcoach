@@ -5,11 +5,11 @@ class User::Profile < ActiveRecord::Base
 #  # do NOT turn on presence validations, it prevents creating an empty profile for a new user.
 
   def fullname
-    if !first_name.nil? and !last_name.nil?
+    if first_name.present? and last_name.present?
       return first_name + ' ' + last_name
-    elsif !first_name.nil?
+    elsif first_name.present?
       return first_name
-    elsif !last_name.nil?
+    elsif last_name.present?
       return last_name
     else
       return nil
