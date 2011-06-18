@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  acts_as_paranoid
   has_many :roles, :as => 'rollable'
 
   has_many :memberships, :class_name => "Project::Membership"

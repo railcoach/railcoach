@@ -22,4 +22,13 @@ describe Project do
       project.invite_member(user)
     end
   end
+
+  describe "#destroy" do
+    it "should set deleted_at" do
+      project = Project.new
+      project.deleted_at.should be_nil
+      project.destroy
+      project.deleted_at.should_not be_nil
+    end
+  end
 end

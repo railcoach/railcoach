@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_paranoid
   include Rollable::Base
 
   rollables Project, :roles =>  ["owner", "member", "pending"]
