@@ -2,6 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
+# Authorization semantics
+gem 'cancan'
+# Roles for authorization
+gem 'rollable'
+
 # Thin if webrick fucks up
 gem 'thin'
 
@@ -20,7 +25,6 @@ gem 'state_machine'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 
-
 group :test, :development do
   gem 'sqlite3-ruby', :require => 'sqlite3' # Development database
   gem "rspec-rails", ">= 2.0.1" # Controller / Model tests
@@ -33,6 +37,17 @@ group :test, :development do
   gem 'selenium-client' # Javascript driver for cucumber / capybara
   gem 'capybara' # Engine for testing with cucumber
   gem 'database_cleaner'
+  
+  # Guard
+  gem 'guard'
+  gem 'growl'
+  gem 'rb-fsevent'
+  gem 'libnotify'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-rails'
+  gem 'guard-sass'
+  gem 'spork', '~> 0.9.0.rc'
 end
 
 group :production do

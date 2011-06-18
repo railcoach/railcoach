@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  include Rollable::Base
+
+  rollables Project, :roles =>  ["owner", "member", "pending"]
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
@@ -13,8 +16,9 @@ class User < ActiveRecord::Base
   has_many :memberships, :class_name => "Project::Membership"
   has_many :projects, :through => :memberships
   has_one :profile
-  has_many :owned_projects, :class_name => "Project"
+  #has_many :owned_projects, :class_name => "Project"
   has_many :user_tokens
+  has_many :roles
 
   #validates :username, :presence => true, :uniqueness => true
   #validates :profile, :presence => true
@@ -25,17 +29,6 @@ class User < ActiveRecord::Base
 
   after_initialize :create_defaults
 
-
-  # Checks for string role on integer(id) project
-  # Gets all memberships where project_id = project, gets rolls associated and maps the names of those in an array, then checks whether role is included in the array.
-  def has_role_on_project?(role, project)
-    membership = self.memberships.find_by_project_id(project)
-    unless membership.blank?
-      membership.roles.collect{ |r| r.name}.include?(role) if not membership.roles.empty?
-    else
-      false
-    end
-  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -50,7 +43,7 @@ class User < ActiveRecord::Base
     #self.name = omniauth['user_info']['name'] if name.blank?
     #self.nickname = omniauth['user_info']['nickname'] if nickname.blank?
 
-    unless omniauth['credentials'].blank?
+    if omniauth['credentials'].present?
       user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
       user_tokens.build(:provider => omniauth['provider'], 
                         :uid => omniauth['uid'],

@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_filter :navigation
+  load_and_authorize_resource
 
   # GET /projects/home
   def home

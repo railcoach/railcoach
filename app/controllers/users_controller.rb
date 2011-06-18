@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :navigation
+  load_and_authorize_resource
 
   def home
     @random_users = User.find(:all, :include => :profile).shuffle.first(12)
