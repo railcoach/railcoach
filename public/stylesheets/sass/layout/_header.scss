@@ -141,6 +141,13 @@
                 border-bottom: 2px solid #FFFFFF;
             }
 
+            &.special {
+                font-style: italic;
+                & > a {
+                    color: #8888FF;
+                }
+            }
+
             &:hover {
                 border-bottom: 2px solid #FF8800;
 

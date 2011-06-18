@@ -18,4 +18,10 @@ class StaticController < ApplicationController
 
     render :layout => "exhibition" unless user_signed_in?
   end
+
+  def bam2011s
+    @nav = 'BAM2011S'
+
+    render :layout => "exhibition"
+  end
 end
