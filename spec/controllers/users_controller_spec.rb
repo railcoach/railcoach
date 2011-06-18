@@ -33,7 +33,8 @@ describe UsersController do
         when_another_user
       end
       it "responds with access denied" do
-        expect { put :update, :id => 1 }.to raise_error CanCan::AccessDenied
+        put :update, :id => 1
+        response.status.should eq(403)
       end
     end
   end
@@ -57,7 +58,8 @@ describe UsersController do
         when_another_user
       end
       it "responds with access denied" do
-        expect { get :edit, :id => 2 }.to raise_error CanCan::AccessDenied
+        get :edit, :id => 2
+        response.status.should eq(403)
       end
     end
   end

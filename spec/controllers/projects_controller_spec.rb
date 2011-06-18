@@ -35,7 +35,8 @@ describe ProjectsController do
       end
 
       it "should give access denied response" do
-        lambda { get :edit, :id => 1 }.should raise_error(CanCan::AccessDenied)
+        get :edit, :id => 1
+        response.status.should eq(403)
       end
     end
   end
