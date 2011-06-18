@@ -42,6 +42,7 @@ group :test, :development do
   gem 'guard'
   gem 'growl'
   gem 'rb-fsevent'
+  gem 'rb-inotify'
   gem 'libnotify'
   gem 'guard-spork'
   gem 'guard-rspec'
