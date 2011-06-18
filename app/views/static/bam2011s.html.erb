@@ -1,0 +1,60 @@
+<% content_for :exhibition do %>
+  <div class="articleContainer">
+    <div class="spacer">
+      <div class="description">
+        <article>
+          <h1><%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>
+            BAM2011S</h1>
+          <div class="column">
+            <p>Summer has arrived again so it is time for our third Bi-Annual Meeting. BAM2011S,
+              as in Bi-Annual Meeting 2011 Summer. It is promising to be a fun afternoon with cool projects,
+              interesting talks and of course some drinks afterwards.</p>
+            <p>So who is invited, well... you! If your a member or just interested in technology... make sure your
+              there!</p>
+          </div>
+          <div class="column">
+            <p>A lot has happened over the last 12 months and we have come a long way of just being an idea. We've
+              worked on projects, formalized ourselves a bit more, had some fun and learned new thing along the way.
+              Now we've reached a crossroad in our development and after a year we are ready for the next step.</p>
+            <p>We hope to see you all on July 2nd - the Board.</p>
+          </div>
+        </article>
+      </div>
+      <%= render :partial => 'layouts/authentication_widget' %>
+      <div class="break"></div>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'BAM2011S', '#' %></li>
+  </ul>
+<% end %>
+
+<div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <h1>What about the details?</h1>
+    </div>
+  </div>
+  <div class="column col1-2">
+    <div class="gridSpacer block blockSpacer">
+      <h3>Date-time:</h3>
+      <p>July 2nd 2011. Venue open at 12:00 and progam starts at 13:00.</p>
+      <h3>Location:</h3>
+      <p>
+        Revelation Space<br>
+        Binckhorstlaan 172<br>
+        2516 BG The Hague
+      </p>
+    </div>
+  </div>
+  <div class="column col1-2">
+    <div class="gridSpacer">
+      <iframe width="460" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.nl/maps?f=q&amp;source=s_q&amp;hl=nl&amp;geocode=&amp;q=Stichting+Revelation+Space,+Binckhorstlaan+172,+2516+BG+Den+Haag&amp;aq=0&amp;sll=52.469397,5.509644&amp;sspn=4.3242,11.096191&amp;ie=UTF8&amp;hq=Stichting+Revelation+Space,&amp;hnear=Binckhorstlaan+172,+Binckhorst,+'s-Gravenhage,+Den+Haag,+Zuid-Holland&amp;ll=52.073281,4.338269&amp;spn=0.008441,0.019698&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe><br />
+      <a href="http://maps.google.nl/maps?f=q&amp;source=embed&amp;hl=nl&amp;geocode=&amp;q=Stichting+Revelation+Space,+Binckhorstlaan+172,+2516+BG+Den+Haag&amp;aq=0&amp;sll=52.469397,5.509644&amp;sspn=4.3242,11.096191&amp;ie=UTF8&amp;hq=Stichting+Revelation+Space,&amp;hnear=Binckhorstlaan+172,+Binckhorst,+'s-Gravenhage,+Den+Haag,+Zuid-Holland&amp;ll=52.073281,4.338269&amp;spn=0.008441,0.019698&amp;z=15&amp;iwloc=A">View Larger Map</a>
+    </div>
+  </div>
+</div>
+<div class="break"></div>
