@@ -10,10 +10,14 @@ describe Ability do
     context "UsersController" do
       let(:user) { User.new }
 
-      [:home, :index, :show].each do |action|
+      [:home, :index].each do |action|
         it "should allow #{action}" do
           ability.should be_able_to action, User
         end
+      end
+
+      it "should allow show" do
+        ability.should be_able_to :show, user
       end
 
       [:edit, :update, :destroy].each do |action|
@@ -26,10 +30,14 @@ describe Ability do
     context "ProjectsController" do
       let(:project) { Project.new }
 
-      [:home, :index, :show].each do |action|
+      [:home, :index].each do |action|
         it "should allow #{action}" do
           ability.should be_able_to action, Project
         end
+      end
+
+      it "should allow show" do
+        ability.should be_able_to :show, project
       end
 
       [:edit, :update, :destroy].each do |action|
