@@ -16,8 +16,6 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-    @project = Project.find(params[:id])
-
     unless @project
       flash[:error] = "This project does not exist (yet)."
       redirect_to(projects_url)
@@ -31,7 +29,6 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
   end
 
   # POST /projects
@@ -47,8 +44,6 @@ class ProjectsController < ApplicationController
 
   # PUT /projects/1
   def update
-    @project = Project.find(params[:id])
-
     if @project.update_attributes(params[:project])
       redirect_to(@project, :notice => 'Project was successfully updated.')
     else
@@ -58,24 +53,21 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
     redirect_to(projects_url)
   end
 
   # PUT /project/1/request_membership
   def request_membership
-    project = Project.find(params[:id])
-    project.request_membership(current_user)
+    @project.request_membership(current_user)
 
     redirect_to :back
   end
 
   # PUT /project/1/invite_member
   def invite_member
-    user = User.find(params[:user_id])
-    project = Project.find(params[:id])
-    project.invite_member(user)
+    @user = User.find(params[:user_id])
+    @project.invite_member(@user)
 
     redirect_to :back
   end

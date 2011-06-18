@@ -66,6 +66,22 @@ describe Ability do
       should_not_be_able_to [:edit, :update, :destroy], :other_user
     end
 
+    context "User::ProfilesController" do
+      extend AbilityExampleHelpers
+      let(:current_user_profile) { current_user.profile }
+      let(:other_user_profile) { other_user.profile }
+      let(:other_user) { User.new }
+
+      before do
+        current_user_profile.stub(:user).and_return(current_user)
+        other_user.stub(:id).and_return(2)
+        other_user_profile.stub(:user).and_return(other_user)
+      end
+
+      should_be_able_to [:edit, :update, :destroy], :current_user_profile
+      should_not_be_able_to [:edit, :update, :destroy], :other_user_profile
+    end
+
     context "ProjectsController" do
       let(:project) { Project.new }
 
@@ -86,6 +102,9 @@ describe Ability do
 
         should_not_be_able_to [:edit, :update, :destroy], :project
       end
+    end
+
+    context "Project::MembershipsController" do
     end
   end
 end

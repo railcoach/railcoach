@@ -43,15 +43,18 @@ class Ability
       can [:accept_member, :deny], Project::Membership do |membership|
         user.is_owner_of?(membership.project)
       end
+      can [:accept_invitation, :deny], Project::Membership do |membership|
+        user == membership.user
+      end
 
       #User
       can :manage, User do |user_model|
-        user.id == user_model.id
+        user == user_model
       end
 
       #User::Profile
       can :manage, User::Profile do |profile|
-        user.id == profile.user.id
+        user == profile.user
       end
     else
       #Everything only guest users may do.
