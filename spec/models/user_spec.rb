@@ -36,4 +36,13 @@ describe User do
       @user.should_not be_valid
     end
   end
+
+  describe "#destroy" do
+    it "should set deleted_at" do
+      user = User.new
+      user.deleted_at.should be_nil
+      user.destroy
+      user.deleted_at.should_not be_nil
+    end
+  end
 end

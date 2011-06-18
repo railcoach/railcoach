@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_paranoid
   include Rollable::Base
 
   rollables Project, :roles =>  ["owner", "member", "pending"]
@@ -13,7 +14,7 @@ class User < ActiveRecord::Base
 
 
 
-  has_many :memberships, :class_name => "Project::Membership"
+  has_many :memberships, :class_name => "Project::Membership", :dependent => :destroy
   has_many :projects, :through => :memberships
   has_one :profile
   #has_many :owned_projects, :class_name => "Project"

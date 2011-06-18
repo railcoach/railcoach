@@ -25,6 +25,9 @@ gem 'state_machine'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 
+# Revertable :destroy
+gem 'rails3_acts_as_paranoid'
+
 group :test, :development do
   gem 'sqlite3-ruby', :require => 'sqlite3' # Development database
   gem "rspec-rails", ">= 2.0.1" # Controller / Model tests
