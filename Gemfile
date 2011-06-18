@@ -31,8 +31,8 @@ group :test, :development do
   gem "autotest" # Automatic testing
   gem "faker"
   gem "machinist" # Mocks
-  gem "rcov" # Code coverage tool
   gem 'rails-erd' #
+  gem 'simplecov', :require => false
   gem 'cucumber-rails' # Acceptance/integration tests
   gem 'selenium-client' # Javascript driver for cucumber / capybara
   gem 'capybara' # Engine for testing with cucumber
@@ -47,6 +47,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-rails'
   gem 'guard-sass'
+  gem 'guard-bundler'
   gem 'spork', '~> 0.9.0.rc'
 end
 
