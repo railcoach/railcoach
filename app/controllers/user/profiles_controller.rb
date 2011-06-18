@@ -2,6 +2,7 @@ class User::ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     @profile = User::Profile.find(params[:id])
+    @user = @profile.user
   end
 
   # PUT /profiles/1
