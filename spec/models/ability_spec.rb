@@ -29,6 +29,10 @@ describe Ability do
       it "should not allow update" do
         ability.should_not be_able_to :update, user
       end
+
+      it "should not allow destroy" do
+        ability.should_not be_able_to :destroy, user
+      end
     end
 
     context "ProjectsController" do
@@ -52,6 +56,10 @@ describe Ability do
 
       it "should not allow update" do
         ability.should_not be_able_to :update, project
+      end
+
+      it "should not allow destroy" do
+        ability.should_not be_able_to :destroy, project
       end
     end
   end
