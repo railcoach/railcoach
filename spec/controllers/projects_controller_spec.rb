@@ -124,36 +124,27 @@ describe ProjectsController do
   end
 
   describe "POST create" do
+    def do_create
+      post :create
+
+    end
     let(:membership) { mock_model(Project::Membership).as_null_object }
+
 
     context "when a user is logged on" do
       before(:each) do
-        Project.should_receive(:new)
-          .and_return(project)
-        Project::Membership.should_receive(:new)
-          .with(:project => project, :user => current_user)
-          .and_return(membership)
-        # For some reason, which I haven't been able to figure out:
-        # 0 post :create will call Project.new 0 times,
-        # 1 post :create will call Project.new 2 times,
-        # 2 post :create will call Project.new 3 times.
-        # Commenting out all other specs in this file doesn't change this.
-        # Project::Membership.new receives the correct number of calls.
-        post :create
-        #post :create
+        Project.stub(:new).and_return(project)
       end
 
-#      it "blablabla" do
-#      end
+      it "should create the project" do
+        do_create
+        assigns[:project].should eq(project)
+      end
 
-      it "should create the project"
-#        assigns[:project].should eq(project)
-#        assigns[:membership].should eq(membership)
-#      end
-
-      it "should redirect to the project"
-#        response.should redirect_to project_path(project)
-#      end
+      it "should redirect to the project" do
+        do_create
+        response.should redirect_to project_path(project)
+      end
     end
   end
 

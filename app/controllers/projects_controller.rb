@@ -36,11 +36,9 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.new(params[:project])
-    @membership = Project::Membership.new(:project => @project, :user => current_user)
-    current_user.is_owner(@project)
+    @project = Project.new(params[:project]).owner(current_user)
 
-    if @project.save and @membership.save
+    if @project.save
       redirect_to(@project, :notice => 'Project was successfully created.')
     else
       render :action => "new"

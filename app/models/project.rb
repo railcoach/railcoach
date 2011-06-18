@@ -1,12 +1,21 @@
 class Project < ActiveRecord::Base
   has_many :roles, :as => 'rollable'
 
-  has_many :memberships, :class_name => "Project::Membership"
+  has_many :memberships, :class_name => "Project::Membership", :dependent => :destroy
   has_many :users, :through => :memberships
+
+  before_save :setup_owner_membership
+  after_save :set_owner_role
+
+  def owner(user)
+    @owner = user
+    self
+  end
 
   def accepted_memberships
     memberships.where( :state => :accepted )
   end
+
 
   def pending_memberships
     memberships.where( :state => :join_request )
@@ -20,7 +29,12 @@ class Project < ActiveRecord::Base
     Project::Membership.create_invitation(self, user)
   end
 
-  def owners
-    self.memberships.joins(:roles).where("project_roles.name = ?", "owner").collect(&:user)
+  private
+  def setup_owner_membership
+    self.memberships.build(:user => @owner, :state => 'accepted')
+  end
+
+  def set_owner_role
+    @owner.is_owner(self)
   end
 end

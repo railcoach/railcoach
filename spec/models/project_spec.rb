@@ -22,4 +22,28 @@ describe Project do
       project.invite_member(user)
     end
   end
+
+  describe "dependent memberships" do
+    before(:each) do
+      @valid = { :name => 'Homo!', :description => 'Lorem smipsum'}
+      @user = User.create!(:email => 'test@test.com', :password => 'testadfasdfas')
+      @p = Project.new(@valid).owner(@user)
+      @p.save!
+    end
+    it "should create a membership" do
+      @p.memberships.size.should == 1
+    end
+
+    it "should set the user as owner" do
+      @p.memberships.first.user.should be(@user)
+    end
+
+    it "should save the membership if project is saved" do
+      Project.first.memberships.count.should == 1
+    end
+
+    it "should have a member that is an owner" do
+      @p.memberships.first.user.is_owner_of?(@p).should == true
+    end
+  end
 end

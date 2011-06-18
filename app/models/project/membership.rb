@@ -2,6 +2,7 @@ class Project::Membership < ActiveRecord::Base
   belongs_to :project, :class_name => "Project"
   belongs_to :user, :class_name => "User"
   validates_uniqueness_of :project_id, :scope => :user_id
+  validates_presence_of :project, :user
 
   state_machine :initial => :none do
     event :accept_member do
