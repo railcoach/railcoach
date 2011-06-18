@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
   acts_as_paranoid
   has_many :roles, :as => 'rollable'
 
-  has_many :memberships, :class_name => "Project::Membership"
+  has_many :memberships, :class_name => "Project::Membership", :dependent => :destroy
   has_many :users, :through => :memberships
 
   def accepted_memberships
