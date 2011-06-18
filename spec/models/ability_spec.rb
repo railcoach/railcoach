@@ -7,7 +7,7 @@ describe Ability do
   context "when no user logged in" do
     let(:ability) { Ability.new(nil) }
 
-    context "user" do
+    context "UsersController" do
       let(:user) { User.new }
 
       it "should allow home" do
@@ -28,6 +28,30 @@ describe Ability do
 
       it "should not allow update" do
         ability.should_not be_able_to :update, user
+      end
+    end
+
+    context "ProjectsController" do
+      let(:project) { Project.new }
+
+      it "should allow home" do
+        ability.should be_able_to :home, Project
+      end
+
+      it "should allow index" do
+        ability.should be_able_to :index, Project
+      end
+
+      it "should allow show" do
+        ability.should be_able_to :show, project
+      end
+
+      it "should not allow edit" do
+        ability.should_not be_able_to :edit, project
+      end
+
+      it "should not allow update" do
+        ability.should_not be_able_to :update, project
       end
     end
   end
