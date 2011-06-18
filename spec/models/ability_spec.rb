@@ -6,7 +6,7 @@ require 'cancan/matchers'
 module AbilityExampleHelpers
   def should_be_able_to(actions, model_or_symbol)
     actions.each do |action|
-      it "should allow #{action}" do
+      it "should allow #{action} on #{model_or_symbol}" do
         that = model_or_symbol.is_a?(Symbol) ? self.send(model_or_symbol) : model_or_symbol
         ability.should be_able_to action, that
       end
@@ -15,7 +15,7 @@ module AbilityExampleHelpers
 
   def should_not_be_able_to(actions, model_or_symbol)
     actions.each do |action|
-      it "should allow #{action}" do
+      it "should not allow #{action} on #{model_or_symbol}" do
         that = model_or_symbol.is_a?(Symbol) ? self.send(model_or_symbol) : model_or_symbol
         ability.should_not be_able_to action, that
       end
