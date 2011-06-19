@@ -55,6 +55,15 @@ describe Ability do
       should_be_able_to [:show], :project
       should_not_be_able_to [:edit, :update, :destroy], :project
     end
+
+    context "Project::MembershipsController" do
+      extend AbilityExampleHelpers
+      let(:membership) { Project::Membership.new(:project => project, :user => user) }
+      let(:user) { User.new }
+      let(:project) { Project.new }
+
+      should_not_be_able_to [:accept_invitation, :accept_member, :deny], :membership
+    end
   end
 
   context "when user logged in" do
@@ -116,6 +125,32 @@ describe Ability do
     end
 
     context "Project::MembershipsController" do
+      extend AbilityExampleHelpers
+      context "when this is not our own membership" do
+        let(:membership) { Project::Membership.new(:project => project, :user => user) }
+        let(:user) { User.new }
+        let(:project) { Project.new }
+
+        context "and we are an owner of the project" do
+          before do
+            current_user.stub(:is_owner_of?).with(project).and_return(true)
+          end
+
+          should_be_able_to [:accept_member, :deny], :membership
+          should_not_be_able_to [:accept_invitation], :membership
+        end
+
+        context "and we are not an owner of the project" do
+          should_not_be_able_to [:accept_member, :accept_invitation, :deny], :membership
+        end
+      end
+
+      context "when this is our own membership" do
+        let(:membership) { Project::Membership.new(:project => project, :user => current_user) }
+        let(:project) { Project.new }
+
+        should_be_able_to [:accept_invitation], :membership
+      end
     end
   end
 end
