@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' }, :wait => 120 do
   watch('config/application.rb')
   watch('config/environment.rb')
   watch(%r{^config/environments/.+\.rb$})
@@ -29,7 +29,7 @@ end
 
 guard 'sass', :input => 'sass', :output => './'
 
-guard 'rails' do
+guard 'rails', :timeout => 120 do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
 end
