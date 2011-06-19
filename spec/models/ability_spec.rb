@@ -36,6 +36,17 @@ describe Ability do
       should_not_be_able_to [:edit, :update, :destroy], :user
     end
 
+    context "User::ProfilesController" do
+      extend AbilityExampleHelpers
+      let(:profile) { user.profile }
+      let(:user) { User.new }
+      before do
+        profile.stub(:user).and_return(user)
+      end
+
+      should_not_be_able_to [:edit, :update, :destroy], :profile
+    end
+
     context "ProjectsController" do
       extend AbilityExampleHelpers
       let(:project) { Project.new }
