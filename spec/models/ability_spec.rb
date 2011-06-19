@@ -24,11 +24,12 @@ module AbilityExampleHelpers
 end
 
 describe Ability do
+  extend AbilityExampleHelpers
+
   context "when no user logged in" do
     let(:ability) { Ability.new(nil) }
 
     context "UsersController" do
-      extend AbilityExampleHelpers
       let(:user) { User.new }
 
       should_be_able_to [:home, :index], User
@@ -37,7 +38,6 @@ describe Ability do
     end
 
     context "User::ProfilesController" do
-      extend AbilityExampleHelpers
       let(:profile) { user.profile }
       let(:user) { User.new }
       before do
@@ -48,7 +48,6 @@ describe Ability do
     end
 
     context "ProjectsController" do
-      extend AbilityExampleHelpers
       let(:project) { Project.new }
 
       should_be_able_to [:home, :index], User
@@ -57,7 +56,6 @@ describe Ability do
     end
 
     context "Project::MembershipsController" do
-      extend AbilityExampleHelpers
       let(:membership) { Project::Membership.new(:project => project, :user => user) }
       let(:user) { User.new }
       let(:project) { Project.new }
@@ -75,7 +73,6 @@ describe Ability do
     end
 
     context "UsersController" do
-      extend AbilityExampleHelpers
       let(:other_user) { User.new }
 
       before do
@@ -87,7 +84,6 @@ describe Ability do
     end
 
     context "User::ProfilesController" do
-      extend AbilityExampleHelpers
       let(:current_user_profile) { current_user.profile }
       let(:other_user_profile) { other_user.profile }
       let(:other_user) { User.new }
@@ -106,7 +102,6 @@ describe Ability do
       let(:project) { Project.new }
 
       context "when user is an owner of the project" do
-        extend AbilityExampleHelpers
         before do
           current_user.should_receive(:is_owner_of?).with(project).and_return(true)
         end
@@ -115,7 +110,6 @@ describe Ability do
       end
 
       context "when user is not an owner of the project" do
-        extend AbilityExampleHelpers
         before do
           current_user.should_receive(:is_owner_of?).with(project).and_return(false)
         end
@@ -125,7 +119,6 @@ describe Ability do
     end
 
     context "Project::MembershipsController" do
-      extend AbilityExampleHelpers
       context "when this is not our own membership" do
         let(:membership) { Project::Membership.new(:project => project, :user => user) }
         let(:user) { User.new }
