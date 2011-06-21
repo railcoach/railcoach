@@ -44,8 +44,6 @@ group :test, :development do
   # Guard
   gem 'guard'
   gem 'growl'
-  gem 'rb-fsevent'
-  gem 'rb-inotify'
   gem 'libnotify'
   gem 'guard-spork'
   gem 'guard-rspec'
@@ -55,6 +53,14 @@ group :test, :development do
   gem 'spork', '~> 0.9.0.rc'
 end
 
+group :mac_development do
+  gem 'rb-fsevent'
+end
+
+group :linux_development do
+  gem 'rb-inotify'
+end
+
 group :production do
-  #gem "pg"  # PostgreSQL gem
+  gem "pg"  # PostgreSQL gem
 end
