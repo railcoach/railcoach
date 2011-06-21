@@ -11,9 +11,7 @@ end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
-  SimpleCov.start 'rails' do
-    add_filter "/spork/"
-  end
+  SimpleCov.start 'rails'
 end
 
 # --- Instructions ---
