@@ -36,7 +36,7 @@ group :test, :development do
   gem "machinist" # Mocks
   gem 'rails-erd' #
   gem 'simplecov', :require => false
-  gem 'cucumber-rails' # Acceptance/integration tests
+  gem 'cucumber-rails', '0.5.2' # Acceptance/integration tests
   gem 'selenium-client' # Javascript driver for cucumber / capybara
   gem 'capybara' # Engine for testing with cucumber
   gem 'database_cleaner'
