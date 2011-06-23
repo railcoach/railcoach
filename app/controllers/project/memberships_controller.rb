@@ -13,18 +13,14 @@ class Project::MembershipsController < ApplicationController
 
   #PUT accept_member with membership_id
   def accept_member
-    if current_user.is_owner_of?(@membership.project)
-      @membership.accept_member
-    end
+    @membership.accept_member
 
     redirect_to :back
   end
 
   #PUT deny with membership_id
   def deny
-    if current_user.is_owner_of?(@membership.project)
-      @membership.destroy
-    end
+    @membership.destroy
 
     redirect_to :back
   end
