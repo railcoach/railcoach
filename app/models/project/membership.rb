@@ -1,8 +1,9 @@
 class Project::Membership < ActiveRecord::Base
+  acts_as_paranoid
   belongs_to :project, :class_name => "Project"
   belongs_to :user, :class_name => "User"
-  has_and_belongs_to_many :roles, :class_name => "Project::Role", :join_table => "project_memberships_roles"
   validates_uniqueness_of :project_id, :scope => :user_id
+  validates_presence_of :project, :user
 
   state_machine :initial => :none do
     event :accept_member do

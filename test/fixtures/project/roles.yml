@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-owner:
-  id: 1
-  name: "owner"
-
-member:
-  id: 2
-  name: "member"

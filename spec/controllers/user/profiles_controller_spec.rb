@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe User::ProfilesController do
+  let(:current_user) { mock_model(User).as_null_object }
+
+  before do
+    controller.stub(:current_user).and_return(current_user)
+  end
+
   describe "GET edit" do
     let(:profile) { mock_model(User::Profile).as_null_object }
     before do
@@ -18,19 +24,18 @@ describe User::ProfilesController do
     
     context "given the data is valid" do
       let(:profile) { mock_model(User::Profile).as_null_object }
-      let(:user) { mock_model(User).as_null_object }
 
       before do
         User::Profile.stub!(:find).with(profile).and_return(profile) # Stub the model, so we just asume that the data exists and works
-        profile.stub!(:user).and_return(user) # Because we dont care if the relationship doesnt work, else profile has a nil relationship
+        profile.stub!(:user).and_return(current_user) # Because we dont care if the relationship doesnt work, else profile has a nil relationship
 
-        put :update, :id => profile, :user_profile => profile # put to profiles#update
+        put :update, :id => profile
       end
 
       it "should find the profile and its user" do
         # Note that we're only checking on working instance variables, nothing more
         assigns[:profile].should eq profile
-        assigns[:user].should eq user 
+        assigns[:user].should eq current_user
       end
 
       it "should update the profile" do
@@ -46,17 +51,16 @@ describe User::ProfilesController do
 
       it "should redirect to user" do
         # Simple redirect test
-        response.should redirect_to user_path(user)
+        response.should redirect_to user_path(current_user)
       end
     end
 
     context "given the data is invalid" do
       let(:profile) { mock_model(User::Profile).as_null_object }
-      let(:user) { mock_model(User).as_null_object }
 
       before do
         User::Profile.stub!(:find).with(profile).and_return(profile) # Stub the model, so we just asume that the data exists and works
-        profile.stub!(:user).and_return(user) # Because we dont care if the relationship doesnt work, else profile has a nil relationship
+        profile.stub!(:user).and_return(current_user) # Because we dont care if the relationship doesnt work, else profile has a nil relationship
         profile.stub!(:update_attributes).and_return(false)
       end
 
@@ -81,5 +85,3 @@ describe User::ProfilesController do
     end
   end
 end
-
-

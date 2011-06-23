@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_filter :navigation
+  load_and_authorize_resource
 
   # GET /projects/home
   def home
@@ -15,8 +16,6 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-    @project = Project.find(params[:id])
-
     unless @project
       flash[:error] = "This project does not exist (yet)."
       redirect_to(projects_url)
@@ -30,18 +29,13 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
   end
 
   # POST /projects
   def create
-    @project = Project.new(params[:project])
-    # TODO give the new membership an admin role within the project
-    @membership = Project::Membership.new(:project => @project, :user => current_user)
+    @project = Project.new(params[:project]).owner(current_user)
 
-    @membership.roles << Project::Role.find_by_name('owner')
-    # TODO use transaction
-    if @project.save and @membership.save
+    if @project.save
       redirect_to(@project, :notice => 'Project was successfully created.')
     else
       render :action => "new"
@@ -50,8 +44,6 @@ class ProjectsController < ApplicationController
 
   # PUT /projects/1
   def update
-    @project = Project.find(params[:id])
-
     if @project.update_attributes(params[:project])
       redirect_to(@project, :notice => 'Project was successfully updated.')
     else
@@ -61,24 +53,21 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
     redirect_to(projects_url)
   end
 
   # PUT /project/1/request_membership
   def request_membership
-    project = Project.find(params[:id])
-    project.request_membership(current_user)
+    @project.request_membership(current_user)
 
     redirect_to :back
   end
 
   # PUT /project/1/invite_member
   def invite_member
-    user = User.find(params[:user_id])
-    project = Project.find(params[:id])
-    project.invite_member(user)
+    @user = User.find(params[:user_id])
+    @project.invite_member(@user)
 
     redirect_to :back
   end

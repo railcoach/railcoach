@@ -18,10 +18,14 @@ describe UsersController do
   end
 
   describe "GET show" do
+    let(:user) { mock_model(User).as_null_object }
+
+    before :each do
+      User.stub(:find).and_return(user)
+    end
+
     context "when the user exists" do
-      let(:user) { mock_model(User).as_null_object }
       before do
-        User.stub(:find).with(1).and_return(user)
         get :show, :id =>1
       end
       it "should return the user" do
@@ -33,7 +37,7 @@ describe UsersController do
   describe "GET home" do
     context "when there are no users" do
       it "should not display any users" do
-        User.stub(:all).and_return([])
+        User.stub(:find).with(:all, {:include=>:profile}).and_return([])
         get :home
         assigns[:random_users].should eq []
       end
