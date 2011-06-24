@@ -98,7 +98,7 @@ describe ProjectsController do
       end
 
       it "should return two items of the shuffled list" do
-        assigns[:random_projects].length.should == 2
+        assigns[:random_projects].length.should == 4
       end
 
       it "should respond with success" do

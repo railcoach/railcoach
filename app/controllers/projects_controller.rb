@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/home
   def home
-    @random_projects = Project.all.shuffle.first(2)
+    @random_projects = Project.all.shuffle.first(4)
 
     render :layout => 'exhibition' unless user_signed_in?
   end
