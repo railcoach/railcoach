@@ -10,62 +10,53 @@ input[type="text"], input[type="password"], input[type="url"], textarea {
     min-height: 20px;
 }
 
-h1 input {
-    border: 0px;
-    height: 40px;
-    font-size: 35px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+input[type="submit"], input[type="reset"] {
+    height: 20px;
+    line-height: 20px;
     font-weight: bold;
-    background: transparent;
-    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0px 10px;
+    @include corner-round-all(10px);
+    font-size: 11px;
+}
+
+input[type="submit"] {
+    background-color: #FF8800;
+    color: #000000;
+    border: 1px solid #888888;
 }
 
 .formBlock {
+    h1 {
+        input {
+            border: 0px;
+            height: 40px;
+            font-size: 35px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            background: transparent;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        sub {
+            font-size: 13px;
+
+            input {
+                height: 20px;
+                font-size: 13px;
+                font-weight: normal;
+            }
+        }
+    }
+
     .formRow {
-        height: 20px;
+        min-height: 20px;
         margin-top: 10px;
         &.right {
             text-align: right;
         }
     }
-    label {
-        display: block;
-        float: left;
+
+    .w3-10 {
         width: 30%;
-        text-align: right;
-        padding-right: 3%;
-        height: 20px;
-        background-color: #DDDDDD;
-        @include corner-round-left(10px);
-    }
-    input {
-        padding: 0px;
-        margin: 0px;
-        border: 0px;
-    }
-    input[type="text"], input[type="password"], .inputBlock {
-        display: block;
-        margin-left: 33%;
-        text-align: left;
-        width: 67%;
-        height: 20px;
-        @include corner-round-right(10px);
-        background-color: #FFFFFF;
-    }
-    .inputBlock {
-        width: 64%;
-        padding-left: 3%;
-    }
-    input[type="submit"] {
-        height: 18px;
-        line-height: 18px;
-        font-weight: bold;
-        padding: 0px 10px;
-        background-color: #333333;
-        color: #FFFFFF;
-        border: 1px solid #000000;
-        @include corner-round-all(10px);
-        font-size: 11px;
     }
 }
