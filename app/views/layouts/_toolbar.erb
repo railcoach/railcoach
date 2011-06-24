@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <li><%= link_to 'Edit Account Information', edit_user_registration_path %></li>
       <li><%= link_to 'Manage connected networks', edit_user_network_path(current_user) %>
-      <li><%= link_to 'Edit Profile', edit_user_profile_path(current_user.profile) if can?(:edit, current_user.profile) %></li>
+      <li><%= link_to "logged in as: #{current_user.profile.fullname}", user_path(current_user) %></li>
       <li><%= link_to 'Logout', destroy_user_session_path %></li>
     <% else %>
       <li><%= link_to 'Login', new_user_session_path  %></li>
