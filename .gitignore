@@ -16,3 +16,4 @@ db/schema.rb
 .idea
 .idea/*
 railcoach.ids
+test/
