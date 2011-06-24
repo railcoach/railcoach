@@ -2,7 +2,7 @@ class OrganizationsController < ApplicationController
   before_filter :navigation
 
   def home
-    @random_organizations = Organization.find(:all).shuffle.first(8)
+    @random_organizations = Organization.all.shuffle.first(6)
     render :layout => 'exhibition' unless user_signed_in?
   end
 
@@ -62,6 +62,8 @@ class OrganizationsController < ApplicationController
   def destroy
     @organization = Organization.find(params[:id])
     @organization.destroy
+
+    redirect_to organizations_url
   end
 
   private

@@ -10,6 +10,40 @@ describe OrganizationsController do
     @mock_organization ||= mock_model(Organization, stubs).as_null_object
   end
 
+  describe "GET home" do
+    context "when enough organizations exist" do
+      let(:organizations) { [mock_model(Organization).as_null_object] * 20 }
+      before do
+        Organization.stub(:all).and_return(organizations)
+        get :home
+      end
+
+      it "should return two items of the shuffled list" do
+        assigns[:random_organizations].length.should == 6
+      end
+
+      it "should respond with success" do
+        response.should be_success
+      end
+    end
+
+    context "when only one project exists" do
+      let(:organizations) { [mock_model(Organization).as_null_object] }
+      before do
+        Organization.stub(:all).and_return(organizations)
+        get :home
+      end
+
+      it "should return the project" do
+        assigns[:random_organizations].length.should == 1
+      end
+
+      it "should respond with success" do
+        response.should be_success
+      end
+    end
+  end
+
   describe "GET index" do
     it "assigns all organizations as @organizations" do
       Organization.stub(:all) { [mock_organization] }
