@@ -22,12 +22,9 @@
   </div>
   <div class="column col5-6">
     <div class="gridSpacer">
-      <% if can?(:manage, @user.profile) %>
-        <div class="blockTools">
-          <%= link_to "Edit", edit_user_profile_path(@user.profile) %> -
-          <%= link_to 'Destroy', @user, :confirm => 'Are you sure?', :method => :delete %>
-        </div>
-      <% end %>
+      <div class="blockTools">
+        <%= raw(user_edit_and_destroy_links) %>
+      </div>
       <p>Gender: <%= translate_gender(@user.profile.gender) %></p>
       <p>Email: <%= @user.email %></p>
     </div>
