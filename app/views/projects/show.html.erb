@@ -16,8 +16,7 @@
   <div class="column col3-4">
     <div class="gridSpacer block blockSpacer">
       <div class="blockTools">
-        <%= link_to 'Edit', edit_project_path(@project) %> -
-        <%= link_to 'Destroy', @project, :confirm => 'Are you sure?', :method => :delete %>
+        <%= raw(edit_and_destroy_links) %>
       </div>
       <article>
         <p><%= @project.description %></p>
