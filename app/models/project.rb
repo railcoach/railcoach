@@ -5,8 +5,8 @@ class Project < ActiveRecord::Base
   has_many :memberships, :class_name => "Project::Membership", :dependent => :destroy
   has_many :users, :through => :memberships
 
-  before_save :setup_owner_membership
-  after_save :set_owner_role
+  before_create :setup_owner_membership
+  after_create :set_owner_role
 
   def owner(user)
     @owner = user
