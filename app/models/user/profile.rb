@@ -12,7 +12,7 @@ class User::Profile < ActiveRecord::Base
     elsif last_name.present?
       return last_name
     else
-      return nil
+      return ''
     end
   end
 

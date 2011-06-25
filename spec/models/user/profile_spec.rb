@@ -8,8 +8,8 @@ describe User::Profile do
 
   context 'when first_name and last_name empty' do
     describe 'fullname' do
-      it 'should return nil' do
-        @profile.fullname.should be_nil
+      it 'should return the empty string' do
+        @profile.fullname.should be_empty
       end
     end
   end
