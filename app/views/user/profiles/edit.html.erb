@@ -7,20 +7,16 @@
 <% end %>
 
 <% form_for @profile do |profile| %>
-  <div class="row">
+  <div class="row formBlock">
     <div class="column col1-1">
       <div class="gridSpacer">
         <h1>
-          <%= profile.text_field :first_name, :placeholder => 'First name' %>
-          <%= profile.text_field :last_name, :placeholder => 'Last name' %>
-          <sub><%= profile.text_field :title, :placeholder => 'Title' %></sub>
+          <%= profile.text_field :first_name, placeholder: 'First name', class: 'w3-10' %>
+          <%= profile.text_field :last_name, placeholder: 'Last name', class: 'w3-10' %>
+          <sub><%= profile.text_field :title, placeholder: 'Title', class: 'w3-10' %></sub>
         </h1>
       </div>
     </div>
-    <div class="break"></div>
-  </div>
-
-  <div class="row">
     <div class="column col1-6 memberUnits">
       <figure>
         <div class="gridSpacer block<%= ' female' if @profile.gender == 'f' %>"></div>

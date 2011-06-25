@@ -1,25 +1,33 @@
 <%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="row formBlock">
+    <div class="column col1-1">
+      <div class="gridSpacer">
+        <h1>
+          <%= f.text_field :name, placeholder: 'Project name' %>
+        </h1>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <div class="column col3-4">
+      <div class="block blockSpacer gridSpacer">
+        <% if @project.errors.any? %>
+          <div id="error_explanation">
+            <h3><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
+            <ul>
+            <% @project.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.text_area :description, placeholder: 'description' %>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
+    <div class="column col1-4">
+      <div class="block gridSpacer blockSpacer"></div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="break"></div>
 <% end %>

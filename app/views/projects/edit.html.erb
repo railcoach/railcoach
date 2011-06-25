@@ -1,6 +1,8 @@
-<h1>Editing project</h1>
-
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'Projects', home_projects_path %></li>
+    <li><%= link_to image_tag('transparent.gif') + @project.name, project_path(@project) %></li>
+    <li><%= link_to image_tag('transparent.gif') + 'Edit', '#' %></li>
+  </ul>
+<% end %>
 <%= render 'form' %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
