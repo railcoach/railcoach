@@ -10,30 +10,26 @@ gem 'rollable'
 # Thin if webrick fucks up
 gem 'thin'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'haml', '>= 3.0.0'
-
 # This needs to be fixed as soon as working rails3 gem is released
-gem "ruby-openid"
 gem 'rack'
 gem 'jquery-rails'
 gem 'state_machine'
+gem 'haml', '>= 3.0.0'
 
 # Authentication Gems
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
+gem 'ruby-openid'
 
 # Revertable :destroy
 gem 'rails3_acts_as_paranoid'
 
 group :test, :development do
   gem 'sqlite3-ruby', :require => 'sqlite3' # Development database
-  gem "rspec-rails", ">= 2.0.1" # Controller / Model tests
-  gem "autotest" # Automatic testing
-  gem "faker"
-  gem "machinist" # Mocks
+  gem 'rspec-rails', '>= 2.0.1' # Controller / Model tests
+  gem 'autotest' # Automatic testing
+  gem 'faker'
+  gem 'machinist' # Mocks
   gem 'rails-erd' #
   gem 'simplecov', :require => false
   gem 'cucumber-rails', '0.5.2' # Acceptance/integration tests
@@ -62,5 +58,5 @@ group :linux_development do
 end
 
 group :production do
-  gem "pg"  # PostgreSQL gem
+  gem 'pg'  # PostgreSQL gem
 end
