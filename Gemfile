@@ -17,9 +17,8 @@ gem 'state_machine'
 gem 'haml', '>= 3.0.0'
 
 # Authentication Gems
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
-gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
-gem 'ruby-openid'
+gem 'devise'
+gem 'omniauth'
 
 # Revertable :destroy
 gem 'rails3_acts_as_paranoid'
