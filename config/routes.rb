@@ -32,6 +32,7 @@ Dynamic::Application.routes.draw do
   get "static/home"
   get "static/news"
   get "static/about"
+  get "static/privacy" => "static#privacy"
   get "bam2011s" => "static#bam2011s"
 
   # The priority is based upon order of creation:

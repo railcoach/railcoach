@@ -19,6 +19,10 @@ class StaticController < ApplicationController
     render :layout => "exhibition" unless user_signed_in?
   end
 
+  def privacy
+    @nav = 'Privacy'
+  end
+
   def bam2011s
     @nav = 'BAM2011S'
 
