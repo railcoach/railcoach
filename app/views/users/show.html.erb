@@ -20,7 +20,7 @@
       <div class="gridSpacer block<%= ' female' if @user.profile.gender == 'f' %>"></div>
     </figure>
   </div>
-  <div class="column col5-6">
+  <div class="column col1-2">
     <div class="gridSpacer">
       <div class="blockTools">
         <%= raw(user_edit_and_destroy_links) %>
@@ -29,5 +29,15 @@
       <p>Email: <%= @user.email %></p>
     </div>
   </div>
+  <div class="column col1-3">
+    <div class="gridSpacer block twitterBlock" id="user_twitter">
+      <h4>Twitter <%= link_to @user.profile.twitter, @user.profile.twitter_path %></h4>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      $('#user_twitter').railcoachTwitterWidget({username: '<%= @user.profile.twitter %>'});
+    });
+  </script>
   <div class="break"></div>
 </div>

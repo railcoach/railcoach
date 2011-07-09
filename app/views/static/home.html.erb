@@ -55,40 +55,15 @@
     </div>
   </div>
   <div class="column col1-3">
-    <div class="gridSpacer">
-      <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-      <script>
-        new TWTR.Widget({
-          version: 2,
-          type: 'profile',
-          rpp: 3,
-          interval: 6000,
-          width: 'auto',
-          height: 172,
-          theme: {
-            shell: {
-              background: 'rgba(255,255,255,0.2)',
-              color: '#000000'
-            },
-            tweets: {
-              background: 'rgba(255,255,255,0.5)',
-              color: '#333333',
-              links: '#dd7700'
-            }
-          },
-          features: {
-            scrollbar: true,
-            loop: false,
-            live: false,
-            hashtags: true,
-            timestamp: true,
-            avatars: false,
-            behavior: 'all'
-          }
-        }).render().setUser('projectlodge').start();
-      </script>
+    <div class="gridSpacer block twitterBlock" id="organization_twitter">
+      <h4><%= link_to '.projectlodge on twitter', 'http://twitter.com/projectlodge' %></h4>
     </div>
   </div>
+  <script>
+    $(function () {
+      $('#organization_twitter').railcoachTwitterWidget();
+    });
+  </script>
 </div>
 <div class="row" id="ie_fallback"></div>
 <script type="text/javascript">
