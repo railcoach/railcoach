@@ -1,0 +1,17 @@
+defaults: &defaults
+  omniauth:
+    facebook:
+      app_id: '217585791616869'
+      app_secret: '35684fa1993e71dec4134766f81a5b1b'
+    github:
+      client_id: '2b4bef800e23baecb59f'
+      client_secret: 'a16f66b57fdbe212797233447c16e3f0496546d6'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

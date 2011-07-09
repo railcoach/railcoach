@@ -144,9 +144,10 @@ Devise.setup do |config|
   #config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
   #config.stretches = Rails.env.test? ? 1 : 10
   require 'openid/store/filesystem'
-  config.omniauth :facebook, "147749211905466", "b682557c3bc08512d09ebc4b848d8d93"
+  require 'settings'
+  config.omniauth :facebook, Settings.omniauth.facebook.app_id, Settings.omniauth.facebook.app_secret
   config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :domain => 'openid.net'
-  config.omniauth :github, "147749211905466", "b682557c3bc08512d09ebc4b848d8d93"
+  config.omniauth :github, Settings.omniauth.github.client_id, Settings.omniauth.github.client_secret
   config.omniauth :google, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
 end
 

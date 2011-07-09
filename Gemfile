@@ -20,6 +20,9 @@ gem 'haml', '>= 3.0.0'
 gem 'devise'
 gem 'omniauth'
 
+# Settings Gem
+gem 'settingslogic'
+
 # Revertable :destroy
 gem 'rails3_acts_as_paranoid'
 
