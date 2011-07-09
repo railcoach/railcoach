@@ -29,15 +29,17 @@
       <p>Email: <%= @user.email %></p>
     </div>
   </div>
-  <div class="column col1-3">
-    <div class="gridSpacer block twitterBlock" id="user_twitter">
-      <h4>Twitter <%= link_to @user.profile.twitter, @user.profile.twitter_path %></h4>
+  <% if @user.profile.twitter.present? %>
+    <div class="column col1-3">
+      <div class="gridSpacer block twitterBlock" id="user_twitter">
+        <h4>Twitter <%= link_to @user.profile.twitter, @user.profile.twitter_path %></h4>
+      </div>
     </div>
-  </div>
-  <script>
-    $(function () {
-      $('#user_twitter').railcoachTwitterWidget({username: '<%= @user.profile.twitter %>'});
-    });
-  </script>
+    <script>
+      $(function () {
+        $('#user_twitter').railcoachTwitterWidget({username: '<%= @user.profile.twitter %>'});
+      });
+    </script>
+  <% end %>
   <div class="break"></div>
 </div>
