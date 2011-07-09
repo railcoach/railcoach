@@ -66,4 +66,15 @@ describe User::Profile do
       end
     end
   end
+
+  describe 'twitter_path' do
+    it "should return a valid twitter account url" do
+      @profile.twitter = 'projectlodge'
+      @profile.twitter_path.should == "http://www.twitter.com/#{@profile.twitter}"
+    end
+
+    it "should return an empty string if no twitter account was found" do
+      @profile.twitter_path.should be_empty
+    end
+  end
 end

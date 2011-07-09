@@ -16,6 +16,12 @@ class User::Profile < ActiveRecord::Base
     end
   end
 
+  def twitter_path
+    url = ""
+    url = "http://www.twitter.com/#{self.twitter}" if self.twitter.present?
+    return url
+  end
+
   def different_names
     errors.add(:base, "first name and last name are the same") if (first_name.eql?(last_name))
   end
