@@ -5,7 +5,7 @@
         <li<%= " class='opened'" if @nav == 'Home' %>><%= link_to 'Home', '/static/home' %></li>
         <li<%= " class='opened'" if @nav == 'Members' %>>
           <%= link_to 'Members', home_users_path %>
-          <ul class="columns-<%= user_signed_in? ? '2' : '1' %>">
+          <ul class="columns-1">
             <li class="column">
               <h1>Active members</h1>
               <ul>
@@ -20,7 +20,7 @@
         </li>
         <li<%= " class='opened'" if @nav == 'Projects' %>>
           <%= link_to('Projects', home_projects_path) %>
-          <ul class="columns-<%= user_signed_in? ? '3' : '2' %>">
+          <ul class="columns-<%= user_signed_in? ? '2' : '1' %>">
             <li class="column">
               <h1>Active projects</h1>
               <ul>
@@ -36,19 +36,10 @@
                 </ul>
               </li>
             <% end %>
-            <li class="column">
-              <h1>Starting your own</h1>
-              <ul>
-                <li><%= link_to 'How to start?', '#' %></li>
-                <li><%= link_to 'Why to start?', '#' %></li>
-                <li><%= link_to "More FAQ's about groups", '#' %></li>
-              </ul>
-            </li>
           </ul>
         </li>
         <li<%= " class='opened'" if @nav == 'News' %>><%= link_to 'News', '/static/news' %></li>
         <li<%= " class='opened'" if @nav == 'About' %>><%= link_to 'About', '/static/about' %></li>
-        <li class="special<%= " opened" if @nav == 'BAM2011S' %>"><%= link_to 'BAM2011S', '/bam2011s' %></li>
       </ul>
     </nav>
     <%= link_to image_tag('logo.png', :class => 'logo'), '/static/home'  %>
