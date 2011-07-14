@@ -57,7 +57,18 @@
           </ul>
         </li>
         <li<%= " class='opened'" if @nav == 'News' %>><%= link_to 'News', '/static/news' %></li>
-        <li<%= " class='opened'" if @nav == 'About' %>><%= link_to 'About', '/static/about' %></li>
+        <li<%= " class='opened'" if @nav == 'About' %>>
+          <%= link_to 'About', '/static/about' %>
+          <ul class="columns-1">
+            <li class="column">
+              <h1>About .projectlodge</h1>
+              <ul>
+                <li><%= link_to 'Privacy policy', '/static/privacy' %></li>
+                <li><%= link_to "Contact", '/static/contact' %></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li class="special<%= " opened" if @nav == 'BAM2011S' %>"><%= link_to 'BAM2011S', '/bam2011s' %></li>
       </ul>
     </nav>
