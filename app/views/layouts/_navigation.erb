@@ -16,15 +16,6 @@
                 <% end %>
               </ul>
             </li>
-            <% if user_signed_in? %>
-              <li class="column">
-                <h1>My contacts</h1>
-                <ul>
-                  <li><%= link_to 'My friends', '#' %></li>
-                  <li><%= link_to 'People I work with', '#' %></li>
-                </ul>
-              </li>
-            <% end %>
           </ul>
         </li>
         <li<%= " class='opened'" if @nav == 'Projects' %>>
@@ -42,7 +33,6 @@
               <li class="column">
                 <h1>My projects</h1>
                 <ul>
-                  <li><%= link_to 'My participations', '#' %></li>
                   <li><%= link_to 'Start a new project', new_project_path %></li>
                 </ul>
               </li>

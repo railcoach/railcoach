@@ -16,8 +16,8 @@
       <li>
         <ul>
           <li><h1>Members</h1></li>
-          <li><%= link_to 'Featured members', '#' %></li>
-          <li><%= link_to 'Members by name', "#"  %></li>
+          <li><%= link_to 'Featured members', home_users_path %></li>
+          <li><%= link_to 'Members by name', users_path  %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Your profile', '#' %></li>
           <% end %>
@@ -36,7 +36,6 @@
           <li><h1>About</h1></li>
           <li><%= link_to 'About projectlodge', '/static/about' %></li>
           <li><%= link_to 'Contact', '#' %></li>
-          <li><%= link_to 'FAQ', '#' %></li>
           <li><%= link_to 'Privacy', '/static/privacy' %></li>
         </ul>
       </li>
