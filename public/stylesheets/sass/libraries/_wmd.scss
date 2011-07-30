@@ -1,8 +1,3 @@
-body 
-{ 
-	background-color: White
-}
-
 .wmd-panel
 {
 	width: 100%;
@@ -12,40 +7,33 @@ body
 
 #wmd-editor
 {
-	background-color: Aquamarine;
 }
 
 #wmd-button-bar 
 {
 	width: 100%;
-	background-color: Silver; 
+	background-color: White;
+	border: 1px solid DarkGray;
 }
 
 #wmd-input 
 { 
-	height: 500px;
-	width: 100%;
-	background-color: Gainsboro;
 	border: 1px solid DarkGray;
 }
 
 #wmd-preview 
-{ 
-	background-color: LightSkyBlue; 
+{
+	padding: 5px;
 }
 
 #wmd-output 
 { 
-	background-color: Pink;
 }
 
 #wmd-button-row 
 {
 	position: relative; 
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 5px;
-	margin-top: 10px;
+	margin: 5px;
 	padding: 0px;  
 	height: 20px;
 }
