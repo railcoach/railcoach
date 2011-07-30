@@ -19,7 +19,7 @@
         <%= raw(project_edit_and_destroy_links) %>
       </div>
       <article>
-        <p><%= @project.description %></p>
+        <p><%= markdown @project.description %></p>
       </article>
     </div>
   </div>
