@@ -27,7 +27,7 @@ gem 'settingslogic'
 gem 'rails3_acts_as_paranoid'
 
 # Markdown
-gem 'rdiscount', '~> 1.6.8'
+gem 'rdiscount'
 
 group :test, :development do
   gem 'sqlite3-ruby', :require => 'sqlite3' # Development database
