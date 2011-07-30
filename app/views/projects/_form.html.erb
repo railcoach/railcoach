@@ -21,7 +21,9 @@
         <% end %>
         <div id="wmd-button-bar" class="wmd-panel"></div>
         <%= f.text_area :description, placeholder: 'description', id: 'wmd-input' %>
-        <div id="wmd-preview" class="wmd-panel"></div>
+        <article>
+          <div id="wmd-preview" class="wmd-panel"></div>
+        </article>
         <!-- <div id="wmd-output" class="wmd-panel"></div> -->
         <div class="actions">
           <%= f.submit %>
