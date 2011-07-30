@@ -29,9 +29,9 @@ Dynamic::Application.routes.draw do
 
   resource :activations
 
-  get "static/home"
-  get "static/news"
-  get "static/about"
+  get "static/home" => "static#home"
+  get "static/news" => "static#news"
+  get "static/about" => "static#about"
   get "static/privacy" => "static#privacy"
   get "static/contact" => "static#contact"
   get "bam2011s" => "static#bam2011s"

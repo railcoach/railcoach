@@ -20,7 +20,11 @@ class StaticController < ApplicationController
   end
 
   def privacy
-    @nav = 'Privacy'
+    @nav = 'About'
+  end
+
+  def contact
+    @nav = 'About'
   end
 
   def bam2011s
