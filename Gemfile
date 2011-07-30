@@ -18,7 +18,7 @@ gem 'haml', '>= 3.0.0'
 
 # Authentication Gems
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth', '~> 0.2.6'
 
 # Settings Gem
 gem 'settingslogic'
