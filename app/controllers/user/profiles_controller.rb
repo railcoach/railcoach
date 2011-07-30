@@ -17,10 +17,4 @@ class User::ProfilesController < ApplicationController
       render :action => 'edit'
     end
   end
-
-  # DELETE /profiles/1
-  def destroy
-    @profile.destroy
-    redirect_to(profiles_url)
-  end
 end
