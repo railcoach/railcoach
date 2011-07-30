@@ -26,6 +26,9 @@ gem 'settingslogic'
 # Revertable :destroy
 gem 'rails3_acts_as_paranoid'
 
+# Markdown
+gem 'rdiscount', '~> 1.6.8'
+
 group :test, :development do
   gem 'sqlite3-ruby', :require => 'sqlite3' # Development database
   gem 'rspec-rails', '>= 2.0.1' # Controller / Model tests
