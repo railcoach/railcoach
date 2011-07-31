@@ -42,11 +42,11 @@ Attacklab.wmdBase = function(){
 	
 	// The default text that appears in the dialog input box when entering
 	// links.
-	var imageDefaultText = "http://";
-	var linkDefaultText = "http://";
+	var imageDefaultText = "http://projectlodge.org/images/projectlodge.png";
+	var linkDefaultText = "http://projectlodge.org/";
 	
 	// The location of your button images relative to the base directory.
-	var imageDirectory = "images/";
+	var imageDirectory = "/images/";
 	
 	// Some intervals in ms.  These can be adjusted to reduce the control's load.
 	var previewPollInterval = 500;
@@ -1456,20 +1456,22 @@ Attacklab.wmdBase = function(){
 	//
 	// If remove is true, the whitespace disappears.
 	wmd.Chunks.prototype.trimWhitespace = function(remove){
-	
-		this.selection = this.selection.replace(/^(\s*)/, "");
+
+		var self = this;
+		this.selection = this.selection.replace(/^(\s*)/, function($1) {
+			if (!remove) {
+				self.before += $1;
+			}
+			return "";
+		});
 		
-		if (!remove) {
-			this.before += re.$1;
-		}
-		
-		this.selection = this.selection.replace(/(\s*)$/, "");
-		
-		if (!remove) {
-			this.after = re.$1 + this.after;
-		}
+		this.selection = this.selection.replace(/(\s*)$/, function($1) {
+			if (!remove) {
+				self.after = $1 + self.after;
+			}
+			return "";
+		});
 	};
-	
 	
 	wmd.Chunks.prototype.addBlankLines = function(nLinesBefore, nLinesAfter, findExtraNewlines){
 	
@@ -2067,7 +2069,7 @@ Attacklab.wmdBase = function(){
         if (chunk.before) {
             var lines = chunk.before.replace(/\n$/, "").split("\n");
             var inChain = false;
-            for (var i in lines) {
+            for (var i = 0; i < lines.length; i++) {
                 var good = false;
                 line = lines[i];
                 inChain = inChain && line.length > 0; // c) any non-empty line continues the chain
