@@ -59,6 +59,10 @@ article ul {
 blockquote, q {
     quotes: none;
 }
+article blockquote, article pre {
+    padding-left: 25px;
+    padding-right: 25px;
+}
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
