@@ -32,4 +32,10 @@ class StaticController < ApplicationController
 
     render :layout => "exhibition"
   end
+
+  def sag2012w
+    @nav = 'SAG2012W'
+
+    render :layout => "exhibition"
+  end
 end

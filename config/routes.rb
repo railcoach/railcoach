@@ -35,6 +35,7 @@ Dynamic::Application.routes.draw do
   get "static/privacy" => "static#privacy"
   get "static/contact" => "static#contact"
   get "bam2011s" => "static#bam2011s"
+  get "sag2012w" => "static#sag2012w"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

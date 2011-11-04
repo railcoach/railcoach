@@ -1,0 +1,49 @@
+<% content_for :exhibition do %>
+  <div class="articleContainer">
+    <div class="spacer">
+      <div class="description">
+        <article>
+          <h1><%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>
+            SAG2012W</h1>
+          <div class="column">
+            <p>Filler</p>
+          </div>
+          <div class="column">
+            <p>Filler</p>
+          </div>
+        </article>
+      </div>
+      <%= render :partial => 'layouts/authentication_widget' %>
+      <div class="break"></div>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'SAG2012W', '#' %></li>
+  </ul>
+<% end %>
+
+<div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <h1>What about the details?</h1>
+    </div>
+  </div>
+  <div class="column col1-2">
+    <div class="gridSpacer block blockSpacer">
+      <h3>Date-time:</h3>
+      <p>Filler</p>
+      <h3>Location:</h3>
+      <p>Filler</p>
+    </div>
+  </div>
+  <div class="column col1-2">
+    <div class="gridSpacer">
+      <iframe width="460" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.nl/maps?f=q&amp;source=s_q&amp;hl=nl&amp;geocode=&amp;q=Stichting+Revelation+Space,+Binckhorstlaan+172,+2516+BG+Den+Haag&amp;aq=0&amp;sll=52.469397,5.509644&amp;sspn=4.3242,11.096191&amp;ie=UTF8&amp;hq=Stichting+Revelation+Space,&amp;hnear=Binckhorstlaan+172,+Binckhorst,+'s-Gravenhage,+Den+Haag,+Zuid-Holland&amp;ll=52.073281,4.338269&amp;spn=0.008441,0.019698&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe><br />
+      <a href="http://maps.google.nl/maps?f=q&amp;source=embed&amp;hl=nl&amp;geocode=&amp;q=Stichting+Revelation+Space,+Binckhorstlaan+172,+2516+BG+Den+Haag&amp;aq=0&amp;sll=52.469397,5.509644&amp;sspn=4.3242,11.096191&amp;ie=UTF8&amp;hq=Stichting+Revelation+Space,&amp;hnear=Binckhorstlaan+172,+Binckhorst,+'s-Gravenhage,+Den+Haag,+Zuid-Holland&amp;ll=52.073281,4.338269&amp;spn=0.008441,0.019698&amp;z=15&amp;iwloc=A">View Larger Map</a>
+    </div>
+  </div>
+</div>
+<div class="break"></div>
