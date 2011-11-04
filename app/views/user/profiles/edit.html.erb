@@ -28,6 +28,7 @@
         <label for="Gender">Male:</label><%= profile.radio_button :gender, "m" %>
         <label for="Gender">Female:</label><%= profile.radio_button :gender, "f" %>
         <%= profile.text_field :twitter, placeholder: 'Twitter name' %>
+        <%= profile.text_field :description, placeholder: 'Description' %>
         <%= submit_tag %>
       </div>
     </div>

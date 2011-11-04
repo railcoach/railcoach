@@ -27,6 +27,7 @@
       </div>
       <p>Gender: <%= translate_gender(@user.profile.gender) %></p>
       <p>Email: <%= @user.email %></p>
+      <p>Description: <%= @user.profile.description %></p>
     </div>
   </div>
   <% if @user.profile.twitter.present? %>

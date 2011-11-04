@@ -6,7 +6,6 @@ module ApplicationHelper
     roles.each { |r| r.name.collect }
   end
 
-
   # Timon Vonk
   # Easilly creates an auth url for a network, takes a network as a string. Would be cool if it read omniauth config instead for whitelisting
   def user_auth_helper_path(network)
@@ -24,5 +23,10 @@ module ApplicationHelper
     else
       raise 'Unkown authentication method'
     end
+  end
+
+  # Convert a markdown text to HTML and sanitize it.
+  def markdown(text)
+    raw sanitize Markdown.new(text).to_html
   end
 end

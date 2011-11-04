@@ -48,8 +48,20 @@ body {
 ol, ul {
     list-style: none;
 }
+article ol {
+    padding-left: 25px;
+    list-style: decimal;
+}
+article ul {
+    padding-left: 25px;
+    list-style: disc;
+}
 blockquote, q {
     quotes: none;
+}
+article blockquote, article pre {
+    padding-left: 25px;
+    padding-right: 25px;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {

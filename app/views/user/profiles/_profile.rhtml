@@ -5,6 +5,7 @@
     <label for="Title">Title:</label><%= profile.text_field :title %><br/>
     <label for="Gender">Male:</label><%= profile.radio_button :gender, "m" %>
     <label for="Gender">Female:</label><%= profile.radio_button :gender, "f" %>
+    <label for="description">Description:</label><%= profile.text_field :description %><br/>
   </p>
 
   <%= submit_tag %><br />
