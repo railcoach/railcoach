@@ -37,6 +37,9 @@ Dynamic::Application.routes.draw do
   get "bam2011s" => "static#bam2011s"
   get "sag2012w" => "static#sag2012w"
 
+  # special page for the launch
+  get "boot" => "static#boot"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -38,4 +38,10 @@ class StaticController < ApplicationController
 
     render :layout => "exhibition"
   end
+
+  def boot
+    @nav = 'boot'
+
+    render :layout => "exhibition"
+  end
 end
