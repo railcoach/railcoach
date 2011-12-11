@@ -4,7 +4,6 @@
 /tmp
 /nbproject
 /config/database.yml
-*.lock
 *.pid
 *.log
 *.swp
@@ -14,3 +13,4 @@
 /.idea
 /railcoach.ids
 /test
+/ZenTest

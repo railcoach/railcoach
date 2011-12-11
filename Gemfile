@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
+gem 'rails', '3.0.11'
 
 # Authorization semantics
 gem 'cancan'
@@ -19,6 +19,9 @@ gem 'haml', '>= 3.0.0'
 # Authentication Gems
 gem 'devise'
 gem 'omniauth', '>= 0.2.6'
+gem 'omniauth-facebook'
+gem 'omniauth-openid'
+gem 'omniauth-github'
 
 # Settings Gem
 gem 'settingslogic'
@@ -37,7 +40,7 @@ group :test, :development do
   gem 'machinist' # Mocks
   gem 'rails-erd' #
   gem 'simplecov', :require => false
-  gem 'cucumber-rails', '0.5.2' # Acceptance/integration tests
+  gem 'cucumber-rails' # Acceptance/integration tests
   gem 'selenium-client' # Javascript driver for cucumber / capybara
   gem 'capybara' # Engine for testing with cucumber
   gem 'database_cleaner'
@@ -52,14 +55,12 @@ group :test, :development do
   gem 'guard-sass'
   gem 'guard-bundler'
   gem 'spork', '~> 0.9.0.rc'
-end
 
-group :mac_development do
-  gem 'rb-fsevent'
-end
+  # OSX notify
+  gem 'rb-fsevent', :require => false
 
-group :linux_development do
-  gem 'rb-inotify'
+  # Linux notify
+  gem 'rb-inotify', :require => false
 end
 
 group :production do

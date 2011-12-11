@@ -146,9 +146,9 @@ Devise.setup do |config|
   require 'openid/store/filesystem'
   require 'settings'
   config.omniauth :facebook, Settings.omniauth.facebook.app_id, Settings.omniauth.facebook.app_secret
-  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :domain => 'openid.net'
   config.omniauth :github, Settings.omniauth.github.client_id, Settings.omniauth.github.client_secret
-  config.omniauth :google, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
+  config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('/tmp'), :require => 'omniauth-openid'
+  config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id', :require => 'omniauth-openid'
 end
 
 # From the holden omniauth example
