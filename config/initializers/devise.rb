@@ -151,6 +151,13 @@ Devise.setup do |config|
   config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id', :require => 'omniauth-openid'
 end
 
+OmniAuth.config.full_host = Proc.new do |env|
+  scheme         = env['rack.url_scheme']
+  local_host     = env['HTTP_HOST']
+  forwarded_host = env['HTTP_X_FORWARDED_HOST']
+  forwarded_host.blank? ? "#{scheme}://#{local_host}" : "#{scheme}://#{forwarded_host}"
+end
+
 # From the holden omniauth example
 require 'openid/store/nonce'
 require 'openid/store/interface'

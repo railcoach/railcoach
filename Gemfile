@@ -14,11 +14,11 @@ gem 'thin'
 gem 'rack'
 gem 'jquery-rails'
 gem 'state_machine'
-gem 'haml', '>= 3.0.0'
+gem 'haml', '~> 3.0.0'
 
 # Authentication Gems
 gem 'devise'
-gem 'omniauth', '>= 0.2.6'
+gem 'omniauth', '~> 1.0.0'
 gem 'omniauth-facebook'
 gem 'omniauth-openid'
 gem 'omniauth-github'
@@ -34,15 +34,12 @@ gem 'rdiscount'
 
 group :test, :development do
   gem 'sqlite3-ruby', :require => 'sqlite3' # Development database
-  gem 'rspec-rails', '>= 2.0.1' # Controller / Model tests
+  gem 'rspec-rails'  # Controller / Model tests
   gem 'autotest' # Automatic testing
   gem 'faker'
   gem 'machinist' # Mocks
   gem 'rails-erd' #
   gem 'simplecov', :require => false
-  gem 'cucumber-rails' # Acceptance/integration tests
-  gem 'selenium-client' # Javascript driver for cucumber / capybara
-  gem 'capybara' # Engine for testing with cucumber
   gem 'database_cleaner'
   
   # Guard
