@@ -17,7 +17,8 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         if authentication
           flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => omniauth['provider']
           #sign_in_and_redirect(:user, authentication.user)
-          sign_in_and_redirect(:user, authentication.user)
+          #sign_in_and_redirect(:user, authentication.user)
+          sign_in_and_redirect authentication.user, :event => :authentication
         else
 
           #create a new user
@@ -32,7 +33,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
           if user.save
             flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => omniauth['provider'] 
-            sign_in_and_redirect(:user, user)
+            sign_in_and_redirect user, :event => :authentication
           else
             session[:omniauth] = omniauth.except('extra')
             redirect_to new_user_registration_url
