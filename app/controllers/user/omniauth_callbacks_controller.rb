@@ -7,7 +7,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       omniauth = env["omniauth.auth"]
 
       if current_user.present? #or User.find_by_email(auth.recursive_find_by_key("email"))
-        current_user.user_tokens.find_or_create_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
+        current_user.user_tokens.find_or_create_by_provider_and_uid(omniauth['provider'], omniauth['uid'].to_s)
         flash[:notice] = "Authentication successful"
         redirect_to edit_user_registration_path
       else
