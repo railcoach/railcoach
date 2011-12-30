@@ -46,10 +46,10 @@ class User < ActiveRecord::Base
 
     if omniauth['credentials'].present?
       user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
-      user_tokens.build(:provider => omniauth['provider'], 
-                        :uid => omniauth['uid'],
-                        :token => omniauth['credentials']['token'], 
-                        :secret => omniauth['credentials']['secret'])
+      #user_tokens.build(:provider => omniauth['provider'], 
+                        #:uid => omniauth['uid'],
+                        #:token => omniauth['credentials']['token'], 
+                        #:secret => omniauth['credentials']['secret'])
     else
       user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
     end
