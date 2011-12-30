@@ -4,4 +4,11 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+
+task :default => :build
+
+task :build do
+  sh "cp config/database.yml.example config/database.yml"
+end
+
 Dynamic::Application.load_tasks
