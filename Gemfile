@@ -16,6 +16,9 @@ gem 'jquery-rails'
 gem 'state_machine'
 gem 'haml', '~> 3.0.0'
 
+# Heroku gem for staging
+gem 'heroku'
+
 # Authentication Gems
 gem 'devise'
 gem 'omniauth', '~> 1.0.0'
