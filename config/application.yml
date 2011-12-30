@@ -13,5 +13,14 @@ development:
 test:
   <<: *defaults
 
+staging:
+  omniauth:
+    facebook:
+      app_id: '330104693676211'
+      app_secret: '8a8769b939643bfafa7f797a4279beba'
+    github:
+      client_id: '2a53bb91f3bcb35a84e1'
+      client_secret: 'e4cf5c2252211bb937d98150f7d222edc68b1a3f'
+
 production:
   <<: *defaults
