@@ -53,7 +53,6 @@ class User < ActiveRecord::Base
     else
       user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
     end
-    #self.confirm!# unless user.email.blank?
   end
 
   def password_required?
