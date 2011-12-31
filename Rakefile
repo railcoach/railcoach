@@ -5,9 +5,9 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 
-task :default => :build
+task :default => [:copy_config, 'db:migrate', 'db:test:prepare']
 
-task :build do
+task :copy_config do
   sh "cp config/database.yml.example config/database.yml"
 end
 
