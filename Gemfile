@@ -47,8 +47,8 @@ group :test, :development do
   
   # Guard
   gem 'guard'
-  gem 'growl'
-  gem 'libnotify'
+  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  gem 'growl' if /darwin/ =~ RUBY_PLATFORM
   gem 'guard-spork'
   gem 'guard-rspec'
   gem 'guard-rails'
