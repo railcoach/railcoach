@@ -21,9 +21,13 @@ end
 
 guard 'sass', :input => 'sass', :output => './'
 
-
 guard 'bundler' do
   watch('Gemfile')
   # Uncomment next line if Gemfile contain `gemspec' command
   # watch(/^.+\.gemspec/)
+end
+
+guard 'rails', :port => 3000 do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
 end
