@@ -33,14 +33,36 @@
   <% if @user.profile.twitter.present? %>
     <div class="column col1-3">
       <div class="gridSpacer block twitterBlock" id="user_twitter">
-        <h4>Twitter <%= link_to @user.profile.twitter, @user.profile.twitter_path %></h4>
+        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+            new TWTR.Widget({
+                version: 2,
+                type: 'profile',
+                rpp: 12,
+                interval: 30000,
+                width: 298,
+                height: 273,
+                theme: {
+                    shell: {
+                        background: 'rgba(0,0,0,0)',
+                        color: '#000000'
+                    },
+                    tweets: {
+                        background: 'rgba(0,0,0,0)',
+                        color: '#000000',
+                        links: '#CC0000'
+                    }
+                },
+                features: {
+                    scrollbar: true,
+                    loop: false,
+                    live: false,
+                    behavior: 'all'
+                }
+            }).render().setUser('<%= @user.profile.twitter %>').start();
+        </script>
       </div>
     </div>
-    <script>
-      $(function () {
-        $('#user_twitter').railcoachTwitterWidget({username: '<%= @user.profile.twitter %>'});
-      });
-    </script>
   <% end %>
   <div class="break"></div>
 </div>

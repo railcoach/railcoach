@@ -32,7 +32,7 @@ module Dynamic
 
     # JavaScript files you want as :init (application.js is always included).
     config.action_view.javascript_expansions[:init] = %w(jquery.min showdown)
-    config.action_view.javascript_expansions[:after_load] = %w(modernizr-1.7.min jquery-ui.min jquery_ujs railcoach.twitter jquery.jtweetsanywhere.min.js wmd)
+    config.action_view.javascript_expansions[:after_load] = %w(modernizr-1.7.min jquery-ui.min jquery_ujs wmd)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
