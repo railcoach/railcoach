@@ -45,4 +45,10 @@ describe User do
       user.deleted_at.should_not be_nil
     end
   end
+
+  # fails if rollable is too old
+  it "should have an is_owner method" do
+    user = User.new
+    user.is_owner(nil)
+  end
 end
