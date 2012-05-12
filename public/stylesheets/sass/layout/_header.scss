@@ -43,12 +43,6 @@
             padding: 20px 0px;
         }
 
-        @media (min-width: 1200px) {
-          & > .spacer {
-            width: $large_page_width;
-          }
-        }
-
         img.projectlodgeLogo {
             display: inline-block;
             margin-bottom: -11px;
