@@ -35,7 +35,7 @@ describe Project do
     end
 
     it "should set the user as owner" do
-      @p.memberships.first.user.should be(@user)
+      @p.memberships.first.user.should == @user
     end
 
     it "should save the membership if project is saved" do
