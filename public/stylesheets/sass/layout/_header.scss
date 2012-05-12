@@ -1,3 +1,5 @@
+@import "_settings";
+
 .exhibition header {
     a {
         color: #FFFFFF;
@@ -32,13 +34,19 @@
         color: #FFFFFF;
         font-size: 12px;
         line-height: 20px;
-        min-height: 245px;
+        min-height: $header_description_min_height;
 
         & > .spacer {
             position: relative;
-            width: 980px;
+            width: $page_width;
             margin: 0px auto;
             padding: 20px 0px;
+        }
+
+        @media (min-width: 1200px) {
+          & > .spacer {
+            width: $large_page_width;
+          }
         }
 
         img.projectlodgeLogo {
@@ -61,18 +69,39 @@
 
         .description {
             float: left;
-            width: 630px;
+            width: $header_description_width;
             margin-left: 20px;
 
             .column {
                 float: left;
-                width: 300px;
-                margin-right: 15px;
+                @include column_width($header_description_width, $header_description_column_count, $header_description_margin);                
+
+                h1 {
+                    font-size: 18px;
+                }
+            }
+
+            .column:last-child {
+                margin-right: 0px;
             }
 
             p {
                 margin-top: 10px;
             }
+        }
+
+        @media (min-width: 1200px) {
+          .description {
+            width: $large_header_description_width;
+
+            .column {
+              @include column_width($large_header_description_width, $header_description_column_count, $header_description_margin);
+
+              h1 {
+                font-size: 31px;
+              }
+            }
+          }
         }
 
         .authenticationWidget {
