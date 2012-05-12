@@ -1,5 +1,7 @@
+@import "_settings";
+
 .sitemap {
-    width: 960px;
+    width: $page_width;
     margin: 0px auto;
     padding: 10px 0px 25px 0px;
     font-size: 12px;
