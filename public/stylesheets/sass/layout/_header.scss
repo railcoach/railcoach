@@ -41,6 +41,10 @@
             width: $page_width;
             margin: 0px auto;
             padding: 20px 0px;
+
+            @media (min-width: 1200px) {
+                width: $large_page_width;
+            }
         }
 
         img.projectlodgeLogo {
