@@ -1,5 +1,7 @@
 @import "_settings";
 
+$col_page_width: 100%;
+
 .content {
     width: $page_width;
     margin: 0px auto;
@@ -17,103 +19,103 @@
             overflow: hidden;
 
             &.col1-1 {
-                width: $page_width;
+                width: $col_page_width;
             }
 
             &.col1-2 {
-                width: $page_width/2;
+                width: $col_page_width/2;
             }
 
             &.col1-3 {
-                width: $page_width/3;
+                width: $col_page_width/3;
             }
 
             &.col2-3 {
-                width: $page_width/3*2;
+                width: $col_page_width/3*2;
             }
 
             &.col1-4 {
-                width: $page_width/4;
+                width: $col_page_width/4;
             }
 
             &.col3-4 {
-                width: $page_width/4*3;
+                width: $col_page_width/4*3;
             }
 
             &.col1-5 {
-                width: $page_width/5;
+                width: $col_page_width/5;
             }
 
             &.col2-5 {
-                width: $page_width/5*2;
+                width: $col_page_width/5*2;
             }
 
             &.col3-5 {
-                width: $page_width/5*3;
+                width: $col_page_width/5*3;
             }
 
             &.col4-5 {
-                width: $page_width/5*4;
+                width: $col_page_width/5*4;
             }
 
             &.col1-6 {
-                width: $page_width/6;
+                width: $col_page_width/6;
             }
 
             &.col5-6 {
-                width: $page_width/6*5;
+                width: $col_page_width/6*5;
             }
 
             &.col1-8 {
-                width: $page_width/8;
+                width: $col_page_width/8;
             }
 
             &.col3-8 {
-                width: $page_width/8*3;
+                width: $col_page_width/8*3;
             }
 
             &.col5-8 {
-                width: $page_width/8*5;
+                width: $col_page_width/8*5;
             }
 
             &.col7-8 {
-                width: $page_width/8*7;
+                width: $col_page_width/8*7;
             }
 
             &.col1-10 {
-                width: $page_width/10;
+                width: $col_page_width/10;
             }
 
             &.col3-10 {
-                width: $page_width/10*3;
+                width: $col_page_width/10*3;
             }
 
             &.col7-10 {
-                width: $page_width/10*7;
+                width: $col_page_width/10*7;
             }
 
             &.col9-10 {
-                width: $page_width/10*9;
+                width: $col_page_width/10*9;
             }
 
             &.col1-12 {
-                width: $page_width/12;
+                width: $col_page_width/12;
             }
 
             &.col5-12 {
-                width: $page_width/12*5;
+                width: $col_page_width/12*5;
             }
 
             &.col7-12 {
-                width: $page_width/12*7;
+                width: $col_page_width/12*7;
             }
 
             &.col9-12 {
-                width: $page_width/12*9;
+                width: $col_page_width/12*9;
             }
 
             &.col11-12 {
-                width: $page_width/12*11;
+                width: $col_page_width/12*11;
             }
 
             .block {
@@ -169,6 +171,12 @@
             color: #000000;
             text-decoration: underline;
         }
+    }
+}
+
+@media (min-width: 1200px) {
+    .content {
+        width: $large_page_width;
     }
 }
 
