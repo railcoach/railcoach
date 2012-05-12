@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.11'
+gem 'rails', '3.0.12'
 
 # Authorization semantics
 gem 'cancan'
