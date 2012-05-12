@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
 private
 
   def create_defaults
-    self.profile ||= Profile.new(self)
+    self.profile ||= Profile.new({user_id: self.id})
   end
 
 end
