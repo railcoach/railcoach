@@ -1,3 +1,5 @@
+@import "_settings";
+
 .exhibition header {
     a {
         color: #FFFFFF;
@@ -36,7 +38,7 @@
 
         & > .spacer {
             position: relative;
-            width: 980px;
+            width: $page_width;
             margin: 0px auto;
             padding: 20px 0px;
         }

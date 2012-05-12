@@ -1,5 +1,7 @@
+@import "_settings";
+
 .content {
-    width: 960px;
+    width: $page_width;
     margin: 0px auto;
     padding: 67px 0px 0px 0px;
 
@@ -15,103 +17,103 @@
             overflow: hidden;
 
             &.col1-1 {
-                width: 960px;
+                width: $page_width;
             }
 
             &.col1-2 {
-                width: 480px;
+                width: $page_width/2;
             }
 
             &.col1-3 {
-                width: 320px;
+                width: $page_width/3;
             }
 
             &.col2-3 {
-                width: 640px;
+                width: $page_width/3*2;
             }
 
             &.col1-4 {
-                width: 240px;
+                width: $page_width/4;
             }
 
             &.col3-4 {
-                width: 720px;
+                width: $page_width/4*3;
             }
 
             &.col1-5 {
-                width: 192px;
+                width: $page_width/5;
             }
 
             &.col2-5 {
-                width: 384px;
+                width: $page_width/5*2;
             }
 
             &.col3-5 {
-                width: 576px;
+                width: $page_width/5*3;
             }
 
             &.col4-5 {
-                width: 768px;
+                width: $page_width/5*4;
             }
 
             &.col1-6 {
-                width: 160px;
+                width: $page_width/6;
             }
 
             &.col5-6 {
-                width: 800px;
+                width: $page_width/6*5;
             }
 
             &.col1-8 {
-                width: 120px;
+                width: $page_width/8;
             }
 
             &.col3-8 {
-                width: 360px;
+                width: $page_width/8*3;
             }
 
             &.col5-8 {
-                width: 600px;
+                width: $page_width/8*5;
             }
 
             &.col7-8 {
-                width: 840px;
+                width: $page_width/8*7;
             }
 
             &.col1-10 {
-                width: 96px;
+                width: $page_width/10;
             }
 
             &.col3-10 {
-                width: 288px;
+                width: $page_width/10*3;
             }
 
             &.col7-10 {
-                width: 672px;
+                width: $page_width/10*7;
             }
 
             &.col9-10 {
-                width: 862px;
+                width: $page_width/10*9;
             }
 
             &.col1-12 {
-                width: 80px;
+                width: $page_width/12;
             }
 
             &.col5-12 {
-                width: 400px;
+                width: $page_width/12*5;
             }
 
             &.col7-12 {
-                width: 560px;
+                width: $page_width/12*7;
             }
 
             &.col9-12 {
-                width: 720px;
+                width: $page_width/12*9;
             }
 
             &.col11-12 {
-                width: 880px;
+                width: $page_width/12*11;
             }
 
             .block {

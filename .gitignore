@@ -1,15 +1,31 @@
+#
+# rails specific 
+#
 /.bundle
 /db/*.sqlite3
 /log/*.log
-/tmp
-/nbproject
 /config/database.yml
+/db/schema.rb
+
+#
+# temporary directories and caches
+#
+/tmp
 *.pid
 *.log
 *.swp
-/public/stylesheets/*.css
 /coverage
-/db/schema.rb
+
+#
+# IDE
+#
+/nbproject
+
+#
+# Other
+#
+/public/stylesheets/*.css
+*.sass-cache
 /.idea
 /railcoach.ids
 /test
