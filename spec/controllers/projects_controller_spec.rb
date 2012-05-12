@@ -11,7 +11,7 @@ describe ProjectsController do
 
   describe "GET edit" do
     before do
-      Project.stub(:find).with(1).and_return(project)
+      Project.stub(:find).with("1").and_return(project)
     end
 
     context "when current user owns the project" do
@@ -44,7 +44,7 @@ describe ProjectsController do
   describe "GET show" do
     context "when the project exists" do
       before do
-        Project.stub(:find).with(1).and_return(project)
+        Project.stub(:find).with("1").and_return(project)
         get :show, :id => 1
       end
 
@@ -59,7 +59,7 @@ describe ProjectsController do
 
     context "when the project does not exists" do
       before do
-        Project.stub(:find).with(666).and_return(false)
+        Project.stub(:find).with("666").and_return(false)
         get :show, :id => 666
       end
 
@@ -151,7 +151,7 @@ describe ProjectsController do
   describe "request_membership" do
     context "when a user is logged on" do
       before(:each) do
-        Project.stub(:find).with(project.id).and_return(project)
+        Project.stub(:find).with(project.id.to_s).and_return(project)
       end
 
       it "should call Project.request_membership with user" do
@@ -170,8 +170,8 @@ describe ProjectsController do
     let(:user) { mock_model(User).as_null_object }
 
     before(:each) do
-      Project.stub(:find).with(project.id).and_return(project)
-      User.stub(:find).with(user.id).and_return(user)
+      Project.stub(:find).with(project.id.to_s).and_return(project)
+      User.stub(:find).with(user.id.to_s).and_return(user)
     end
 
     it "should call Project.invite_member with user and project" do

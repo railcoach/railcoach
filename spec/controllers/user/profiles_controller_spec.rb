@@ -10,7 +10,7 @@ describe User::ProfilesController do
   describe "GET edit" do
     let(:profile) { mock_model(User::Profile).as_null_object }
     before do
-      User::Profile.stub(:find).with(profile).and_return(profile)
+      User::Profile.stub(:find).with(profile.id.to_s).and_return(profile)
       get :edit, :id => profile
     end
 
@@ -26,7 +26,7 @@ describe User::ProfilesController do
       let(:profile) { mock_model(User::Profile).as_null_object }
 
       before do
-        User::Profile.stub!(:find).with(profile).and_return(profile) # Stub the model, so we just asume that the data exists and works
+        User::Profile.stub!(:find).with(profile.id.to_s).and_return(profile) # Stub the model, so we just asume that the data exists and works
         profile.stub!(:user).and_return(current_user) # Because we dont care if the relationship doesnt work, else profile has a nil relationship
 
         put :update, :id => profile
@@ -40,7 +40,7 @@ describe User::ProfilesController do
 
       it "should update the profile" do
         # Nice huh.
-        profile.should_receive(:update_attributes).with(profile).and_return(true)
+        profile.should_receive(:update_attributes).with(profile.id.to_s).and_return(true)
         put :update, :id => profile, :user_profile => profile # put to profiles#update
       end
 
@@ -59,7 +59,7 @@ describe User::ProfilesController do
       let(:profile) { mock_model(User::Profile).as_null_object }
 
       before do
-        User::Profile.stub!(:find).with(profile).and_return(profile) # Stub the model, so we just asume that the data exists and works
+        User::Profile.stub!(:find).with(profile.id.to_s).and_return(profile) # Stub the model, so we just asume that the data exists and works
         profile.stub!(:user).and_return(current_user) # Because we dont care if the relationship doesnt work, else profile has a nil relationship
         profile.stub!(:update_attributes).and_return(false)
       end
@@ -69,7 +69,7 @@ describe User::ProfilesController do
       end
 
       it "should not update attributes" do
-        profile.should_receive(:update_attributes).with(profile).and_return(false)
+        profile.should_receive(:update_attributes).with(profile.id.to_s).and_return(false)
         do_request
       end
 

@@ -18,7 +18,7 @@ describe Project::MembershipsController do
   let (:project) { mock_model(Project).as_null_object }
 
   before do
-    Project::Membership.stub(:find).with(membership).and_return(membership)
+    Project::Membership.stub(:find).with(membership.id.to_s).and_return(membership)
     membership.stub(:project).and_return(project)
     request.env["HTTP_REFERER"] = "http://example.com/"
   end
