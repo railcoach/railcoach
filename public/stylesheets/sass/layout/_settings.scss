@@ -1,0 +1,24 @@
+/***
+ * settings
+ */ 
+
+/****
+ * general settings for the entire website
+ */
+$page_width: 960px;
+$large_page_width: 1200px;
+
+/***
+ * settings for the header
+ */
+$header_description_width: $page_width;
+$large_header_description_width: $large_page_width;
+$header_description_margin: 15px;
+$header_description_min_height: 140px;
+$header_description_column_count: 3;
+
+@mixin column_width($width, $columns, $margin: 0px) {
+    width: ($width - $margin * ($columns - 1)) / $columns;
+    margin-right: $margin;
+}
+

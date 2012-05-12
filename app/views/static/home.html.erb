@@ -3,23 +3,42 @@
     <div class="spacer">
       <div class="description">
         <article>
-          <h1>What is <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
           <div class="column">
-            <p>The question should not be what, but who! Linking people together in an open and free environment to do what they like to do. Create musical instruments, collaborate on art pieces, helping out a local causes, plan performances and anything you can imagine. Innovating together in technology and growing personally in knowledge.</p>
+<h1>What is <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
+            <p>The question should not be what, but who! Linking people together in an open and free environment to do what they like to do.</p>
+          </div>
+          <div class="column">
+            <p> Create musical instruments, collaborate on art pieces, helping out a local causes, plan performances and anything you can imagine. Innovating together in technology and growing personally in knowledge.</p>
           </div>
           <div class="column">
             <p>We as .projectlodge ARE the platform on wich we do innovative, technological and fun projects. Together on Local and Global level. We find each other and collaborate on the future!</p>
-            <p>We want to enable the individual to contribute to the world on their own terms, level and field.</p>
+            <p style="display:none">We want to enable the individual to contribute to the world on their own terms, level and field.</p>
           </div>
         </article>
       </div>
-      <%= render :partial => 'layouts/authentication_widget' %>
       <div class="break"></div>
     </div>
   </div>
 <% end %>
 <div class="row">
-  <div class="column col2-3">
+  <div class="column col1-3">
+    <div class="gridSpacer block blockSpacer">
+      Lorum ipsum
+    </div>
+  </div>
+  <div class="column col1-3">
+    <div class="gridSpacer block blockSpacer">
+      Lorum ipsum
+    </div>
+  </div>
+  <div class="column col1-3">
+    <div class="gridSpacer block blockSpacer">
+      Lorum ipsum
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="column col1-2">
     <div class="gridSpacer">
       <div class="newsRotator">
         <header>
@@ -54,7 +73,7 @@
       </div>
     </div>
   </div>
-  <div class="column col1-3">
+  <div class="column col1-2">
     <div class="gridSpacer block twitterBlock" id="organization_twitter">
       <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
       <script>
@@ -63,7 +82,7 @@
               type: 'profile',
               rpp: 12,
               interval: 30000,
-              width: 298,
+              width: 568,
               height: 178,
               theme: {
                   shell: {
