@@ -65,4 +65,5 @@ end
 
 group :production do
   gem 'pg'  # PostgreSQL gem
+  gem 'unicorn' # Rails applications server
 end
