@@ -142,6 +142,8 @@ Devise.setup do |config|
 
   # for Rails 3.1 / Devise 2.x
   config.case_insensitive_keys = [:email]
+  config.use_salt_as_remember_token = true
+  config.reset_password_within = 6.hours
 
   # OmniAuth settings
   #config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
