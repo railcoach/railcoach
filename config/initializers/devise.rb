@@ -140,6 +140,9 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
 
+  # for Rails 3.1 / Devise 2.x
+  config.case_insensitive_keys = [:email]
+
   # OmniAuth settings
   #config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
   #config.stretches = Rails.env.test? ? 1 : 10
