@@ -36,6 +36,7 @@ Dynamic::Application.routes.draw do
   get "static/contact" => "static#contact"
   get "bam2011s" => "static#bam2011s"
   get "sag2012w" => "static#sag2012w"
+  get "sag2012s" => "static#sag2012s"
 
   # special page for the launch
   get "boot" => "static#boot"

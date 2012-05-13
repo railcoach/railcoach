@@ -1,0 +1,58 @@
+<% content_for :exhibition do %>
+  <div class="articleContainer">
+    <div class="spacer">
+      <div class="description">
+        <article>
+          <h1><%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>
+            SAG 2012 Summer</h1>
+          <div class="column">
+            <p>This will be our 5th gathering and the 2nd as an official association.</p>
+            <p> Like the previous gathering the day will have two sections. The first is the general assembly for our members, after that the public program will begin.</p>
+          </div>
+          <div class="column">
+            <p> There will be several keynotes by interesting people. The various projects will be demonstrated, and you are invited to lend a hand right away. After that we can enjoy some short talks and we'll end the day socializing with drinks.</p>
+          </div>
+        </article>
+      </div>
+      <!-- <%= render :partial => 'layouts/authentication_widget' %> -->
+      <div class="break"></div>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to image_tag('transparent.gif') + 'SAG2012S', '#' %></li>
+  </ul>
+<% end %>
+
+<div class="row">
+  <div class="column col1-1">
+    <div class="gridSpacer">
+      <h1>What about the details?</h1>
+    </div>
+  </div>
+  <div class="column col1-2">
+    <div class="gridSpacer block blockSpacer">
+      <h3>Date-time:</h3>
+      <p>July 7th. Doors open at 12:00. Program starts at 13:00.</p>
+      <h3>Location:</h3>
+      <p>RevSpace, The Hague</p>
+      <h3>Agenda:</h3>
+      <ul>
+        <li>Keynotes</li>
+        <li>Project presentations</li>
+        <li>Product demonstrations</li>
+        <li>Lightning talks</li>
+        <li>Drinks</li>
+      </ul>
+    </div>
+  </div>
+  <div class="column col1-2">
+    <div class="gridSpacer">
+      <iframe width="460" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.nl/maps?f=q&amp;source=s_q&amp;hl=nl&amp;geocode=&amp;q=Stichting+Revelation+Space,+Binckhorstlaan+172,+2516+BG+Den+Haag&amp;aq=0&amp;sll=52.469397,5.509644&amp;sspn=4.3242,11.096191&amp;ie=UTF8&amp;hq=Stichting+Revelation+Space,&amp;hnear=Binckhorstlaan+172,+Binckhorst,+'s-Gravenhage,+Den+Haag,+Zuid-Holland&amp;ll=52.073281,4.338269&amp;spn=0.008441,0.019698&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe><br />
+      <a href="http://maps.google.nl/maps?f=q&amp;source=embed&amp;hl=nl&amp;geocode=&amp;q=Stichting+Revelation+Space,+Binckhorstlaan+172,+2516+BG+Den+Haag&amp;aq=0&amp;sll=52.469397,5.509644&amp;sspn=4.3242,11.096191&amp;ie=UTF8&amp;hq=Stichting+Revelation+Space,&amp;hnear=Binckhorstlaan+172,+Binckhorst,+'s-Gravenhage,+Den+Haag,+Zuid-Holland&amp;ll=52.073281,4.338269&amp;spn=0.008441,0.019698&amp;z=15&amp;iwloc=A">View Larger Map</a>
+    </div>
+  </div>
+</div>
+<div class="break"></div>
