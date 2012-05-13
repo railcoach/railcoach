@@ -67,7 +67,7 @@ GEM
     guard-spork (0.8.0)
       guard (>= 0.10.0)
       spork (>= 0.8.4)
-    haml (3.0.25)
+    haml (3.1.5)
     hashie (1.2.0)
     heroku (2.25.0)
       launchy (>= 0.3.2)
@@ -218,7 +218,7 @@ DEPENDENCIES
   guard-rspec
   guard-sass
   guard-spork
-  haml (~> 3.0.0)
+  haml
   heroku
   jquery-rails
   libnotify

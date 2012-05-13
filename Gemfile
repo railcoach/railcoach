@@ -14,7 +14,7 @@ gem 'thin'
 gem 'rack'
 gem 'jquery-rails'
 gem 'state_machine'
-gem 'haml', '~> 3.0.0'
+gem 'haml'
 
 # Heroku gem for staging
 gem 'heroku'
