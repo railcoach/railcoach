@@ -1,167 +1,7 @@
-@import "_settings";
-
-$col_page_width: 100%;
-
 .content {
-    width: $page_width;
+    width: 960px;
     margin: 0px auto;
     padding: 67px 0px 0px 0px;
-
-    &.gridlayout {
-        clear: both;
-
-        .row {
-            clear: both;
-        }
-
-        .column {
-            float: left;
-            overflow: hidden;
-
-            &.col1-1 {
-                width: $col_page_width;
-            }
-
-            &.col1-2 {
-                width: $col_page_width/2;
-            }
-
-            &.col1-3 {
-                width: $col_page_width/3;
-            }
-
-            &.col2-3 {
-                width: $col_page_width/3*2;
-            }
-
-            &.col1-4 {
-                width: $col_page_width/4;
-            }
-
-            &.col3-4 {
-                width: $col_page_width/4*3;
-            }
-
-            &.col1-5 {
-                width: $col_page_width/5;
-            }
-
-            &.col2-5 {
-                width: $col_page_width/5*2;
-            }
-
-            &.col3-5 {
-                width: $col_page_width/5*3;
-            }
-
-            &.col4-5 {
-                width: $col_page_width/5*4;
-            }
-
-            &.col1-6 {
-                width: $col_page_width/6;
-            }
-
-            &.col5-6 {
-                width: $col_page_width/6*5;
-            }
-
-            &.col1-8 {
-                width: $col_page_width/8;
-            }
-
-            &.col3-8 {
-                width: $col_page_width/8*3;
-            }
-
-            &.col5-8 {
-                width: $col_page_width/8*5;
-            }
-
-            &.col7-8 {
-                width: $col_page_width/8*7;
-            }
-
-            &.col1-10 {
-                width: $col_page_width/10;
-            }
-
-            &.col3-10 {
-                width: $col_page_width/10*3;
-            }
-
-            &.col7-10 {
-                width: $col_page_width/10*7;
-            }
-
-            &.col9-10 {
-                width: $col_page_width/10*9;
-            }
-
-            &.col1-12 {
-                width: $col_page_width/12;
-            }
-
-            &.col5-12 {
-                width: $col_page_width/12*5;
-            }
-
-            &.col7-12 {
-                width: $col_page_width/12*7;
-            }
-
-            &.col9-12 {
-                width: $col_page_width/12*9;
-            }
-
-            &.col11-12 {
-                width: $col_page_width/12*11;
-            }
-
-            .block {
-                position: relative;
-                display: block;
-                border: 1px solid #AAAAAA;
-                background-color: #DDDDEE;
-                background-color: rgba(255, 255, 255, 0.4);
-                @include corner-round-all(3px);
-                @include shadow-outside(1px, 5px, rgba(0, 0, 0, 0.2));
-            }
-
-            .gridSpacer {
-                position: relative;
-                margin: 20px 10px 10px 10px;
-            }
-
-            .gridSpacer:first-child {
-                margin: 10px 10px 10px 10px;
-            }
-
-            .blockSpacer {
-                padding: 15px;
-
-                .blockTools {
-                    top: 15px;
-                    right: 15px;
-                }
-            }
-        }
-
-        .blockTools {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            display: none;
-        }
-
-        *:hover > .blockTools {
-            display: block;
-        }
-
-        &.visible .column .gridSpacer {
-            background-color: rgba(0,0,0,0.1);
-        }
-    }
 
     a {
         color: #CC0000;
@@ -174,9 +14,154 @@ $col_page_width: 100%;
     }
 }
 
-@media (min-width: 1200px) {
-    .content {
-        width: $large_page_width;
+.gridlayout {
+    clear: both;
+
+    .row {
+        clear: both;
+    }
+
+    .column {
+        float: left;
+
+        &.col1-1 {
+            width: 100%;
+        }
+
+        &.col1-2 {
+            width: 50%;
+        }
+
+        &.col1-3 {
+            width: 33.33%;
+        }
+
+        &.col2-3 {
+            width: 66.67%;
+        }
+
+        &.col1-4 {
+            width: 25%;
+        }
+
+        &.col3-4 {
+            width: 75%;
+        }
+
+        &.col1-5 {
+            width: 20%;
+        }
+
+        &.col2-5 {
+            width: 40%;
+        }
+
+        &.col3-5 {
+            width: 60%;
+        }
+
+        &.col4-5 {
+            width: 80%;
+        }
+
+        &.col1-6 {
+            width: 16.67%;
+        }
+
+        &.col5-6 {
+            width: 83.33%;
+        }
+
+        &.col1-8 {
+            width: 12.5%;
+        }
+
+        &.col3-8 {
+            width: 37.5%;
+        }
+
+        &.col5-8 {
+            width: 62.5%;
+        }
+
+        &.col7-8 {
+            width: 87.5%;
+        }
+
+        &.col1-10 {
+            width: 10%;
+        }
+
+        &.col3-10 {
+            width: 30%;
+        }
+
+        &.col7-10 {
+            width: 70%;
+        }
+
+        &.col9-10 {
+            width: 90%;
+        }
+
+        &.col1-12 {
+            width: 8.33%;
+        }
+
+        &.col5-12 {
+            width: 41.67%;
+        }
+
+        &.col7-12 {
+            width: 58.33%;
+        }
+
+        &.col11-12 {
+            width: 91.67%;
+        }
+
+        .block {
+            position: relative;
+            display: block;
+            border: 1px solid #AAAAAA;
+            background-color: #DDDDEE;
+            background-color: rgba(255, 255, 255, 0.4);
+            @include corner-round-all(3px);
+            @include shadow-outside(1px, 5px, rgba(0, 0, 0, 0.2));
+        }
+
+        .gridSpacer {
+            position: relative;
+            margin: 20px 10px 10px 10px;
+        }
+
+        .gridSpacer:first-child {
+            margin: 10px 10px 10px 10px;
+        }
+
+        .blockSpacer {
+            padding: 15px;
+
+            .blockTools {
+                top: 15px;
+                right: 15px;
+            }
+        }
+    }
+
+    .blockTools {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: none;
+    }
+
+    *:hover > .blockTools {
+        display: block;
+    }
+
+    &.visible .column .gridSpacer {
+        background-color: rgba(0,0,0,0.1);
     }
 }
 

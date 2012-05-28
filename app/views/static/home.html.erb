@@ -1,18 +1,24 @@
 <% content_for :exhibition do %>
   <div class="articleContainer">
     <div class="spacer">
-      <div class="description">
-        <article>
-          <div class="column">
-<h3>What is <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %> ?</h3>
-            <p>The question should not be what, but who! Linking people together in an open and free environment to do what they like to do.</p>
+      <div class="gridlayout">
+        <article class="row">
+          <div class="column col1-1">
+            <div class="gridSpacer">
+              <h1>What is <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %> ?</h1>
+            </div>
           </div>
-          <div class="column">
-            <p> Create musical instruments, collaborate on art pieces, helping out a local causes, plan performances and anything you can imagine. Innovating together in technology and growing personally in knowledge.</p>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p>The question should not be what, but who! Linking people together in an open and free environment to do what they like to do.</p>
+              <p> Create musical instruments, collaborate on art pieces, helping out a local causes, plan performances and anything you can imagine. Innovating together in technology and growing personally in knowledge.</p>
+            </div>
           </div>
-          <div class="column">
-            <p>We as .projectlodge ARE the platform on wich we do innovative, technological and fun projects. Together on Local and Global level. We find each other and collaborate on the future!</p>
-            <p style="display:none">We want to enable the individual to contribute to the world on their own terms, level and field.</p>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p>We as .projectlodge ARE the platform on wich we do innovative, technological and fun projects. Together on Local and Global level. We find each other and collaborate on the future!</p>
+              <p>We want to enable the individual to contribute to the world on their own terms, level and field.</p>
+            </div>
           </div>
         </article>
       </div>
@@ -52,7 +58,7 @@
             <article>
               <div class="container">
                 <h1>FOSDEM 2012</h1>
-		<p>We visited FOSDEM 2012 with a small group. It was awesome, despite the cold weather.</p>
+                <p>We visited FOSDEM 2012 with a small group. It was awesome, despite the cold weather.</p>
               </div>
             </article>
           </div>
@@ -60,7 +66,7 @@
             <article>
               <div class="container">
                 <h1>SAG2012W</h1>
-		<p>Saturday January 14th the <a href=/sag2012w>SAG2012W</a> will take place, starting at 13:00.</p>
+		            <p>Saturday January 14th the <a href=/sag2012w>SAG2012W</a> will take place, starting at 13:00.</p>
               </div>
             </article>
           </div>
@@ -68,7 +74,7 @@
             <article>
               <div class="container">
                 <h1>BOOT party</h1>
-		<p>At the <a href=/boot>BOOT party</a> we launched the association. Fifteen people signed up as members.</p>
+		            <p>At the <a href=/boot>BOOT party</a> we launched the association. Fifteen people signed up as members.</p>
               </div>
             </article>
           </div>
@@ -85,7 +91,7 @@
               type: 'profile',
               rpp: 12,
               interval: 30000,
-              width: 568,
+              width: 458,
               height: 178,
               theme: {
                   shell: {

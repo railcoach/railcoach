@@ -1,20 +1,27 @@
 <% content_for :exhibition do %>
   <div class="articleContainer">
     <div class="spacer">
-      <div class="description">
-        <article>
-          <h1><%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>
-            SAG 2012 Summer</h1>
-          <div class="column">
-            <p>This will be our 5th gathering and the 2nd as an official association.</p>
-            <p> Like the previous gathering the day will have two sections. The first is the general assembly for our members, after that the public program will begin.</p>
+      <div class="gridlayout">
+        <article class="row">
+          <div class="column col1-1">
+            <div class="gridSpacer">
+              <h1><%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>
+                SAG 2012 Summer</h1>
+            </div>
           </div>
-          <div class="column">
-            <p> There will be several keynotes by interesting people. The various projects will be demonstrated, and you are invited to lend a hand right away. After that we can enjoy some short talks and we'll end the day socializing with drinks.</p>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p>This will be our 5th gathering and the 2nd as an official association.</p>
+              <p> Like the previous gathering the day will have two sections. The first is the general assembly for our members, after that the public program will begin.</p>
+            </div>
+          </div>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p> There will be several keynotes by interesting people. The various projects will be demonstrated, and you are invited to lend a hand right away. After that we can enjoy some short talks and we'll end the day socializing with drinks.</p>
+            </div>
           </div>
         </article>
       </div>
-      <!-- <%= render :partial => 'layouts/authentication_widget' %> -->
       <div class="break"></div>
     </div>
   </div>

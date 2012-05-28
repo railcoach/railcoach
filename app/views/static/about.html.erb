@@ -1,20 +1,27 @@
 <% content_for :exhibition do %>
   <div class="articleContainer">
     <div class="spacer">
-      <div class="description">
-        <article>
-          <h1>Know more about <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
-          <div class="column">
-            <p>The projectlodge started as in idea by Bert Meerman in 2009. While talking to others for about a year mid 2010 the first projectlodge meeting was organized. Getting together people from work, fellow students and other that were interested was the basic idea.</p>
-            <p>main idea was to get together, share ideas, do cool stuff and just have fun.</p>
+      <div class="gridlayout">
+        <article class="row">
+          <div class="column col1-1">
+            <div class="gridSpacer">
+              <h1>Know more about <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>?</h1>
+            </div>
           </div>
-          <div class="column">
-            <p>After this first meeting the ball really started rolling. New people wanted in, the current name was adopted and the group of people now had a light weight board to support their activities.</p>
-            <p>The main values of the organisation are still there. Our goal as an organisation is to enable you in these values.</p>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p>The projectlodge started as in idea by Bert Meerman in 2009. While talking to others for about a year mid 2010 the first projectlodge meeting was organized. Getting together people from work, fellow students and other that were interested was the basic idea.</p>
+              <p>main idea was to get together, share ideas, do cool stuff and just have fun.</p>
+            </div>
+          </div>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p>After this first meeting the ball really started rolling. New people wanted in, the current name was adopted and the group of people now had a light weight board to support their activities.</p>
+              <p>The main values of the organisation are still there. Our goal as an organisation is to enable you in these values.</p>
+            </div>
           </div>
         </article>
       </div>
-      <!--  <%= render :partial => 'layouts/authentication_widget' %> -->
       <div class="break"></div>
     </div>
   </div>

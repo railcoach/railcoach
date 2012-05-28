@@ -1,26 +1,32 @@
 <% content_for :exhibition do %>
   <div class="articleContainer">
     <div class="spacer">
-      <div class="description">
-        <article>
-          <h1><%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %>
-            BAM2011S</h1>
-          <div class="column">
-            <p>Summer has arrived again so it is time for our third Bi-Annual Meeting. BAM2011S,
-              as in Bi-Annual Meeting 2011 Summer. It is promising to be a fun afternoon with cool projects,
-              interesting talks and of course some drinks afterwards.</p>
-            <p>So who is invited, well... you! If your a member or just interested in technology... make sure your
-              there!</p>
+      <div class="gridlayout">
+        <article class="row">
+          <div class="column col1-1">
+            <div class="gridSpacer">
+              <h1><%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %> BAM2011S</h1>
+            </div>
           </div>
-          <div class="column">
-            <p>A lot has happened over the last 12 months and we have come a long way of just being an idea. We've
-              worked on projects, formalized ourselves a bit more, had some fun and learned new thing along the way.
-              Now we've reached a crossroad in our development and after a year we are ready for the next step.</p>
-            <p>We hope to see you all on July 2nd - the Board.</p>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p>Summer has arrived again so it is time for our third Bi-Annual Meeting. BAM2011S,
+                as in Bi-Annual Meeting 2011 Summer. It is promising to be a fun afternoon with cool projects,
+                interesting talks and of course some drinks afterwards.</p>
+              <p>So who is invited, well... you! If your a member or just interested in technology... make sure your
+                there!</p>
+            </div>
+          </div>
+          <div class="column col1-2">
+            <div class="gridSpacer">
+              <p>A lot has happened over the last 12 months and we have come a long way of just being an idea. We've
+                worked on projects, formalized ourselves a bit more, had some fun and learned new thing along the way.
+                Now we've reached a crossroad in our development and after a year we are ready for the next step.</p>
+              <p>We hope to see you all on July 2nd - the Board.</p>
+            </div>
           </div>
         </article>
       </div>
-      <!-- <%= render :partial => 'layouts/authentication_widget' %> -->
       <div class="break"></div>
     </div>
   </div>

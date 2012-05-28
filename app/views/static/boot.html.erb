@@ -1,10 +1,14 @@
 <% content_for :exhibition do %>
   <div class="articleContainer">
     <div class="spacer">
-      <div class="description">
-        <article>
-          <h1>boot <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
-          <p><%= image_tag 'boot-header.png', :style => 'margin-top: 7px;' %></p>
+      <div class="gridlayout">
+        <article class="row">
+          <div class="column col1-1">
+            <div class="gridSpacer">
+              <h1>boot <%= image_tag 'projectlodge-light.png', :alt => '.projectlodge',:class => 'projectlodgeLogo' %></h1>
+              <p><%= image_tag 'boot-header.png', :style => 'margin-top: 7px;' %></p>
+            </div>
+          </div>
         </article>
       </div>
       <div class="break"></div>

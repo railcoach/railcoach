@@ -1,5 +1,3 @@
-@import "_settings";
-
 .exhibition header {
     a {
         color: #FFFFFF;
@@ -34,17 +32,11 @@
         color: #FFFFFF;
         font-size: 12px;
         line-height: 20px;
-        min-height: $header_description_min_height;
 
         & > .spacer {
             position: relative;
-            width: $page_width;
+            width: 960px;
             margin: 0px auto;
-            padding: 20px 0px;
-
-            @media (min-width: 1200px) {
-                width: $large_page_width;
-            }
         }
 
         img.projectlodgeLogo {
@@ -63,55 +55,6 @@
             line-height: 25px;
             font-weight: bold;
             margin-bottom: 9px;
-        }
-
-        .description {
-            float: left;
-            width: $header_description_width;
-            margin-left: 20px;
-
-            .column {
-                float: left;
-                @include column_width($header_description_width, $header_description_column_count, $header_description_margin);                
-
-                h1 {
-                    font-size: 18px;
-                }
-            }
-
-            .column:last-child {
-                margin-right: 0px;
-            }
-
-            p {
-                margin-top: 10px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-          .description {
-            width: $large_header_description_width;
-
-            .column {
-              @include column_width($large_header_description_width, $header_description_column_count, $header_description_margin);
-
-              h1 {
-                font-size: 31px;
-              }
-            }
-          }
-        }
-
-        .authenticationWidget {
-            margin-right: 20px;
-            float: right;
-            width: 310px;
-            .block {
-                background-color: #333333;
-                border: 1px solid #444444;
-                padding: 14px;
-                @include shadow-inset(10px, 200px, rgba(0, 0, 0, 0.8));
-            }
         }
     }
 }
@@ -144,7 +87,7 @@
 
     & > .spacer {
         position: relative;
-        width: 980px;
+        width: 960px;
         margin: 0px auto;
     }
 
